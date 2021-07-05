@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="corona">
+	<!-- 데이터 조회 -->
+	
+	<!-- 1. 국내 데이터 -->
+	<select id = 'searchK' resultType = "corona.KoreaVo">
+		select * from KoreaData
+	</select>
+	
+	<!-- 1-1. 국내 데이터 중 일일 확진자만 -->
+	<select id = 'searchTodayCF' resultType = "String">
+		select todayDecide from KoreaData
+	</select>
+	
+	<!-- 2. 국외 데이터 -->
+	<select id = 'searchG' resultType = "corona.GlobalVo">
+		select * from GlobalData
+	</select>
+	
+	<!-- 2-1. 국외 데이터 합계 -->
+	<select id = 'searchGTot' resultType = "map">
+		select sum(CASE WHEN NATIONNM != '한국' THEN NATDEFCNT END)totalDef, sum(CASE WHEN NATIONNM != '한국' THEN NATDEATHCNT END)totalDeath from GlobalData
+	</select>
+	
+	<!-- 3. 시도별 데이터 -->
+	<select id = 'searchC' resultType = "corona.CityVo">
+		select * from CityData
+	</select>
+	
+	<!-- 3-1. 시도별 데이터 중 합계의 해외유입 수, 지역발생 수만 가져오기-->
+	<select id = 'searchCK' resultType = "corona.CityVo">
+		select OVERFLOWCNT, LOCALOCCCNT from CityData where CITYNM ='합계' 
+	</select>
+	
+	<!-- 4. 연령별 데이터 -->
+	<select id = 'searchGA' resultType = "corona.GenderAgeVo">
+		select * from GenderAgeData
+	</select>
+	
+	<!-- 데이터 삽입 -->
+	
+	<!-- 1. 국내 데이터 -->
+	<insert id = 'insertK' parameterType = "corona.KoreaVo">
+		INSERT INTO KoreaData(stdDay, stdTime, decideCnt, clearCnt, examCnt, deathCnt, careCnt, resultNegCnt, accExamCompCnt, accDefRate, todayDecide, todayClear, todayCare, todayDeath)
+		VALUES(#{stdDay},#{stdTime},#{decideCnt},#{clearCnt},#{examCnt},#{deathCnt},#{careCnt},#{resultNegCnt},#{accExamCompCnt},#{accDefRate},#{todayDecide},#{todayClear},#{todayCare},#{todayDeath})
+	</insert>
+	
+	<!-- 2. 국외 데이터 -->
+	<insert id = 'insertG' parameterType = "corona.GlobalVo">
+		INSERT INTO GlobalData(stdDay, stdTime, areaNm, nationNm, natDefCnt, natDeathCnt, natDeathRate)
+		VALUES(#{stdDay},#{stdTime},#{areaNm},#{nationNm},#{natDefCnt},#{natDeathCnt},#{natDeathRate})
+	</insert>
+	
+	<!-- 3. 시도별 데이터 -->
+	<insert id = 'insertC' parameterType = "corona.CityVo">
+		INSERT INTO CityData(stdDay, stdTime, cityNm, defCnt, deathCnt, isolClearCnt, isolIngCnt, incDec, qurRate, overFlowCnt, localOccCnt)
+		VALUES(#{stdDay},#{stdTime},#{cityNm},#{defCnt},#{deathCnt},#{isolClearCnt},#{isolIngCnt},#{incDec},#{qurRate},#{overFlowCnt},#{localOccCnt})
+	</insert>
+	 
+	 
+	<!-- 4. 연령별 데이터 -->
+	<insert id = 'insertGA' parameterType = "corona.GenderAgeVo">
+		INSERT INTO GenderAgeData(stdDay, gubun, confCase, confCaseRate, death, deathRate, criticalRate)
+		VALUES(#{stdDay},#{gubun},#{confCase},#{confCaseRate},#{death},#{deathRate},#{criticalRate})
+	</insert>
+	
+	<!-- 데이터 삭제 -->
+	
+	<!-- 1. 국내 데이터 -->
+	<select id = 'deleteK'>
+		delete from KoreaData
+	</select>
+	
+	<!-- 2. 국외 데이터 -->
+	<select id = 'deleteG'>
+		delete from GlobalData
+	</select>
+	
+	<!-- 3. 시도별 데이터 -->
+	<select id = 'deleteC'>
+		delete from CityData
+	</select>
+	
+	<!-- 4. 연령별 데이터 -->
+	<select id = 'deleteGA'>
+		delete from GenderAgeData
+	</select>
+</mapper>

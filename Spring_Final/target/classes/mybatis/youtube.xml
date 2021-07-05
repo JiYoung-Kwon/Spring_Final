@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="youtube">
+	<!-- 데이터 조회 -->
+	
+	<!-- 1. 국내 데이터 -->
+	<select id = 'search' resultType = "String">
+		select videoId from youtube
+	</select>
+	
+	<!-- 데이터 삽입 -->
+	
+	<!-- 1. 국내 데이터 -->
+	<insert id = 'insert' parameterType = "String">
+		INSERT INTO youtube(videoId)
+		VALUES(#{videoId})
+	</insert>
+	
+	<!-- 데이터 삭제 -->
+	
+	<!-- 1. 국내 데이터 -->
+	<select id = 'delete'>
+		delete from youtube
+	</select>
+	
+</mapper>
