@@ -21,6 +21,8 @@
 		<mapper resource="mybatis/youtube.xml"/>
 		<mapper resource="mybatis/reserve.xml" />
 		<mapper resource="mybatis/vCenter.xml"/>
+		<mapper resource="mybatis/sanghwal.xml"/>
+		<mapper resource="mybatis/hospital.xml"/>
 	</mappers>
 	
 </configuration>

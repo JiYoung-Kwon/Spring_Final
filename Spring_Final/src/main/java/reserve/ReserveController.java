@@ -166,7 +166,7 @@ public class ReserveController {
 	    // 4 params(to, from, type, text) are mandatory. must be filled
 	    HashMap<String, String> params = new HashMap<String, String>();
 	    params.put("to", toPhone);
-	    params.put("from", "010-9922-7371");
+	    params.put("from", "");
 	    params.put("type", "SMS");
 	    params.put("text", authKey);
 	    params.put("app_version", "test app 1.2"); // application name and version

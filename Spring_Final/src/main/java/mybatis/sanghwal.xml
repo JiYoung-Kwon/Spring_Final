@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+
+<mapper namespace="sanghwal">
+
+	<select id="totList" parameterType="String" resultType="Integer">
+		select
+		count(serial) totList from sanghwal
+		where title like
+		'%${_parameter}%'
+		or doc like '%${_parameter}%'
+	</select>
+
+	<!-- 생활속 조회부분 -->
+	<select id="search_basic" parameterType="mybatis.sanghwalPage"
+		resultType="sanghwal.sanghwalVo">
+		SELECT * from(
+		SELECT rownum rno, m.* from(
+		SELECT serial,
+		pSerial, mId, to_char(mdate, 'rrrr-mm-dd') mdate, title, doc,
+		hit
+		FROM
+		sanghwal
+		WHERE title like '%${findStr}%'
+		ORDER BY serial DESC )m
+		)WHERE rno BETWEEN #{startNo} AND #{endNo}
+	</select>
+
+	<select id="search_doc" parameterType="mybatis.sanghwalPage"
+		resultType="sanghwal.sanghwalVo">
+		SELECT * from(
+		SELECT rownum rno, m.* from(
+		SELECT serial,
+		pSerial, mId,
+		to_char(mdate, 'rrrr-mm-dd') mdate, title, doc,
+		hit
+		FROM
+		sanghwal
+		WHERE doc like '%${findStr}%'
+		ORDER BY serial DESC )m
+		)WHERE rno BETWEEN
+		#{startNo} AND #{endNo}
+	</select>
+
+	<!-- 생활속 view부분 -->
+	<select id="sanghwal_view" parameterType="Integer"
+		resultType='sanghwal.sanghwalVo'>
+		select *
+		from sanghwal
+		where serial = #{_paremter}
+		order by serial
+	</select>
+
+    <select id='sanghwalAtt_view' parameterType='Integer' resultType='sanghwal.sanghwalAttVo'>
+			select * from sanghwalAtt where pSerial = #{_parameter} order by serial
+	</select>	
+		
+	<!-- <select id='sanghwalAtt_view' parameterType='Integer' resultType='board.BoardAttVo'> 
+		select * from system.sanghwalAtt where pSerial = #{_parameter} </select> -->
+
+	<!-- 조회수 증가 -->
+	<update id="sanghwal_hitUp" parameterType='Integer'>
+		update sanghwal
+		set hit=hit+1 where serial = #{_parameter}
+	</update>
+	
+</mapper>

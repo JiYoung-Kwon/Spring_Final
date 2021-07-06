@@ -79,3 +79,8 @@ function banner (){
 setInterval(function(){
 	$("#btn_right").trigger("click");
 },4000);
+
+// 공지사항 페이지 이동
+function unoticePageGo(){
+	$('#middle').load('notice/ureader.notice');
+}

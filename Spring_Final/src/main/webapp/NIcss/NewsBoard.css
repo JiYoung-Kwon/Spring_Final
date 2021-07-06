@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+
+/* 게시판 */
+#News_Board *{
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+	cursor: default;
+	vertical-align: top;
+	font-size: 13pt;
+	font-weight: bold;
+	color: #000;
+	background-color: #fff;
+}
+
+#News_Board{
+	width: 1400px;
+	height: auto;
+
+	top: 50%;
+	left: 50%;
+	
+}
+
+#News_Board > #News_header{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 40pt;
+}
+
+<!--/* 폼1 */-->
+#News_Board > #News_board_frm{
+	width: 100%;
+	height: 100px;
+	border-top: 5px solid #aaa;
+	border-bottom: 5px solid #aaa;
+	position: relative;
+}
+
+#News_Board > #News_board_frm > #News_total{
+	width: 150px;
+	height: 50%;
+	border: 2px solid #aaa;
+	position: absolute;
+	top: 50%;
+	left: 1%;
+	transform: translate(-0%, -50%);
+	text-align: center;
+}
+
+#News_Board > #News_board_frm > #News_sort{
+	width: 150px;
+	height: 50%;
+	border: 2px solid #aaa;
+	position: absolute;
+	top: 50%;
+	left: 60%;
+	transform: translate(-0%, -50%);
+}
+
+#News_Board > #News_board_frm > #News_searchbox{
+	width: 300px;
+	height: 50%;
+	border: 2px solid #aaa;
+	box-sizing: border-box;
+	position: absolute;
+	top: 50%;
+	left: 99%;
+	transform: translate(-100%, -50%);
+	display: flex;
+}
+#News_Board > #News_board_frm > #News_searchbox > #findstr{
+	flex: 1;
+	padding: 10px;
+}
+
+#News_Board > #News_board_frm > #News_searchbox > #search{
+	flex: 1;
+	background-image: url("../image/search.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#News_Board > #News_frm{
+	width: 100%;
+	height: 600px;
+	padding: 25px 0px;
+}
+
+#News_Board > #News_frm > .News_item, .News_items{
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid #aaa;
+	box-sizing: border-box;
+	display: flex;
+}
+
+#News_Board > #News_frm > .News_item > span{
+	flex: 1;
+	line-height: 48px;
+	text-align: center;
+}
+
+#News_Board > #News_frm > .News_item > span:nth-child(2){
+	flex: 4;
+}
+
+#News_Board > #News_frm > .News_item > span:nth-child(3){
+	flex: 3;
+}
+
+#News_Board > #News_frm > .News_item > span{
+	flex: 1;
+	line-height: 48px;
+	text-align: center;
+}
+
+#News_Board > #News_frm > .News_items > span:nth-child(2){
+	flex: 4;
+}
+
+#News_Board > #News_frm > .News_items > span:nth-child(3){
+	flex: 3;
+}
+
+#News_Board > #News_frm > .News_items:hover > span{
+	font-size: 15pt;
+}
+
+
+#News_board_frm > #News_searchbox > #News_findbtn{
+   width: 50px;
+   height: 100%;
+   padding: 10px;
+   float: right;
+   background-image: url("../image/search.png");
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+/* 게시판  */
+#News_frm > .News_item {
+   width: 100%;
+   height: 50px;
+   border-bottom: 1px solid #aaa;
+   display: flex;
+}
+
+#News_frm > .News_item > span{
+   flex: 1;
+   line-height: 49px;
+   text-align: center;
+}
+
+#News_frm > .News_items > span:hover{
+   background-color: #000;
+   color: #fff;
+}
+
+#News_frm > .News_item > span:nth-child(2){
+   flex: 6;
+}
+
+#News_frm > .News_items{
+   width: 100%;
+   height: 50px;
+   border-bottom: 1px solid #aaa;
+   display: flex;
+}
+
+#News_frm > .News_items > span{
+   flex: 1;
+   line-height: 49px;
+   text-align: center;
+}
+
+#News_frm > .News_items > span:nth-child(2){
+   flex: 6;
+}
+
+#News_Board > #News_footer_frm{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+
+#News_Board > #News_footer_frm > #News_previous{
+	width: 100px;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	display: flex;
+}
+
+#News_Board > #News_footer_frm > #News_previous > input:nth-child(1){
+	flex: 1;
+	background-image: url("../image/left2.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+#News_Board > #News_footer_frm > #News_previous > input:nth-child(2){
+	flex: 1;
+	background-image: url("../image/left1.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#News_Board > #News_footer_frm > #News_center{
+	width: auto;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#News_Board > #News_footer_frm > #News_center > input{
+	width: 50px;
+	height: 100%;
+	float: left;
+}
+
+#News_Board > #News_footer_frm > #News_next{
+	width: 100px;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 75%;
+	transform: translate(-50%, -50%);
+	display: flex;
+}
+
+#News_Board > #News_footer_frm > #News_next > input:nth-child(1){
+	flex: 1;
+	background-image: url("../image/right1.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#News_Board > #News_footer_frm > #News_next > input:nth-child(2){
+	flex: 1;
+	background-image: url("../image/right2.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* 제목 밑 버튼 3개 */
+
+#News_menubtn_zone{
+   width: 100%;
+   height: auto;
+   margin: 0px 25px;
+   text-align: center;
+}
+
+#News_menubtn_zone > input{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 20px;
+	border: 1px solid #aaa;
+}
+
+.btn_News{
+	margin: 0px 20px;
+}
+
+.btn_news{
+	margin: 0px 20px;
+}
+
+.News{
+	margin: 0px 20px;
+}
+#search{
+	width: 51px;
+    height: 100%;
+    border: 1px solid black;  /*  임시로 검색하기위해 만든 성원씨의 작품 */
+}

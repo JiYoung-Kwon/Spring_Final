@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board"> 
+
+	  <select id='totList' parameterType="NIboard.NI_Page" resultType="Integer">
+	  		<choose>
+	  			<when test="tabGubun == 'issue'">
+	  				select count(serial) totList from Issue 
+	  				where title   like '%${findStr }%' 
+	  				or    doc       like '%${findStr }%'
+	  			</when>
+	  			
+	  			<when test="tabGubun == 'news'">
+	  				select count(serial) totList from News 
+	  				where title   like '%${findStr}%' 
+	  				or    doc       like '%${findStr}%'
+	  			</when>
+	  
+	  			<when test="tabGubun == 'hobby'">
+	  				select count(serial) totList from hobby 
+	  				where title   like '%${findStr}%' 
+	  				or    doc       like '%${findStr}%'
+	  			</when>
+	  			
+	  			<when test="tabGubun == 'issue_M'">
+	  				select count(serial) totList from Issue 
+	  				where title   like '%${findStr }%' 
+	  				or    doc       like '%${findStr }%'
+	  			</when>
+	  			
+	  			<when test="tabGubun == 'news_M'">
+	  				select count(serial) totList from News 
+	  				where title   like '%${findStr}%' 
+	  				or    doc       like '%${findStr}%'
+	  			</when>
+	  
+	  			<when test="tabGubun == 'hobby_M'">
+	  				select count(serial) totList from hobby 
+	  				where title   like '%${findStr}%' 
+	  				or    doc       like '%${findStr}%'
+	  			</when>
+	  		</choose>
+	  		
+	  </select>	
+	  
+	  
+	 
+ 	  <select id="Issue" parameterType="NIboard.NI_Page" resultType="NIboard.NIBoardVo">
+		 SELECT * from(
+            SELECT rownum rno, m.* from(
+               SELECT serial, pserial, mId, to_char(mDate, 'rrrr-mm-dd') mDate, title, doc, hit
+               FROM Issue
+               WHERE title like '%${findStr}%' or 
+                    doc like '%${findStr}%' ORDER BY serial DESC )m 
+         )WHERE rno BETWEEN #{startNo} AND #{endNo} 
+	  </select>	
+	
+	   <select id="News" parameterType="NIboard.NI_Page" resultType="NIboard.NIBoardVo">
+		 SELECT * from(
+            SELECT rownum rno, m.* from(
+               SELECT serial, pserial, mId, to_char(mDate, 'rrrr-mm-dd') mDate, title, doc, hit
+               FROM News
+               WHERE title like '%${findStr}%' or 
+                    doc like '%${findStr}%' ORDER BY serial DESC )m
+         )WHERE rno BETWEEN #{startNo} AND #{endNo} 
+	  </select>
+	  
+	  <select id="hobby" parameterType="NIboard.NI_Page" resultType="NIboard.NIBoardVo">
+		 SELECT * from(
+            SELECT rownum rno, m.* from(
+               SELECT serial, pserial, mId, to_char(mDate, 'rrrr-mm-dd') mDate, title, doc, hit
+               FROM hobby
+               WHERE title like '%${findStr}%' or 
+                    doc like '%${findStr}%' ORDER BY serial DESC )m
+         )WHERE rno BETWEEN #{startNo} AND #{endNo} 
+	  </select>
+	  
+	  
+	  
+	  
+ 	  <select id="IssueView" parameterType="NIboard.NIBoardVo" resultType="NIboard.NIBoardVo">
+	  	SELECT * from Issue
+	  	where serial = #{serial }
+	  </select> 
+
+ 	  <select id="NewsView" parameterType="NIboard.NIBoardVo" resultType="NIboard.NIBoardVo">
+	  	SELECT * from News
+	  	where serial = #{serial }
+	  </select> 
+
+ 	  <select id="hobbyView" parameterType="NIboard.NIBoardVo" resultType="NIboard.NIBoardVo">
+	  	SELECT * from hobby
+	  	where serial = #{serial }
+	  </select> 
+	  
+	<!-- insert -->
+	<insert id="IssueCreate" parameterType="NIboard.NIBoardVo">
+		INSERT INTO Issue(serial, pserial, title, mId, mDate, hit, doc)
+		values(seq_Issue.nextval, 0, #{title }, '관리자', SYSDATE, 0, #{doc })
+	</insert>
+	
+	<insert id="NewsCreate" parameterType="NIboard.NIBoardVo">
+		INSERT INTO News(serial, pserial, title, mId, mDate, hit, doc)
+		values(seq_News.nextval, 0, #{title }, '관리자', SYSDATE, 0, #{doc })
+	</insert>
+	
+	<insert id="hobbyCreate" parameterType="NIboard.NIBoardVo">
+		INSERT INTO hobby(serial, pserial, title, mId, mDate, hit, doc)
+		values(seq_hobby.nextval, 0, #{title }, '관리자', SYSDATE, 0, #{doc })
+	</insert>
+	<!-- insert -->
+	
+	<!-- update -->
+   <update id="IssueUpdate" parameterType="NIboard.NIBoardVo">
+      UPDATE   Issue
+      SET      title = #{title}, doc = #{doc}, mDate = SYSDATE
+      WHERE   serial = #{serial}
+   </update>
+   
+    <update id="NewsUpdate" parameterType="NIboard.NIBoardVo">
+      UPDATE   News
+      SET      title = #{title}, doc = #{doc}, mDate = SYSDATE
+      WHERE   serial = #{serial}
+   </update>
+   
+    <update id="hobbyUpdate" parameterType="NIboard.NIBoardVo">
+      UPDATE   hobby
+      SET      title = #{title}, doc = #{doc}, mDate = SYSDATE
+      WHERE   serial = #{serial}
+   </update>
+   <!-- update -->
+   
+   <!-- delete -->
+	<delete id="IssueDelete" parameterType="NIboard.NIBoardVo">
+		DELETE
+		FROM Issue
+		WHERE serial = #{serial}
+	</delete>
+	
+	<delete id="NewsDelete" parameterType="NIboard.NIBoardVo">
+		DELETE
+		FROM News
+		WHERE serial = #{serial}
+	</delete>
+	
+	<delete id="hobbyDelete" parameterType="NIboard.NIBoardVo">
+		DELETE
+		FROM hobby
+		WHERE serial = #{serial}
+	</delete>
+	<!-- delete -->
+   
+   <!-- hit up -->
+	<update id="Issuehitup" parameterType="Integer">
+		UPDATE	Issue
+		SET		hit = hit + 1
+		WHERE	serial = #{_parameter}
+	</update>
+	
+	<update id="Newshitup" parameterType="Integer">
+		UPDATE	News
+		SET		hit = hit + 1
+		WHERE	serial = #{_parameter}
+	</update>
+	
+	<update id="hobbyhitup" parameterType="Integer">
+		UPDATE	hobby
+		SET		hit = hit + 1
+		WHERE	serial = #{_parameter}
+	</update>
+	<!-- hit up -->
+	
+	
+</mapper>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

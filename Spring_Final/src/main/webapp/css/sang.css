@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+#sang #subject{
+	font: 13pt;
+	text-align: center;
+}
+
+#sang #items{
+	display:flex;
+	flex-wrap: wrap;
+	margin-left:80px;
+}
+
+#sang .item{
+	margin-top:20px;
+  margin-right:80px;
+}
+
+#sang .item:hover{
+	cursor: pointer;
+}
+
+#sang #frm_sang{
+	width:1400px;
+}
+
+#sang #items .photo{
+	width:250px;
+	height:250px;
+}
+
+#sang #nop {
+	width:1000px;
+	height:600px;
+	margin:30px auto;
+	text-align:center;
+	font-size: 30pt;
+}
+
+#btn_zone{
+	text-align: center;
+}
+
+#find{
+	width:1100px;
+	height:80px;
+	text-align: right;
+}
+
+#find #findStr{
+	height:30px;
+}
+
+#find #btnFind{
+	font-size: 13pt;
+}
+/*---view 페이지 ---*/
+
+#sang #hit{
+	float:right;
+}
+
+#sang #image_zone{
+	width:1100px;
+	min-height:200px;
+	border:1px solid #000;
+	margin:0px auto;
+}
+
+#sang #doc{
+	width:1100px;
+	height:300px;
+	border:1px solid #000;
+	margin-top:30px;
+}
+
+#sang #title{
+	text-align: center;
+}

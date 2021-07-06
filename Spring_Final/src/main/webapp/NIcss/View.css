@@ -1,0 +1,132 @@
+
+/* 게시판 상세보기 */
+#View > div, form, input, span, select, option, textarea{
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+	cursor: default;
+	vertical-align: top;
+	font-size: 13pt;
+	font-weight: bold;
+	color: #000;
+	background-color: #fff;
+}
+
+#View{
+	width: 1400px;
+	height: auto;
+
+	top: 50%;
+	left: 50%;
+
+}
+
+#View > #View_header{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	text-align: left;
+	font-size: 40pt;
+}
+
+#View > #View_frm{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+<!--/* 폼1 */-->
+#View > #View_frm > #View_section1{
+	width: 100%;
+	height: 100px;
+	border-top: 2px solid #aaa;
+	border-bottom: 0.5px solid #aaa;
+	box-sizing: border-box;
+	position: relative;
+}
+
+#View > #View_frm > #View_section1 > #View_title{
+	width: 100%;
+	height: 50%;
+	border: 2px solid #aaa;
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(-0%, -50%);
+}
+<!--/* 폼1 */-->
+
+<!--/* 폼2 */-->
+#View > #View_frm > #View_section2{
+	width: 100%;
+	height: 100px;
+	border-top: 0.5px solid #aaa;
+	border-bottom: 2px solid #aaa;
+	box-sizing: border-box;
+	position: relative;
+}
+
+#View > #View_frm > #notice_section2 > #View_id{
+	width: 300px;
+	height: 50%;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(-0%, -50%);
+}
+
+#View > #View_frm > #View_section2 > output{
+	width: 50px;
+	height: 50%;
+	line-height: 50px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 300px;
+	transform: translate(-0%, -50%);
+}
+
+#View > #View_frm > #View_section2 > #View_date{
+	width: 200px;
+	height: 50%;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 350px;
+	transform: translate(-0%, -50%);
+}
+<!--/* 폼2 */-->
+
+<!--/* 폼3 */-->
+#View > #View_frm > #View_section3{
+	width: 100%;
+	height: auto;
+	margin: 25px 0px;
+	padding: 10px;
+	border: 2px solid #aaa;
+	box-sizing: border-box;
+}
+<!--/* 폼3 */-->
+
+#View > #View_back{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+
+#View > #View_back > #View_backbtn{
+	width: 100px;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	transform: translate(-0%, -50%);
+	background-color: rgba(170, 170, 170, 0.5);
+}
+/* 게시판 상세보기 */

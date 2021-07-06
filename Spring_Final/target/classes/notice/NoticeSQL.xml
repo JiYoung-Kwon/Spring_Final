@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+
+<mapper namespace="notice">
+	<!-- 전체 리스트 -->
+	<select id="totlist_Title" parameterType="String" resultType="Integer">
+		SELECT	count(serial) totList
+		FROM	notice
+		WHERE	title LIKE '%${_parameter}%'
+	</select>
+	
+	<select id="totlist_Content" parameterType="String" resultType="Integer">
+		SELECT	count(serial) totList
+		FROM	notice
+		WHERE	doc LIKE '%${_parameter}%'
+	</select>
+	<!-- 전체 리스트 -->
+	
+	<!-- reader -->
+	<select id="reader_Title" parameterType="notice.NoticePage" resultType="notice.NoticeVo">
+		SELECT *
+		FROM(
+			SELECT rownum rno, m.*
+			FROM(
+				SELECT serial, title, mid, to_char(mdate, 'rrrr-mm-dd') mdate, hit, doc
+				FROM notice
+				WHERE title LIKE '%${findStr}%'
+				ORDER BY serial DESC)m
+		)WHERE rno BETWEEN #{startNo} AND #{endNo}
+	</select>
+	
+	<select id="reader_Content" parameterType="notice.NoticePage" resultType="notice.NoticeVo">
+		SELECT *
+		FROM(
+			SELECT rownum rno, m.*
+			FROM(
+				SELECT serial, title, mid, to_char(mdate, 'rrrr-mm-dd') mdate, hit, doc
+				FROM notice
+				WHERE doc LIKE '%${findStr}%'
+				ORDER BY serial DESC)m
+		)WHERE rno BETWEEN #{startNo} AND #{endNo}
+	</select>
+	<!-- reader -->
+	
+	<!-- view -->
+	<select id="view_serial" parameterType="Integer" resultType="notice.NoticeVo">
+		SELECT	serial, title, mid, TO_CHAR(mdate, 'rrrr-mm-dd') mdate, hit, doc
+		FROM	notice
+		WHERE	serial = #{_parameter}
+	</select>
+	<!-- view -->
+	
+	<!-- hit up -->
+	<update id="view_hitup" parameterType="Integer">
+		UPDATE	notice
+		SET		hit = hit + 1
+		WHERE	serial = #{_parameter}
+	</update>
+	<!-- hit up -->
+	
+	<!-- create -->
+	<insert id="create_notice" parameterType="notice.NoticeVo">
+		INSERT INTO notice(serial, title, mid, mdate, hit, doc)
+		values(seq_notice.nextval, #{title}, '관리자', SYSDATE, 0, #{doc})
+	</insert>
+	<!-- create -->
+	
+	<!-- update -->
+	<update id="update_notice" parameterType="notice.NoticeVo">
+		UPDATE	notice
+		SET		title = #{title}, doc = #{doc}, mdate = SYSDATE
+		WHERE	serial = #{serial}
+	</update>
+	<!-- update -->
+	
+	<!-- updatecompare -->
+	<update id="updatecompare_notice" parameterType="notice.NoticeVo">
+		UPDATE	notice
+		SET		title = ' [수정됨] ' || #{title}, doc = #{doc}, mdate = SYSDATE
+		WHERE	serial = #{serial}
+	</update>
+	<!-- updatecompare -->
+	
+	<!-- delete -->
+	<delete id="delete_notice" parameterType="notice.NoticeVo">
+		DELETE
+		FROM notice
+		WHERE serial = #{serial}
+	</delete>
+	<!-- delete -->
+</mapper>

@@ -32,7 +32,7 @@
 	<!-- Gmail -->
 	  <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 	    <property name="host" value="smtp.gmail.com" />
-	    <property name="port" value="587" />
+	    <property name="port" value="587" />	
 	    <property name="username" value="" />
 	    <property name="password" value="" />
 	    <property name="javaMailProperties">

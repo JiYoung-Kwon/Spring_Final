@@ -62,9 +62,15 @@
 					<!-- 메뉴 탭 --> <a>뉴스&이슈</a>
 					<ul id="sub4" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
-						<li class="sub_menu"><a>뉴스게시판</a></li>
-						<li class="sub_menu"><a>이슈게시판</a></li>
-						<li class="sub_menu"><a>이시국 취미생활</a></li>
+						<li class="sub_menu" id='Issue'
+							onclick="$('#middle').load('NI/search.brd?tabGubun=issue');"
+							data-ajax="false"><a>위험지역 이슈</a></li>
+						<li class="sub_menu" id="News"
+							onclick="$('#middle').load('NI/search.brd?tabGubun=news');"
+							data-ajax="false"><a>코로나 관련보도</a></li>
+						<li class="sub_menu" id="hobby"
+							onclick="$('#middle').load('NI/search.brd?tabGubun=hobby');"
+							data-ajax="false"><a id="hobby">이시국 취미생활</a></li>
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
@@ -73,11 +79,26 @@
 					<!-- 메뉴 탭 --> <a>의료기관찾기</a>
 					<ul id="sub5" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
-						<li class="sub_menu"><a>국민안심병원</a></li>
-						<li class="sub_menu"><a>코로나검사 실시기관</a></li>
-						<li class="sub_menu"><a>코로나 선별진료소 운영기관</a></li>
-						<li class="sub_menu"><a>메뉴4</a></li>
+						<li class="sub_menu"><a id='hospital'
+							onclick="$('#middle').load('./map.hospital?gubun=0')">국민안심병원</a>
+						</li>
+						<li class="sub_menu"><a id='careCenter'
+							onclick="$('#middle').load('./map.hospital?gubun=1')">코로나
+								선별진료소 운영기관</a></li>
+						<li class="sub_menu"><a id='testAgency'
+							onclick="$('#middle').load('./map.hospital?gubun=2')">코로나검사
+								실시기관</a></li>
 					</ul>
+				</li>
+				<!-- 메뉴 끝  -->
+
+				<li class="main_menu">
+					<!-- 메뉴 탭 --> <a id="notice" onclick="unoticePageGo()">공지사항</a>
+				</li>
+
+				<li class="main_menu"
+					onclick="$('#middle').load('./sanghwal/search.sanghwal');">
+					<!-- 메뉴 탭 --> <a>생활속 방역수칙</a>
 				</li>
 				<!-- 메뉴 끝  -->
 			</ul>

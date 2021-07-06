@@ -1,0 +1,389 @@
+@charset "UTF-8";
+.layer{
+	display: none;
+	border: 1px solid #aaa;
+	width: 350px;
+	height: 80%;
+	text-align: center;
+}
+
+#findMap{
+	width: 1400px;
+	margin-bottom: 60px;
+}
+/* #wrapper{
+	display: inline;
+} */
+
+/* .left_side,
+.right_side{
+	flex: 1;
+} */
+
+#tab_container{
+	margin: 20px 0;
+}
+
+#tab_container .tab_title{
+	padding-left: 0;
+	margin: 0;
+	display: flex;
+}
+
+#tab_container .tab_title li{
+	list-style: none;
+	float: left;
+	height: 42px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 19px;
+	font-family: '맑은 고딕 Bold', '맑은 고딕 Regular', '맑은 고딕', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	border: 1px solid #aaa;
+	padding-top: 18px;
+	margin-bottom: 30px;
+	flex: 1;
+}
+
+#tab_container .tab_title .on_tab{
+	background-color: #07aad6;
+	font-weight: bold;
+	color: #fff;
+	border: 1px solid #2b5f79;
+}
+
+.tab_menu{
+	width: 1400px;
+	margin-top: 50px;
+}
+
+.tab_cont {
+	clear: both;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+	width: 1400px;
+	height: auto;
+	background: inherit;
+	background-color: rgba(255, 255, 255, 1);
+	box-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(121, 121, 121, 1);
+	border-radius: 10px;
+}
+
+.tab_cont div,
+.tab_text div,
+.list_menu div{
+	text-align: center;
+}
+
+.tab_text{
+	position: relative;
+	text-align: center;
+	height: 56px;
+	margin-bottom: 15px;
+}
+
+.tab_text:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	height: 1px;
+	background-color: #000;
+}
+
+.tab_text .identify{
+	position: relative;
+	display: inline-block;
+	padding: 0 20px;
+	background-color: #fff;
+}
+
+.tab_text .tab_identify{
+	margin-top: 20px;
+}
+
+.list_menu{
+	display: inline-block;
+	width: 349px;
+	border-bottom: 1px solid #aaa;
+}
+
+.list_menu div{
+	width: 349px;
+	height: 40px;
+}
+
+.tab_body .hospital_text,
+.tab_body .carecenter_text{
+	padding: 20px 70px 0px 70px;
+	text-align: center;
+}
+
+.tab_body .testagency_text{
+	padding: 20px 20px 0px 20px;
+}
+
+.tab_body .hospital_text span,
+.tab_body .carecenter_text span,
+.tab_body .testagency_text span{
+	font-family: '맑은 고딕 Bold', '맑은 고딕 Regular', '맑은 고딕', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 16px;
+	letter-spacing: 0.4px;
+	padding-bottom: 3px;
+}
+
+.tab_body .testagency_text_body1,
+.tab_body .testagency_text_body2{
+	padding-bottom: 5px !important;
+}
+
+
+.tab_body .mark{
+	color: red;
+}
+
+.tab_body .hospital_text .hospital_text_body1{
+	padding-bottom: 5px;
+}
+
+.tab_body .hospital_text .hospital_text_body,
+.tab_body .carecenter_text .carecenter_text_body{
+	padding-bottom: 10px;
+}
+
+.tab_body .hospital_text .hospital_text_body3{
+	padding-left: 5px;
+}
+
+.img_wrapper{
+	display: flex;
+	padding-bottom: 20px;
+}
+
+.img_wrapper div{
+	display: block;
+	flex: 1;
+}
+
+.img_wrapper img{
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	padding-top: 5px;
+}
+
+.img_wrapper span{
+	display: block;
+	margin-top: 5px;
+	padding-bottom: 0px;
+}
+
+.img_wrapper .doctor_img{
+	height: 65px;
+	width: 65px;
+	padding-top: 39px;
+}
+
+#search_area{
+	display: inline-block;
+	width: 350px;
+	background-color: #fff;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+}
+
+.find_cont .selcity,
+.find_cont .search_text{
+	margin: 15px 0 0 0;
+	text-align: center;
+}
+
+.find_cont .selcity > select,
+input[type=text]{
+	width: 145px;
+	height: 35px;
+	padding: 0 0 0 13px;
+	border: 1px solid #aaa;
+	border-radius: 0;
+	background-color: #fff;
+	color: #666;
+	font-size: 15px;
+	line-height: 30px;
+	box-sizing: border-box;
+}
+
+.find_cont .selcity #sido{
+	margin-right: 15px;
+}
+
+.find_cont .search_text input[type=text]{
+	width: 250px;
+}
+
+.find_cont .search_text input[type=button]{
+	background-color: #07aad6;
+	color: #fff;
+	border: 1px solid #1072a7;
+	display: inline-block;
+	min-width: 43px;
+	height: 32px;
+	padding: 0 13px;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 32px;
+}
+
+.find_box{
+	border-bottom: 1px solid #aaa;
+	padding-bottom: 20px;
+}
+
+.search_result{
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+	max-height: 707px;
+	height: 707px;
+}
+
+.title{
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+	line-height: 50px;
+	border-bottom: 1px solid #aaa;
+}
+
+.search_result .find_list ul{
+	margin: 0;
+}
+.search_result .find_list li{
+	width: 308px;
+	min-height: 80px;
+	overflow: auto;
+	padding: 20px 20px 20px 20px;
+	border-bottom: 1px solid #aaa;
+}
+
+ul, li{
+	list-style: none;
+	padding-left: 0px;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 35px;
+}
+
+.find_list li .pointer{
+	float: left;
+	width: 26px;
+	height: 32px;
+	margin-right: 10px;
+	background: url('../img/spotPointer.png') 0 0 no-repeat;
+	font-size: 14px;
+	color: #08b6ea;
+	line-height: 26px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.find_list a{
+	float: left;
+	color: #333;
+	text-decoration: none;
+}
+
+.search_result li, span, dt{
+	display: inline-block;
+}
+
+.search_result dl{
+	display: inline;
+}
+
+.find_list dt{
+	padding: 2px 0 0 0;
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: ns;
+	display: flex;
+}
+
+.find_list .addr{
+	clear: both;
+	margin: 7px 7px 7px 35px;
+	color: #666;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.map_area{
+	position: relative;
+	width: 1000px;
+	height: 940px;
+	overflow: hidden;
+	float: right;
+	background: url(https://ssl.pstatic.net/static/maps/mantle/1x/pattern_1.png) 0px 0px repeat transparent;
+}
+
+.find_cont .search_text .btnSearch{
+	cursor: pointer;
+}
+
+#detail:before{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    width: 20px;
+    height: 16px;
+    margin-left: -8px;
+    background: url(../img/img_bubble03.png) 0 0 no-repeat;
+}
+
+#detail{
+	border: 1px solid #aaa;
+	width: 300px;
+	height: 300px;
+}
+
+
+
+
+.gm-style-mtc{
+display: none;		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

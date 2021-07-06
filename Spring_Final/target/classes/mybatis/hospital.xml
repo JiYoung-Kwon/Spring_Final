@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="hospital"> 
+
+	 <!--  입력   -->
+	 <insert id="A0insert" parameterType="mky.HospitalVo" >
+	 	INSERT INTO hospital(address, hospitalName, lat, lng, sido, sigungu, phoneNumber, hospUrl, hospType)
+	 	values(#{address}, #{hospitalName}, #{lat}, #{lng}, #{sido}, #{sigungu}, #{phoneNumber}, #{hospUrl}, #{hospType})
+	 </insert>
+	 
+	 <insert id="97insert" parameterType="mky.HospitalVo" >
+	 	INSERT INTO testagency(address, hospitalName, lat, lng, sido, sigungu, phoneNumber, hospUrl)
+	 	values(#{address}, #{hospitalName}, #{lat}, #{lng}, #{sido}, #{sigungu}, #{phoneNumber}, #{hospUrl})
+	 </insert>
+	 
+	 <insert id="99insert" parameterType="mky.HospitalVo" >
+	 	INSERT INTO carecenter(address, hospitalName, lat, lng, sido, sigungu, phoneNumber, hospUrl)
+	 	values(#{address}, #{hospitalName}, #{lat}, #{lng}, #{sido}, #{sigungu}, #{phoneNumber}, #{hospUrl})
+	 </insert>
+	 
+	 <!-- 삭제 -->
+	 <delete id="A0delete">
+	 	DELETE FROM hospital
+	 </delete>
+	 
+	 <delete id="97delete">
+	 	DELETE FROM testagency
+	 </delete>
+	 
+	 <delete id="99delete">
+	 	DELETE FROM carecenter
+	 </delete>
+	 
+	 <!-- 조회 -->
+	 <select id="A0search" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
+	 	select hospitalname, address, phonenumber from hospital where sido = #{sido} and sigungu=#{sigungu} and hospitalname LIKE '%${findStr}%'
+	 </select>
+	 
+	 <select id="97search" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
+	 	select hospitalname, address, phonenumber from testagency where sido=#{sido} and sigungu=#{sigungu} and hospitalname LIKE '%${findStr}%'
+	 </select>
+	 
+	 <select id="99search" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
+	 	select hospitalname, address, phonenumber from carecenter where sido=#{sido} and sigungu=#{sigungu} and hospitalname LIKE '%${findStr}%'
+	 </select>
+	 
+	 <!-- 위도 경도 조회 -->
+	 <select id="A0mark" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
+	 	select lat, lng from hospital where address = #{address}
+	 </select>
+	 
+	 <select id="97mark" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
+	 	select lat, lng from testagency where address = #{address}
+	 </select>
+	 
+	 <select id="99mark" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
+	 	select lat, lng from carecenter where address = #{address}
+	 </select>
+	 
+</mapper>

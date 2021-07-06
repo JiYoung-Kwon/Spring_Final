@@ -6,20 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src='../js/graph.js'></script>
-<link rel='StyleSheet' type='text/css' href='/coronaMain/graph/formtest.css'>
+<link rel='StyleSheet' type='text/css'
+	href='./graph/formtest.css'>
+<script  src="./graph/graph.js"></script>
 </head>
 <body>
 	<div id="graph" >
