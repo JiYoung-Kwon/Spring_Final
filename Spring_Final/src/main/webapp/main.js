@@ -84,3 +84,8 @@ setInterval(function(){
 function unoticePageGo(){
 	$('#middle').load('notice/ureader.notice');
 }
+
+$('#logo_IF').on({ 'click': function(){ 
+	location.href = './index.jsp';
+}}
+)

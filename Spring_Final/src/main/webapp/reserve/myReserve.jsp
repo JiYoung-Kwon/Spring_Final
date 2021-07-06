@@ -108,7 +108,6 @@ function smsPopup() {
 function emailPopup() {
 	window.open("./reserve/email.jsp", "b", "width=850, height=300, left=100, top=50");
 	}
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLIebDhLkY-CHMWTNkDj3NLzWWJCsfv0&callback=initMap&region=kr">initMap()</script>	
+</script>	
 </body>
 </html>

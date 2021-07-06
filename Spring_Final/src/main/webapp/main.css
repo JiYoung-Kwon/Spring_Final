@@ -68,7 +68,10 @@
 	display: block;
 }
  
- 
+#logo_IF{
+	cursor: pointer;
+	
+}
 /* 서브메뉴 틀 위치  */
 .sub_wraaper{     
 	z-index:1;
@@ -351,6 +354,6 @@ color:#fbb003;
     font-size: 15px;
 }
 
- a:link { color: black; text-decoration: none;}
- a:visited { color: black; text-decoration: none;}
- a:hover { color: blue; text-decoration: underline;}
+#header a:link { color: #000000; text-decoration: none;}
+#header a:visited { color: #000000; text-decoration: none;}
+#header a:hover { color: #22107b; text-decoration:none;}

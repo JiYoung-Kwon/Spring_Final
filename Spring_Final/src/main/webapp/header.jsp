@@ -32,7 +32,6 @@
 							onclick="$('#middle').load('/Spring_Final/corona/searchG.corona');"
 							data-ajax="false"><a>국외 발생 현황</a></li>
 						<li class="sub_menu"><a>시도별 발생 현황</a></li>
-						<li class="sub_menu"><a>메뉴4</a></li>
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
@@ -42,8 +41,6 @@
 						<!-- 서브 메뉴 -->
 						<li id="Maingraph" class="sub_menu"><a>국내 접종 현황</a></li>
 						<li id="G7" class="sub_menu"><a>국외 접종 현황</a></li>
-						<li class="sub_menu"><a>메뉴3</a></li>
-						<li class="sub_menu"><a>메뉴4</a></li>
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
@@ -92,8 +89,8 @@
 				</li>
 				<!-- 메뉴 끝  -->
 
-				<li class="main_menu">
-					<!-- 메뉴 탭 --> <a id="notice" onclick="unoticePageGo()">공지사항</a>
+				<li class="main_menu" id="notice" onclick="unoticePageGo()">
+					<!-- 메뉴 탭 --> <a>공지사항</a>
 				</li>
 
 				<li class="main_menu"
