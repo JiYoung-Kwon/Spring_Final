@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+
+<mapper namespace="graph">
+
+	<select id="G7" resultType="float" parameterType="String">
+		select percent
+		from G7vaccine
+		where name like '%${_parameter}%'
+	</select>
+	<select id="one" resultType="integer" parameterType="String">
+		select onesum
+		from Cityvaccine
+		where num like '%${_parameter}%'
+	</select>
+	<select id="two" resultType="integer" parameterType="String">
+		select twosum
+		from Cityvaccine
+		where num like '%${_parameter}%'
+	</select>
+	<select id="koData" resultType="graph.koDataVo">
+		select
+		oneplu,onesum,twoplu,twosum,oneday,twoday
+		from Koreavaccine
+	</select>
+	<select id="CityData" resultType="graph.CityDataVo">
+		select
+		num,oneplu,onesum,twoplu,twosum
+		from Cityvaccine
+	</select>
+	<select id="DDate" resultType="String"  parameterType='String'>
+		select Ddate
+		from Ddatevaccine
+		where name  like '%${_parameter}%'
+	</select>
+	<update id="UpdateCity" parameterType='String'>
+		update Koreavaccine
+		set
+		oneplu = #{oneplu},
+		onesum = #{onesum},
+		twoplu = #{twoplu},
+		twosum = #{twosum},
+		oneday = #{oneday},
+		twoday = #{twoday}
+	</update>
+	<update id="UpdateDdate" parameterType='String'>
+		update Ddatevaccine
+		set
+		Ddate = #{Ddate}
+		where name = #{name}
+	</update>
+	<update id="UpdateG7" parameterType='String'>
+		update G7vaccine
+		set
+		percent = #{percent}
+		where name = #{name}
+	</update>
+		<update id="UpdateCityDate" parameterType='graph.CityDataVo'>
+		update Cityvaccine
+		set
+		oneplu  = #{oneplu},
+		onesum = #{onesum},
+		twoplu = #{twoplu},
+		twosum = #{twosum}
+		where num = #{num}
+	</update>
+</mapper>

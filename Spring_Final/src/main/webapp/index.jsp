@@ -16,5 +16,15 @@
 	<div id="footer"><jsp:include page="./footer.jsp"></jsp:include></div>
 </div>
 <script type="text/javascript" src="./main.js"></script>
+
+<script>
+	$('.main_menu #sub2 #Maingraph').on('click',function(){
+		$('#middle').load('/Spring_Final/graph/ko.graph');
+	})
+		$('.main_menu #sub2 #G7').on('click',function(){
+		$('#middle').load('/Spring_Final/graph/G7.graph');
+	})
+	
+</script>
 </body>
 </html> 

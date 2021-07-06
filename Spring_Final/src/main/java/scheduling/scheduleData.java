@@ -10,6 +10,7 @@ import corona.CityData;
 import corona.GenderAgeData;
 import corona.GlobalData;
 import corona.KoreaData;
+import graph.VaccinUpdate;
 import youtube.YoutubeData;
 
 @Controller
@@ -29,6 +30,9 @@ public class scheduleData {
 	@Autowired
 	YoutubeData yData;
 	
+	@Autowired
+	VaccinUpdate vUpdate;
+	
 	@Scheduled(cron = "00 00 11 * * *")
 	public void fixedKGAC() {
 		try {
@@ -41,6 +45,20 @@ public class scheduleData {
 			e.printStackTrace();
 		}
 	}
+	
+	@Scheduled(cron = "10 40 11 * * *")
+	public void fixedV() {
+		try {
+			//Vaccin Data은 12시 갱신
+			vUpdate.CityUpData();
+			vUpdate.G7Update();
+			vUpdate.koUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	@Scheduled(cron = "00 00 15 * * *")
 	public void fixedG() {

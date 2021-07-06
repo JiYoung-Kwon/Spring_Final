@@ -180,5 +180,11 @@
 			<version>1.7.30</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>5.5.0</version>
+		</dependency>
 	</dependencies>
 </project>
