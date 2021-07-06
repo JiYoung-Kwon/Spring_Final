@@ -19,6 +19,8 @@
 	<mappers>
 		<mapper resource="mybatis/corona.xml"/>
 		<mapper resource="mybatis/youtube.xml"/>
+		<mapper resource="mybatis/reserve.xml" />
+		<mapper resource="mybatis/vCenter.xml"/>
 	</mappers>
 	
 </configuration>

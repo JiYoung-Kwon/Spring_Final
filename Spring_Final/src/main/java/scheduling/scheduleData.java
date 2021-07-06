@@ -11,6 +11,7 @@ import corona.GenderAgeData;
 import corona.GlobalData;
 import corona.KoreaData;
 import graph.VaccinUpdate;
+import vCenter.vCenterApi;
 import youtube.YoutubeData;
 
 @Controller
@@ -46,7 +47,7 @@ public class scheduleData {
 		}
 	}
 	
-	@Scheduled(cron = "10 40 11 * * *")
+	@Scheduled(cron = "00 00 12 * * *")
 	public void fixedV() {
 		try {
 			//Vaccin Data은 12시 갱신

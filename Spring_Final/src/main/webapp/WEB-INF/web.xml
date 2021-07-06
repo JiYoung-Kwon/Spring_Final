@@ -27,7 +27,7 @@
 		<servlet-name>corona</servlet-name>
 		<url-pattern>*.corona</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- main -->
 	<servlet>
 		<servlet-name>youtube</servlet-name>
@@ -38,7 +38,7 @@
 		<servlet-name>youtube</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- graph -->
 	<servlet>
 		<servlet-name>graph</servlet-name>
@@ -48,5 +48,27 @@
 	<servlet-mapping>
 		<servlet-name>graph</servlet-name>
 		<url-pattern>*.graph</url-pattern>
+	</servlet-mapping>
+
+	<!-- reserve & vCenter -->
+	<servlet>
+		<servlet-name>reserve</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>reserve</servlet-name>
+		<url-pattern>*.reserve</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>vCenter</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>vCenter</servlet-name>
+		<url-pattern>*.vCenter</url-pattern>
 	</servlet-mapping>
 </web-app>

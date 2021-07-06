@@ -16,7 +16,7 @@
 	<div id="footer"><jsp:include page="./footer.jsp"></jsp:include></div>
 </div>
 <script type="text/javascript" src="./main.js"></script>
-
+<script src='/Spring_Final/reservejs/reserve.js'></script>
 <script>
 	$('.main_menu #sub2 #Maingraph').on('click',function(){
 		$('#middle').load('/Spring_Final/graph/ko.graph');

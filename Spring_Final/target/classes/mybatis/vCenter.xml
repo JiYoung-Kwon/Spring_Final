@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="vCenter">
+
+    <insert id="insert" parameterType="vCenter.vCenterVo">
+		insert into vCenter(address, centerName, facilityName, lat, lng, phoneNumber, sido, sigungu, dong)
+		values( #{address }, #{centerName }, #{facilityName }, #{lat }, #{lng }, #{phoneNumber }, #{sido }, #{sigungu },#{dong })
+	</insert> 
+	
+	<select id="sido" resultType="String">
+		SELECT DISTINCT sido FROM vCenter ORDER BY sido
+	</select>
+	
+	<select id="sigungu" parameterType="String" resultType="String">
+		SELECT DISTINCT sigungu FROM vCenter WHERE sido='${_parameter}' ORDER BY sigungu
+	</select>
+	
+	<select id="dong" parameterType="vCenter.vCenterVo" resultType="String">
+		SELECT DISTINCT dong FROM vCenter WHERE sido = #{sido } and sigungu=#{sigungu } ORDER BY dong
+	</select>
+	
+	<select id="search" parameterType="vCenter.vCenterVo" resultType="vCenter.vCenterVo">
+		SELECT * FROM vCenter where sido = #{sido }
+		
+		<if test="sigungu !='none'">
+		and sigungu = #{sigungu }
+		</if>
+		
+		<if test="dong != 'none'">
+		and dong = #{dong }
+		</if>
+	</select>
+	
+	<select id="information" parameterType="vCenter.vCenterVo" resultType="vCenter.vCenterVo">
+		SELECT * FROM vCenter WHERE centerName = #{centerName } and FACILITYNAME = #{facilityName } and dong = #{dong }
+	</select> 
+	
+	<select id="timeChk" parameterType="vCenter.vCenterVo" resultType="Integer">
+		SELECT count(*) FROM MyReserve WHERE reserveCenter = #{centerName } and facilityName = #{facilityName } and reserveTime = #{time} and RESERVEDATE = #{date}
+	</select> 	
+	
+	<select id="mapChk" parameterType="vCenter.vCenterVo" resultType="vCenter.vCenterVo">
+		SELECT lat, lng FROM vCenter WHERE centerName = #{centerName } and FACILITYNAME = #{facilityName }
+	</select> 
+</mapper>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

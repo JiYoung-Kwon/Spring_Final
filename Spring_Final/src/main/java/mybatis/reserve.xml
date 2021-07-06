@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="reserve">
+	<!-- 입력 -->
+	<insert id="reserve_myinsert" parameterType="reserve.MyReserveVo">
+			INSERT INTO MyReserve(myName, myJumin, myPhone, Email, reserveVaccine, reserveDate, reserveTime, reserveCenter, reserveNum, facilityName )
+			values(#{myName}, #{myJumin} , #{myPhone}, #{Email}, #{reserveVaccine}, #{reserveDate}, #{reserveTime},  #{reserveCenter},  seq_reserveNum.nextVal, #{facilityName})		
+	</insert>
+	
+	<insert id="reserve_otherinsert" parameterType="reserve.OtherReserveVo">
+			INSERT INTO OtherReserve(otherName, otherJumin, otherPhone, myPhone)
+			values(#{otherName}, #{otherJumin} , #{otherPhone}, #{myPhone})
+	</insert>
+	
+	<!-- 조회 -->
+	<select id="reserve_chkSearch" parameterType="reserve.OtherReserveVo" resultType="Integer">
+			SELECT COUNT(OTHERNAME) FROM OtherReserve WHERE myPhone = #{myPhone}
+	</select>
+	
+	<select id="reserve_search" parameterType="reserve.MyReserveVo" resultType="reserve.MyReserveVo">
+			select * from MyReserve where myPhone = #{myPhone} and myName = #{myName} and reserveNum = #{reserveNum}
+	</select>
+	
+	<select id="reserve_searchOne" parameterType="reserve.MyReserveVo" resultType="reserve.MyReserveVo">
+			select * from MyReserve where myPhone = #{myPhone} and myName = #{myName}
+	</select>
+	
+	<select id="reserve_numSearch" parameterType="reserve.MyReserveVo" resultType="reserve.MyReserveVo">
+			select * from MyReserve where myPhone = #{myPhone} and myName = #{myName} and myJumin = #{myJumin}
+	</select>
+
+	<select id="reserve_ohterSearch" parameterType="reserve.OtherReserveVo" resultType="reserve.OtherReserveVo">
+			select * from OtherReserve where myPhone = #{myPhone}
+	</select>
+	
+	<!-- 삭제 -->
+	<delete id="reserve_delete" parameterType="reserve.MyReserveVo">
+			DELETE FROM MyReserve WHERE myPhone = #{myPhone}
+	</delete>
+	
+	<delete id="reserve_otherDelete" parameterType="reserve.OtherReserveVo">
+			DELETE FROM OtherReserve WHERE myPhone = #{myPhone}
+	</delete>
+	
+</mapper>

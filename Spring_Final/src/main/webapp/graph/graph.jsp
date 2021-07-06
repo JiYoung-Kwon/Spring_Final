@@ -47,7 +47,7 @@
 							</th>
 						</tr>
 						<tr>
-							<td>당일실적 A
+							<td>전일실적 A
 							</th>
 							<td>${vo.oneplu}
 							</th>
@@ -103,9 +103,9 @@
 								<th scope="col" colspan="2">2회차접종</th>
 							</tr>
 							<tr>
-								<th scope="col">당일실적</th>
+								<th scope="col">전일실적</th>
 								<th scope="col">당일누계</th>
-								<th scope="col">당일실적</th>
+								<th scope="col">전일실적</th>
 								<th scope="col">당일누계</th>
 							</tr>
 						</thead>

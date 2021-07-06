@@ -4,6 +4,7 @@
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src='/Spring_Final/reservejs/reserve.js'></script>
 <meta charset="UTF-8">
 <title>header</title>
 
@@ -50,10 +51,10 @@
 					<!-- 메뉴 탭 --> <a>백신예약</a>
 					<ul id="sub3" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
-						<li class="sub_menu"><a>예약하기</a></li>
-						<li class="sub_menu"><a>조회하기</a></li>
-						<li class="sub_menu"><a>메뉴3</a></li>
-						<li class="sub_menu"><a>메뉴4</a></li>
+						<li class="sub_menu"><a
+							onclick="$('#middle').load('./doReserve.reserve');">예약하기</a></li>
+						<li class="sub_menu"><a
+							onclick="$('#middle').load('./sc.reserve');">조회하기</a></li>
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
