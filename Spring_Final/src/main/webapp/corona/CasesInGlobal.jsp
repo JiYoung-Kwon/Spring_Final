@@ -34,16 +34,22 @@
 
 #table6 .td, #table7 .td, #table8 .td {
 	display: table-cell;
-	border: 1px solid;
+	border: 1px solid #00000020;
 }
 
 #table6 .td:first-child {
 	width: 698px;
 	border-right: 0px;
+	border-top: 2px solid #13669b;
+	border-bottom: 1px solid #6d88b7;
+	background: #f0fdff;
 }
 
 #table6 .td:last-child {
 	width: 550px;
+	border-top: 2px solid #13669b;
+	border-bottom: 1px solid #6d88b7;
+	background: #f0fdff;
 }
 
 #table7>.tr>.td {
@@ -66,31 +72,53 @@
 #table8>.tr>.td {
 	width: 700px;
 	border-top: 0px;
+	border-bottom: 1px solid #6d88b7;
 }
 
 #table8>.tr>.tr>.td {
 	width: 550px;
 	border-top: 0px;
 	border-left: 0px;
+	border-bottom: 1px solid #6d88b7;
 }
 
 #cases{
 	width: max-content;
     margin: 0 auto;
 }
+
+h2::before {
+	display: inline-block;
+	content: '';
+	width: 10px;
+	height: 20px;
+	margin-left: -20px;
+	margin-right: 7px;
+	background-color: #13669B;
+	border-right: 4px solid #0b9bc9;
+}
+
+h3::before {
+	display: inline-block;
+	content: '';
+	width: 8px;
+	height: 8px;
+	margin-left: -16px;
+	margin-right: 8px;
+	border: 3px solid #0b9bc9;
+}
+
 </style>
 
 </head>
 
 <body>
-
-	<h1>국외 발생 현황</h1>
-
 	<div id='cases'>
-
+		<h2>국외 발생 현황</h2>
+		코로나바이러스감염증-19 국외 발생현황
 		<div id='global'>
 			<c:set var='stdDay' value='${gList[0].stdDay }' />
-			<h3>- 전체 국가 발생 현황
+			<h3> 전체 국가 발생 현황
 				(${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
 				${gList[0].stdTime} 기준)</h3>
 			<div id='table6'>

@@ -9,10 +9,12 @@ var plugin = {
 			if (!meta.hidden && i == 0) {
 				meta.data.forEach(function(element, index) {
 					// Draw the text in black, with the specified font
-					ctx.fillStyle = 'rgb(255, 0, 0)';
+					ctx.fillStyle = '#FFF';
+					//ctx.strokeStyle  = "#FB316E";
+					//ctx.lineWidth = 0.5;
 					var fontSize = 15;
-					var fontStyle = 'normal';
-					var fontFamily = 'Helvetica Neue';
+					var fontStyle = 'bold';
+					var fontFamily = 'Lato';
 					ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 					// Just naively convert to string for now
 					var dataString = dataset.data[index].toString();
@@ -22,6 +24,7 @@ var plugin = {
 					var padding = 5;
 					var position = element.tooltipPosition();
 					ctx.fillText(dataString, position.x, position.y - (fontSize / 2) - padding);
+					//ctx.strokeText(dataString, position.x, position.y - (fontSize / 2) - padding);
 				});
 			}
 		});
@@ -29,7 +32,7 @@ var plugin = {
 };
 
 
-drawChart1 = function(kJson) { 
+drawChart1 = function(kJson) {
 	var arrDate = [];
 	var arrTodayDecide = [];
 	var arrDecide = [];
@@ -51,14 +54,20 @@ drawChart1 = function(kJson) {
 					type: 'line',
 					yAxisID: 'TodayDecide',
 					label: "Population (millions)",
-					borderColor: "#3e95cd",
+					borderColor: "#FB316E",
 					data: arrTodayDecide,
-					fill: false
+					fill: false,
+					pointStyle: 'circle',
+                    pointRadius: '6',
+                    pointBackgroundColor: '#FB316E',
+                    pointBorderColor: '#fff',
+                    borderColor: '#FB316E',
+                    borderWidth: 2
 				},
 				{
 					label: "Population (millions)",
 					yAxisID: 'Decide',
-					backgroundColor: "#e8c3b9",
+					backgroundColor: "#39B6F2",
 					data: arrDecide
 				}
 			]
@@ -139,14 +148,20 @@ drawChart2 = function(kJson) {
 					type: 'line',
 					yAxisID: 'TodayDecide',
 					label: "Population (millions)",
-					borderColor: "#3e95cd",
+					borderColor: "#39B6F2",
 					data: arrTodayClear,
-					fill: false
+					fill: false,
+					pointStyle: 'circle',
+                    pointRadius: '6',
+                    pointBackgroundColor: '#39B6F2',
+                    pointBorderColor: '#fff',
+                    borderColor: '#39B6F2',
+                    borderWidth: 2
 				},
 				{
 					label: "Population (millions)",
 					yAxisID: 'Decide',
-					backgroundColor: "#e8c3b9",
+					backgroundColor: "#FB316E",
 					data: arrClear,
 				}
 			]
@@ -186,7 +201,7 @@ drawChart2 = function(kJson) {
 					position: 'right',
 					ticks: {
 						min: 0,
-						max: 900,
+						max: 1000,
 						fontSize: 14,
 						userCallback: function(value, index, values) {
 							value = value.toString();

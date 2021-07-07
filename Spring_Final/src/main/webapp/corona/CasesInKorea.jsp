@@ -15,7 +15,8 @@
 
 <title>국내 발생 현황</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 
 <style>
 #table1 *, #table2 *, #table3 *, #table4 *, #table5 *, #table6 *,
@@ -42,40 +43,55 @@
 
 #table1 .td, #table2 .td, #table3 .td {
 	display: table-cell;
-	border: 1px solid;
+	border: 1px solid #00000020;
 }
 
 #table1>.tr>.td:first-child {
 	width: 500px;
 	border-bottom: 0px;
+	background: #f0fdff;
+}
+
+#table1>.tr:first-child {
+	border-top: 2px solid #13669b;
 }
 
 #table1>.tr>.td:not(first-child) {
 	width: 250px;
 	border-bottom: 0px;
+	background: #f0fdff;
 }
 
 #table2>.tr>.td:nth-child(2) {
 	width: 375px;
 	border-bottom: 0px;
+	background: #f0fdff;
 }
 
 #table2>.tr>.td:not(:nth-child(2)) {
 	width: 125px;
 	border-bottom: 0px;
+	background: #f0fdff;
+}
+
+#table2 .td {
+	border-top: 1px solid #6d88b7;
 }
 
 #table3>.tr>.td:not(:nth-child(2)) {
-	width: 125px;
+	width: 126px;
+	border-bottom: 1px solid #6d88b7;
 }
 
 #table3>.tr>.td:nth-child(2) {
-	width: 375px;
+	width: 379px;
+	border-bottom: 1px solid #6d88b7;
 }
 
 #table3 .td>.tr:first-child>.td {
 	width: 125px;
 	border-top: 0px;
+	background: #f0fdff;
 }
 
 #table3 .td>.tr:last-child>.td {
@@ -97,24 +113,32 @@
 	height: 30px;
 }
 
+#table4>.tr:first-child {
+	border-top: 2px solid #13669b;
+}
+
 #table4 .td, #table5 .td {
 	display: table-cell;
 }
 
 #table4 .td, #table5 .td {
-	border: 1px solid;
+	border: 1px solid #00000020;
 }
 
 #table4>.tr>.td:first-child {
 	width: 937.5px;
+	border-bottom: 1px solid #6d88b7;
 }
 
 #table4>.tr>.td:not(first-child) {
 	width: 156.25px;
+	background: #f0fdff;
+	border-bottom: 1px solid #6d88b7;
 }
 
 #table4>.tr>.td>.tr>.td {
 	border-bottom: 0px;
+	background: #f0fdff;
 }
 
 #table4>.tr>.td>.tr>.td:first-child {
@@ -154,7 +178,8 @@
 
 #table5>.tr>.td {
 	width: 125px;
-	border-top: 0px;
+	border-top: 0;
+	border-bottom: 1px solid #6d88b7;
 }
 
 /* css- 그래프 크기 */
@@ -181,7 +206,7 @@
 
 .chart {
 	width: 1250px;
-	border: 1px solid;
+	border: 1px solid #00000020;
 }
 
 em {
@@ -198,31 +223,68 @@ em {
 	height: 30px;
 }
 
+#table6 .tr:first-child, #table7 .tr:first-child {
+	background: #f0fdff;
+}
+
 #table6 .td, #table7 .td {
 	display: table-cell;
-	border: 1px solid;
+	border: 1px solid #00000020;
 	width: 312.5px;
 }
 
-#cases{
+#table6 .tr:first-child>.td, #table7 .tr:first-child>.td {
+	border-top: 2px solid #13669b;
+	border-bottom: 1px solid #6d88b7;
+}
+
+#table6 .tr:last-child>.td, #table7 .tr:last-child>.td {
+	border-bottom: 1px solid #6d88b7;
+}
+
+#cases {
 	width: max-content;
-    margin: 0 auto;
+	margin: 0 auto;
+}
+
+h2::before {
+	display: inline-block;
+	content: '';
+	width: 10px;
+	height: 20px;
+	margin-left: -20px;
+	margin-right: 7px;
+	background-color: #13669B;
+	border-right: 4px solid #0b9bc9;
+}
+
+h3::before {
+	display: inline-block;
+	content: '';
+	width: 8px;
+	height: 8px;
+	margin-left: -16px;
+	margin-right: 8px;
+	border: 3px solid #0b9bc9;
+}
+
+h3>a{
+	font-size : 15px;
 }
 </style>
 
 </head>
 
 <body>
-
-	<h1>국내 발생 현황</h1>
-
 	<div id='cases'>
-
+		<h2>국내 발생 현황</h2>
+		코로나바이러스감염증-19 국내 발생현황
 		<div id='patient'>
 			<c:set var='stdDay' value='${kList[0].stdDay }' />
-			<h3>- 누적 확진자 현황
-				(${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
-				${kList[0].stdTime} 기준)</h3>
+			<h3>
+				누적 확진자 현황 <a>(${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
+					${kList[0].stdTime} 기준)</a>
+			</h3>
 
 			<div id='table1'>
 				<div class='tr'>
@@ -298,7 +360,10 @@ em {
 		</div>
 
 		<div id='test'>
-			<h3>- 누적 검사 현황</h3>
+			<h3>
+				누적 검사 현황 <a>(${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
+					${kList[0].stdTime} 기준)</a>
+			</h3>
 
 			<div id='table4'>
 				<div class='tr'>
@@ -365,7 +430,7 @@ em {
 
 		<div id='patientGraph'>
 
-			<h3>- 일일 및 누적 확진환자 추세</h3>
+			<h3>일일 및 누적 확진환자 추세</h3>
 			<div class='chart'>
 				<div id='chart1'>
 					<div class='yAxes_label'>
@@ -387,7 +452,7 @@ em {
 
 		<div id='cumulativeGraph'>
 
-			<h3>- 확진환자 내 일일 및 누적 격리해제 추세</h3>
+			<h3>확진환자 내 일일 및 누적 격리해제 추세</h3>
 			<div class='chart'>
 				<div id='chart2'>
 					<div class='yAxes_label'>
@@ -408,8 +473,11 @@ em {
 
 
 		<div id='gender'>
-
-			<h3>- 확진자 성별 현황</h3>
+			<c:set var='stdDay' value='${gaList[0].stdDay }' />
+			<h3>
+				확진자 성별 현황 <a>(${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
+					${kList[0].stdTime} 기준)</a>
+			</h3>
 			<div id='table6'>
 				<div class='tr'>
 					<div class='td'>구분</div>
@@ -439,7 +507,10 @@ em {
 
 		<div id='age'>
 
-			<h3>- 확진자 연령별 현황</h3>
+			<h3>
+				확진자 연령별 현황 <a>(${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
+					${kList[0].stdTime} 기준)</a>
+			</h3>
 			<div id='table7'>
 				<div class='tr'>
 					<div class='td'>구분</div>
@@ -470,9 +541,10 @@ em {
 	</div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-<script src="/Spring_Final/coronaJs/chartKorea.js"></script>
-<script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script src="/Spring_Final/coronaJs/chartKorea.js"></script>
+	<script>
 		drawChart1(${kJson});
 		drawChart2(${kJson});
 </script>

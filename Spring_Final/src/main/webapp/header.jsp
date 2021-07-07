@@ -21,8 +21,8 @@
 		</div>
 		<div id="header_menu">
 			<ul id="menu_wrapper">
-				<li class="main_menu">
-					<!-- 메뉴 탭 --> <a>코로나발생동향</a>
+				<li class="main_menu" onclick="$('#middle').load('/Spring_Final/corona/searchK.corona');">
+					<!-- 메뉴 탭 --> <a >코로나발생동향</a>
 					<ul id="sub1" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
 						<li class="sub_menu"
@@ -31,11 +31,10 @@
 						<li class="sub_menu"
 							onclick="$('#middle').load('/Spring_Final/corona/searchG.corona');"
 							data-ajax="false"><a>국외 발생 현황</a></li>
-						<li class="sub_menu"><a>시도별 발생 현황</a></li>
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
-				<li class="main_menu">
+				<li class="main_menu" id = 'MainMove'>
 					<!-- 메뉴 탭 --> <a>백신접종현황</a>
 					<ul id="sub2" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
@@ -44,7 +43,7 @@
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
-				<li class="main_menu">
+				<li class="main_menu" onclick="$('#middle').load('./doReserve.reserve');">
 					<!-- 메뉴 탭 --> <a>백신예약</a>
 					<ul id="sub3" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
@@ -55,7 +54,7 @@
 					</ul>
 				</li>
 				<!-- 메뉴 끝  -->
-				<li class="main_menu">
+				<li class="main_menu" onclick="$('#middle').load('NI/search.brd?tabGubun=issue');">
 					<!-- 메뉴 탭 --> <a>뉴스&이슈</a>
 					<ul id="sub4" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
@@ -72,7 +71,7 @@
 				</li>
 				<!-- 메뉴 끝  -->
 
-				<li class="main_menu">
+				<li class="main_menu" onclick="$('#middle').load('./map.hospital?gubun=0')">
 					<!-- 메뉴 탭 --> <a>의료기관찾기</a>
 					<ul id="sub5" class="sub_wraaper">
 						<!-- 서브 메뉴 -->

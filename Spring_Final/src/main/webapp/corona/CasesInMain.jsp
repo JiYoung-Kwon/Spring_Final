@@ -13,7 +13,7 @@
 <style>
 #cases {
 	border: 1px solid;
-	width: 1200px;
+	width: 1365px;
 	margin: 0 auto;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .total .map {
-	width: 550px;
+	width: 1100px;
 	border: 1px solid;
 	margin: 50px 0px 50px 50px;
 }
@@ -39,6 +39,7 @@
 	float: left;
 	/* display: flex; */
 	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .total .case #info {
@@ -59,8 +60,9 @@
 	text-align: right;
 }
 
-.map_graph #map_layout{
+.map_graph #map_layout {
 	position: relative;
+	transform: translate(140px, 10px);
 }
 
 button[data-city^="city"] {
@@ -205,6 +207,7 @@ svg {
 
 .case>div {
 	display: none;
+	height: 450px;
 }
 </style>
 
@@ -635,7 +638,7 @@ svg {
 							<%-- <div id = 'info_chart'>
 								<canvas id="doughnut-city" width="1000" height="300"></canvas>
 							</div> --%>
-						
+
 							<div id='info_label'>
 								<div class='patient'>
 									<span>누적 확진환자</span>
@@ -664,44 +667,49 @@ svg {
 
 							<div id='info_data'>
 								<div class='patient'>
-									<span><fmt:formatNumber value="${cList[18-i].defCnt}" pattern="#,###" /> </span>
-									<span>명</span>
+									<span><fmt:formatNumber value="${cList[18-i].defCnt}"
+											pattern="#,###" /> </span> <span>명</span>
 								</div>
 
 								<div class='increase'>
-									<span>(+<fmt:formatNumber value="${cList[18-i].incDec}" pattern="#,###" />)</span>
+									<span>(+<fmt:formatNumber value="${cList[18-i].incDec}"
+											pattern="#,###" />)
+									</span>
 								</div>
 
 								<div class='isolation'>
-									<span><fmt:formatNumber value="${cList[18-i].isolIngCnt}" pattern="#,###" /></span>
-									<span>명</span>
+									<span><fmt:formatNumber
+											value="${cList[18-i].isolIngCnt}" pattern="#,###" /></span> <span>명</span>
 								</div>
 
 								<div class='release'>
-									<span><fmt:formatNumber value="${cList[18-i].isolClearCnt}" pattern="#,###" /></span>
-									<span>명</span>
+									<span><fmt:formatNumber
+											value="${cList[18-i].isolClearCnt}" pattern="#,###" /></span> <span>명</span>
 								</div>
 
 								<div class='death'>
-									<span><fmt:formatNumber value="${cList[18-i].deathCnt}" pattern="#,###" /></span>
-									<span>명</span>
+									<span><fmt:formatNumber value="${cList[18-i].deathCnt}"
+											pattern="#,###" /></span> <span>명</span>
 								</div>
 
 								<div class='per'>
-									<span>
-									<c:choose>
-										<c:when test="${cList[18-i].qurRate eq -1}">-</c:when>				
-										<c:otherwise>
-											<fmt:formatNumber value="${cList[18-i].qurRate}" pattern="#,###.00" /></span>
-										</c:otherwise>
+									<span> <c:choose>
+											<c:when test="${cList[18-i].qurRate eq -1}">-</c:when>
+											<c:otherwise>
+												<fmt:formatNumber value="${cList[18-i].qurRate}"
+													pattern="#,###.00" /></span>
+									</c:otherwise>
 									</c:choose>
-									
+
 									<span>명</span>
 								</div>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
+				발생률 : 지역별 인구 출처 - 행정안전부, 주민등록인구현황 (’20.1월 기준) 해당 시군구별 확진자는 신고 의료기관 및
+				보건소의 주소지를 기준으로 한 것으로, 역학조사 결과에 따라 변동될 수 있으며, 지자체에서 발표하는 코로나19 발생현황과
+				상이할 수 있습니다.
 			</div>
 		</div>
 	</div>
