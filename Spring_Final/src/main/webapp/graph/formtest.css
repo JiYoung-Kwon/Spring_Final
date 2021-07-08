@@ -6,11 +6,12 @@
 }
 
 #stable #sta {
-	border-collapse: separate;
-	border-spacing: 1px;
-	text-align: center;
-	line-height: 1.5;
-	margin: 20px auto;
+	display: table;
+	width: 1250px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0px;
+	padding: 0px;
 }
 
 #stable #sta th {
@@ -18,21 +19,28 @@
 	padding: 10px;
 	font-weight: bold;
 	vertical-align: top;
-	border: 1px solid #000;
+	border: 1px solid #00000020;
+	border-top: 2px solid #13669b;
+	border-bottom: 1px solid #6d88b7;
 	color: #000000;
-	background: #00ffff;
+	background: #f0fdff;
 }
 
 #stable #sta td {
 	width: 400px;
 	padding: 10px;
 	vertical-align: top;
-	border: 1px solid #000;
-	background: #eee;
+	border: 1px solid #00000020;
+}
+
+
+#stable #sta tbody>tr:last-child>td{
+	border-bottom: 1px solid #6d88b7;
 }
 
 #btable #bta {
-	border-collapse: separate;
+	display: table;
+	border-collapse: collapse;
 	border-spacing: 1px;
 	text-align: center;
 	line-height: 1.5;
@@ -44,17 +52,31 @@
 	padding: 10px;
 	font-weight: bold;
 	vertical-align: top;
-	border: 1px solid #000;
-	color: #000000;
-	background: #00ffff;
+	border: 1px solid #00000020;
+	background: #f0fdff;
+}
+
+#btable #bta thead>tr:first-child {
+	border-top: 2px solid #13669b;
+}
+
+#btable #bta thead>tr:first-child>th:first-child{
+	border-bottom: 1px solid #6d88b7;
+}
+
+#btable #bta thead>tr:last-child>th {
+	border-bottom: 1px solid #6d88b7;
+}
+
+#btable #bta tbody>#top:last-child>td {
+	border-bottom: 1px solid #6d88b7;
 }
 
 #btable #bta td {
 	width: 155px;
 	padding: 10px;
 	vertical-align: top;
-	border: 1px solid #000;
-	background: #eee;
+	border: 1px solid #00000020;
 }
 
 #Ddate {
@@ -62,7 +84,7 @@
 }
 
 #graph {
-	width: 1400px;
+	width: 1250px;
 	margin: 20px auto;
 }
 
@@ -76,6 +98,7 @@
 	float: right;
 	top: -40px;
 	right: 0px;
+	font-weight : bold;
 }
 
 #stable>#sta {
@@ -88,7 +111,7 @@
 }
 
 .tab_basic {
-	width: 1400px;
+	width: 1250px;
 	margin: auto;
 }
 
@@ -132,10 +155,31 @@
 	width: 100%;
 	min-height: 100px;
 	padding: 20px;
-	background: #eee;
+	background: rgb(255, 255, 255);
 	box-sizing: border-box;
 }
 
 .tab_content:first-child {
 	display: block;
+}
+
+h2::before {
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 20px;
+    margin-left: -20px;
+    margin-right: 7px;
+    background-color: #13669B;
+    border-right: 4px solid #0b9bc9;
+}
+
+h3::before {
+    display: inline-block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin-left: -16px;
+    margin-right: 8px;
+    border: 3px solid #0b9bc9;
 }

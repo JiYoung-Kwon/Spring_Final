@@ -17,12 +17,8 @@
 
 <body>
 	<div id='graph'>
-
-		<div id='header'>
-			시도별 접종 현황
-			<hr />
-
-		</div>
+		<h2>시도별 접종 현황</h2>
+		코로나바이러스감염증-19 시도별 접종 현황
 
 		<div id='stable'>
 			<div>

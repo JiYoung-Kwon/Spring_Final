@@ -49,9 +49,6 @@ graph.graph = function(one, two, thr, fou, fix, six, ser, eig, nin, ten, ele, te
 
                backgroundColor:
                   'rgba(255, 99, 132, 7)',
-               borderColor:
-                  'rgba(80, 188, 233, 0.2)'
-               ,
                borderWidth: 1
             }
             ]
@@ -92,8 +89,6 @@ graph.kp = function(oneone, onetwo, onethr, onefou, onefix, onesix, oneser, onee
                data: [oneone, onetwo, onethr, onefou, onefix, onesix, oneser, oneeig, onenin, oneten, oneele, onetwe, onethi, onefon, onefif, onesin, onesev, onegin], //컨트롤러에서 모델로 받아온다.
                backgroundColor:
                   'rgba(255, 99, 132, 7)',
-               borderColor:
-                  'rgba(80, 188, 233, 0.2)',
                borderWidth: 1
             }
             ]
@@ -134,25 +129,27 @@ graph.G7 = function(United, America, Canada, Germany, Italy, Japan, England, one
                data: [United, America, Canada, Germany, Italy, Japan, England, one, ko], //컨트롤러에서 모델로 받아온다.
                backgroundColor:
                   'rgba(255, 99, 132, 7)',
-               borderColor:
-                  'rgba(80, 188, 233, 0.2)'
-
-               ,
                borderWidth: 1
             }
             ]
          },
-         options: {
+ options: {
             legend: {
                display: false
             },
             scales: {
+               xAxes: [{
+                  ticks: {
+                     max: 150
+                  }
+               }],
                yAxes: [{
                   ticks: {
-                     beginAtZero: true
+
                   }
                }]
             }
+
          },
          plugins: plugin
       });
