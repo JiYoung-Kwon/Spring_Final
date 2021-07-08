@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -28,7 +27,7 @@
 		</div>
 		
 		<form id="Issue_board_frm" name="Issue_frm" method="post" action="" onsubmit="return false;">
-			<div id="Issue_total"> 총 ${page.totList } 건</div>
+			<div id="Issue_total"> 총 <span>${page.totList }</span> 건</div>
 			<select id="Issue_sort">
 				<option value="jacSung">제목</option>
 				<option value="joHoe">내용</option>
@@ -40,7 +39,9 @@
 			
 			<input id="nowPage" name="nowPage" type="hidden" value='${(empty param.nowPage)? 1 : param.nowPage }'>
 			<input id="tabGubun" name="tabGubun" type="hidden" value='${param.tabGubun}'>
+			<input id="serial" name="serial" type="hidden" value='${param.serial }'>
 			<input id="findStr" name="findStr" type="hidden" value='${param.findStr }'>
+			
 		</form>
 		
 		
@@ -57,7 +58,7 @@
 		<c:forEach var="list" items="${list}">
 			<div class="Issue_items" onclick="brd.view('${list.serial }')">
 				<span>${list.rno}</span>
-				<span>${list.title}</span>
+				<span>[이슈] ${list.title}</span>
 				<span>${list.mId}</span>
 				<span>${list.mDate}</span>
 				<span>${list.hit}</span>
@@ -77,7 +78,7 @@
 			</div>
 			<div id="Issue_center">
 			<c:forEach var='p' begin='${page.startPage }' end='${page.endPage }'>
-				<input type='button' value='${p }' onclick ='brd.move(${p})' <c:if test="${p eq page.nowPage}">style='font-size:20pt;'</c:if>/>
+				<input type='button' value='${p }' onclick ='brd.move(${p})' <c:if test="${p eq page.nowPage}">style='text-decoration: underline;color:#13669b;'</c:if>/>
 			</c:forEach>
 			
 			</div>

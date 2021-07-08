@@ -2,7 +2,7 @@
 
 
 /* 게시판 */
-#News_Board *{
+#hobby_Board *{
 	margin: 0px;
 	padding: 0px;
 	border: none;
@@ -18,12 +18,12 @@
 	background-color: #fff;
 }
 
-#News_Board{
-	width: 1400px;
+#hobby_Board{
+	width: 1100px;
 	height: auto;
 }
 
-#News_Board > #News_header{
+#hobby_Board > #hobby_header{
 	width: 100%;
 	height: 100px;
 	line-height: 100px;
@@ -32,7 +32,7 @@
 }
 
 <!--/* 폼1 */-->
-#News_Board > #News_board_frm{
+#hobby_Board > #hobby_board_frm{
 	width: 100%;
 	height: 100px;
 	border-top: 5px solid #0b9bc9;
@@ -40,7 +40,7 @@
 	position: relative;
 }
 
-#News_Board > #News_board_frm > #News_total{
+#hobby_Board > #hobby_board_frm > #hobby_total{
 	width: 150px;
 	height: 50%;
 	line-height: 41px;
@@ -52,19 +52,19 @@
 	text-align: center;
 }
 
-#News_Board > #News_board_frm > #News_total > span{
+#hobby_Board > #hobby_board_frm > #hobby_total > span{
 	font-weight: bold;
 	color: #13669b;
 }
 
-#News_Board > #News_board_frm > #News_sort{
+#hobby_Board > #hobby_board_frm > #hobby_sort{
 	width: 150px;
 	height: 50%;
 	padding: 10px;
 	border: 2px solid #13669b;
 	position: absolute;
 	top: 50%;
-	left: 70%;
+	left: 60%;
 	transform: translate(-50%, -50%);
 	
 	-webkit-appearance: none;
@@ -75,7 +75,7 @@
 	background-position: 90% center;
 }
 
-#News_Board > #News_board_frm > #News_searchbox{
+#hobby_Board > #hobby_board_frm > #hobby_searchbox{
 	width: 300px;
 	height: 50%;
 	border: 2px solid #aaa;
@@ -86,12 +86,12 @@
 	transform: translate(-100%, -50%);
 	display: flex;
 }
-#News_Board > #News_board_frm > #News_searchbox > #findstr{
+#hobby_Board > #hobby_board_frm > #hobby_searchbox > #findstr{
 	flex: 1;
 	padding: 5px;
 }
 
-#News_Board > #News_board_frm > #News_searchbox > #search{
+#hobby_Board > #hobby_board_frm > #hobby_searchbox > #search{
 	flex: 1;
 	
 	border: none;
@@ -100,54 +100,54 @@
 	background-position: center center;
 }
 
-#News_Board > #News_frm{
+#hobby_Board > #hobby_frm{
 	width: 100%;
 	height: 600px;
 	padding: 25px 0px;
 }
 
-#News_Board > #News_frm > .News_item, .News_items{
+#hobby_Board > #hobby_frm > .hobby_item, .hobby_items{
 	width: 100%;
 	height: 50px;
 	border-bottom: 2px solid #aaa;
 	display: flex;
 }
 
-#News_Board > #News_frm > .News_item > span{
+#hobby_Board > #hobby_frm > .hobby_item > span{
 	flex: 1;
 	line-height: 48px;
 	text-align: center;
 }
 
-#News_Board > #News_frm > .News_item > span{
+#hobby_Board > #hobby_frm > .hobby_item > span{
 	flex: 1;
 	line-height: 48px;
 	text-align: center;
 }
 
-#News_Board > #News_frm > .News_items > span:nth-child(1){
+#hobby_Board > #hobby_frm > .hobby_items > span:nth-child(1){
 	color: #13669b;
 	font-weight: bold;
 }
 
-#News_Board > #News_frm > .News_item > span:nth-child(2){
+#hobby_Board > #hobby_frm > .hobby_item > span:nth-child(2){
 	flex: 5;
 }
 
-#News_Board > #News_frm > .News_items > span:nth-child(2){
+#hobby_Board > #hobby_frm > .hobby_items > span:nth-child(2){
 	flex: 5;
 }
 
-#News_Board > #News_frm > .News_item > span:nth-child(3){
+#hobby_Board > #hobby_frm > .hobby_item > span:nth-child(3){
 	flex: 2;
 }
 
-#News_Board > #News_frm > .News_items > span:nth-child(3){
+#hobby_Board > #hobby_frm > .hobby_items > span:nth-child(3){
 	flex: 2;
 }
 
 
-#News_board_frm > #News_searchbox > #News_findbtn{
+#hobby_board_frm > #hobby_searchbox > #hobby_findbtn{
   	flex: 1;
 	background-image: url("./image/notice_search.png");
 	background-repeat: no-repeat;
@@ -155,48 +155,48 @@
 }
 
 /* 게시판  */
-#News_frm > .News_item {
+#hobby_frm > .hobby_item {
    width: 100%;
    height: 50px;
    border-bottom: 1px solid #aaa;
    display: flex;
 }
 
-#News_frm > .News_item > span{
+#hobby_frm > .hobby_item > span{
    flex: 1;
    line-height: 49px;
    text-align: center;
 }
 
 
-#News_frm > .News_item > span:nth-child(2){
+#hobby_frm > .hobby_item > span:nth-child(2){
    flex: 6;
 }
 
-#News_frm > .News_items{
+#hobby_frm > .hobby_items{
    width: 100%;
    height: 50px;
    border-bottom: 1px solid #aaa;
    display: flex;
 }
 
-#News_frm > .News_items > span{
+#hobby_frm > .hobby_items > span{
    flex: 1;
    line-height: 49px;
    text-align: center;
 }
 
-#News_frm > .News_items > span:nth-child(2){
+#hobby_frm > .hobby_items > span:nth-child(2){
    flex: 6;
 }
 
-#News_Board > #News_footer_frm{
+#hobby_Board > #hobby_footer_frm{
 	width: 100%;
 	height: 100px;
 	position: relative;
 }
 
-#News_Board > #News_footer_frm > #News_previous{
+#hobby_Board > #hobby_footer_frm > #hobby_previous{
 	width: 100px;
 	height: 50%;
 	position: absolute;
@@ -206,7 +206,7 @@
 	display: flex;
 }
 
-#News_Board > #News_footer_frm > #News_previous > input:nth-child(1){
+#hobby_Board > #hobby_footer_frm > #hobby_previous > input:nth-child(1){
 	flex: 1;
 	background-image: url("../image/left2.png");
 	background-repeat: no-repeat;
@@ -214,14 +214,14 @@
 }
 
 
-#News_Board > #News_footer_frm > #News_previous > input:nth-child(2){
+#hobby_Board > #hobby_footer_frm > #hobby_previous > input:nth-child(2){
 	flex: 1;
 	background-image: url("../image/left1.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
-#News_Board > #News_footer_frm > #News_center{
+#hobby_Board > #hobby_footer_frm > #hobby_center{
 	width: auto;
 	height: 50%;
 	position: absolute;
@@ -230,13 +230,13 @@
 	transform: translate(-50%, -50%);
 }
 
-#News_Board > #News_footer_frm > #News_center > input{
+#hobby_Board > #hobby_footer_frm > #hobby_center > input{
 	width: 50px;
 	height: 100%;
 	float: left;
 }
 
-#News_Board > #News_footer_frm > #News_next{
+#hobby_Board > #hobby_footer_frm > #hobby_next{
 	width: 100px;
 	height: 50%;
 	position: absolute;
@@ -246,14 +246,14 @@
 	display: flex;
 }
 
-#News_Board > #News_footer_frm > #News_next > input:nth-child(1){
+#hobby_Board > #hobby_footer_frm > #hobby_next > input:nth-child(1){
 	flex: 1;
 	background-image: url("../image/right1.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
-#News_Board > #News_footer_frm > #News_next > input:nth-child(2){
+#hobby_Board > #hobby_footer_frm > #hobby_next > input:nth-child(2){
 	flex: 1;
 	background-image: url("../image/right2.png");
 	background-repeat: no-repeat;
@@ -262,33 +262,49 @@
 
 /* 제목 밑 버튼 3개 */
 
-#News_menubtn_zone{
-   width: 100%;
+#hobby_menubtn_zone{
+   width: 95%;
    height: auto;
    margin: 0px 25px;
    text-align: center;
 }
 
-#News_menubtn_zone > input{
+#hobby_menubtn_zone > input{
 	width: 200px;
 	height: 50px;
 	margin-bottom: 20px;
 	border: 1px solid #aaa;
 }
 
-.btn_News{
+.btn_hobby{
 	margin: 0px 20px;
 }
 
-.btn_news{
+.btn_hobby{
 	margin: 0px 20px;
 }
 
-.News{
+.hobby{
 	margin: 0px 20px;
 }
 #search{
 	width: 51px;
     height: 100%;
     border: 1px solid black;  /*  임시로 검색하기위해 만든 성원씨의 작품 */
+}
+
+#hobby_Board > #CreateM{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+
+#hobby_Board > #CreateM > #Create{
+	width: 100px;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	transform: translate(-100%, -0%);
+	background-color: rgba(170, 170, 170, 0.5);
 }

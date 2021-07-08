@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<link rel='stylesheet' type='text/css' href='../NIcss/Update_form.css'>
-<script src="../NIjs/jquery-3.6.0.min.js" ></script>
-<script src="../NIjs/Manager.js"></script>
-<script src="../textarea/demo/js/service/HuskyEZCreator.js"></script>
+<link rel='stylesheet' type='text/css' href='./NIcss/Update_form.css'>
+<script src="./NIjs/jquery-3.6.0.min.js" ></script>
+<script src="./NIjs/Manager.js"></script>
+<script src="./textarea/demo/js/service/HuskyEZCreator.js"></script>
 
 </head>
 <body>
@@ -50,6 +50,6 @@
 	
 </body>
 <script> brd.init(); </script>
-<script src="../js/editor2.js"></script>
-<script src="../js/NIboarder.js"></script>
+<script src="./NIjs/editor2.js"></script>
+<script src="./NIjs/NIboarder.js"></script>
 </html>

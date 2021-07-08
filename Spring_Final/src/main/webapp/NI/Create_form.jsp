@@ -5,10 +5,10 @@
 <meta charset="UTF-8">
 <title>게시글 작성 폼</title>
 
-<link rel="stylesheet" href="../NIcss/Create.css">
-<script src="../NIjs/jquery-3.6.0.min.js" ></script>
-<script src="../NIjs/Manager.js"></script>
-<script src="../textarea/demo/js/service/HuskyEZCreator.js"></script>
+<link rel="stylesheet" href="./NIcss/Create.css">
+<script src="./NIjs/jquery-3.6.0.min.js" ></script>
+<script src="./NIjs/Manager.js"></script>
+<script src="./textarea/demo/js/service/HuskyEZCreator.js"></script>
 
 </head>
 <body>
@@ -44,13 +44,9 @@
 		
 		
 	
-	
-		
-	
 </body>
 <script> brd.init(); 
-		imageView('attfile', 'attzone');
 </script>
-<script src="../js/editor.js"></script>
-<script src="../js/NIboarder.js"></script>
+<script src="./NIjs/editor.js"></script>
+<script src="./NIjs/NIboarder.js"></script>
 </html>

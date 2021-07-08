@@ -2,7 +2,7 @@
 
 
 /* 게시판 */
-#News_Board *{
+#Issue_Board *{
 	margin: 0px;
 	padding: 0px;
 	border: none;
@@ -18,12 +18,12 @@
 	background-color: #fff;
 }
 
-#News_Board{
-	width: 1400px;
+#Issue_Board{
+	width: 1100px;
 	height: auto;
 }
 
-#News_Board > #News_header{
+#Issue_Board > #Issue_header{
 	width: 100%;
 	height: 100px;
 	line-height: 100px;
@@ -32,7 +32,7 @@
 }
 
 <!--/* 폼1 */-->
-#News_Board > #News_board_frm{
+#Issue_Board > #Issue_board_frm{
 	width: 100%;
 	height: 100px;
 	border-top: 5px solid #0b9bc9;
@@ -40,7 +40,7 @@
 	position: relative;
 }
 
-#News_Board > #News_board_frm > #News_total{
+#Issue_Board > #Issue_board_frm > #Issue_total{
 	width: 150px;
 	height: 50%;
 	line-height: 41px;
@@ -52,19 +52,19 @@
 	text-align: center;
 }
 
-#News_Board > #News_board_frm > #News_total > span{
+#Issue_Board > #Issue_board_frm > #Issue_total > span{
 	font-weight: bold;
 	color: #13669b;
 }
 
-#News_Board > #News_board_frm > #News_sort{
+#Issue_Board > #Issue_board_frm > #Issue_sort{
 	width: 150px;
 	height: 50%;
 	padding: 10px;
 	border: 2px solid #13669b;
 	position: absolute;
 	top: 50%;
-	left: 70%;
+	left: 60%;
 	transform: translate(-50%, -50%);
 	
 	-webkit-appearance: none;
@@ -75,7 +75,7 @@
 	background-position: 90% center;
 }
 
-#News_Board > #News_board_frm > #News_searchbox{
+#Issue_Board > #Issue_board_frm > #Issue_searchbox{
 	width: 300px;
 	height: 50%;
 	border: 2px solid #aaa;
@@ -86,12 +86,12 @@
 	transform: translate(-100%, -50%);
 	display: flex;
 }
-#News_Board > #News_board_frm > #News_searchbox > #findstr{
+#Issue_Board > #Issue_board_frm > #Issue_searchbox > #findstr{
 	flex: 1;
 	padding: 5px;
 }
 
-#News_Board > #News_board_frm > #News_searchbox > #search{
+#Issue_Board > #Issue_board_frm > #Issue_searchbox > #search{
 	flex: 1;
 	
 	border: none;
@@ -100,54 +100,54 @@
 	background-position: center center;
 }
 
-#News_Board > #News_frm{
+#Issue_Board > #Issue_frm{
 	width: 100%;
 	height: 600px;
 	padding: 25px 0px;
 }
 
-#News_Board > #News_frm > .News_item, .News_items{
+#Issue_Board > #Issue_frm > .Issue_item, .Issue_items{
 	width: 100%;
 	height: 50px;
 	border-bottom: 2px solid #aaa;
 	display: flex;
 }
 
-#News_Board > #News_frm > .News_item > span{
+#Issue_Board > #Issue_frm > .Issue_item > span{
 	flex: 1;
 	line-height: 48px;
 	text-align: center;
 }
 
-#News_Board > #News_frm > .News_item > span{
+#Issue_Board > #Issue_frm > .Issue_item > span{
 	flex: 1;
 	line-height: 48px;
 	text-align: center;
 }
 
-#News_Board > #News_frm > .News_items > span:nth-child(1){
+#Issue_Board > #Issue_frm > .Issue_items > span:nth-child(1){
 	color: #13669b;
 	font-weight: bold;
 }
 
-#News_Board > #News_frm > .News_item > span:nth-child(2){
+#Issue_Board > #Issue_frm > .Issue_item > span:nth-child(2){
 	flex: 5;
 }
 
-#News_Board > #News_frm > .News_items > span:nth-child(2){
+#Issue_Board > #Issue_frm > .Issue_items > span:nth-child(2){
 	flex: 5;
 }
 
-#News_Board > #News_frm > .News_item > span:nth-child(3){
+#Issue_Board > #Issue_frm > .Issue_item > span:nth-child(3){
 	flex: 2;
 }
 
-#News_Board > #News_frm > .News_items > span:nth-child(3){
+#Issue_Board > #Issue_frm > .Issue_items > span:nth-child(3){
 	flex: 2;
 }
 
 
-#News_board_frm > #News_searchbox > #News_findbtn{
+#Issue_board_frm > #Issue_searchbox > #Issue_findbtn{
   	flex: 1;
 	background-image: url("./image/notice_search.png");
 	background-repeat: no-repeat;
@@ -155,48 +155,48 @@
 }
 
 /* 게시판  */
-#News_frm > .News_item {
+#Issue_frm > .Issue_item {
    width: 100%;
    height: 50px;
    border-bottom: 1px solid #aaa;
    display: flex;
 }
 
-#News_frm > .News_item > span{
+#Issue_frm > .Issue_item > span{
    flex: 1;
    line-height: 49px;
    text-align: center;
 }
 
 
-#News_frm > .News_item > span:nth-child(2){
+#Issue_frm > .Issue_item > span:nth-child(2){
    flex: 6;
 }
 
-#News_frm > .News_items{
+#Issue_frm > .Issue_items{
    width: 100%;
    height: 50px;
    border-bottom: 1px solid #aaa;
    display: flex;
 }
 
-#News_frm > .News_items > span{
+#Issue_frm > .Issue_items > span{
    flex: 1;
    line-height: 49px;
    text-align: center;
 }
 
-#News_frm > .News_items > span:nth-child(2){
+#Issue_frm > .Issue_items > span:nth-child(2){
    flex: 6;
 }
 
-#News_Board > #News_footer_frm{
+#Issue_Board > #Issue_footer_frm{
 	width: 100%;
 	height: 100px;
 	position: relative;
 }
 
-#News_Board > #News_footer_frm > #News_previous{
+#Issue_Board > #Issue_footer_frm > #Issue_previous{
 	width: 100px;
 	height: 50%;
 	position: absolute;
@@ -206,7 +206,7 @@
 	display: flex;
 }
 
-#News_Board > #News_footer_frm > #News_previous > input:nth-child(1){
+#Issue_Board > #Issue_footer_frm > #Issue_previous > input:nth-child(1){
 	flex: 1;
 	background-image: url("../image/left2.png");
 	background-repeat: no-repeat;
@@ -214,14 +214,14 @@
 }
 
 
-#News_Board > #News_footer_frm > #News_previous > input:nth-child(2){
+#Issue_Board > #Issue_footer_frm > #Issue_previous > input:nth-child(2){
 	flex: 1;
 	background-image: url("../image/left1.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
-#News_Board > #News_footer_frm > #News_center{
+#Issue_Board > #Issue_footer_frm > #Issue_center{
 	width: auto;
 	height: 50%;
 	position: absolute;
@@ -230,13 +230,13 @@
 	transform: translate(-50%, -50%);
 }
 
-#News_Board > #News_footer_frm > #News_center > input{
+#Issue_Board > #Issue_footer_frm > #Issue_center > input{
 	width: 50px;
 	height: 100%;
 	float: left;
 }
 
-#News_Board > #News_footer_frm > #News_next{
+#Issue_Board > #Issue_footer_frm > #Issue_next{
 	width: 100px;
 	height: 50%;
 	position: absolute;
@@ -246,14 +246,14 @@
 	display: flex;
 }
 
-#News_Board > #News_footer_frm > #News_next > input:nth-child(1){
+#Issue_Board > #Issue_footer_frm > #Issue_next > input:nth-child(1){
 	flex: 1;
 	background-image: url("../image/right1.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
-#News_Board > #News_footer_frm > #News_next > input:nth-child(2){
+#Issue_Board > #Issue_footer_frm > #Issue_next > input:nth-child(2){
 	flex: 1;
 	background-image: url("../image/right2.png");
 	background-repeat: no-repeat;
@@ -262,21 +262,21 @@
 
 /* 제목 밑 버튼 3개 */
 
-#News_menubtn_zone{
-   width: 100%;
+#Issue_menubtn_zone{
+   width: 95%;
    height: auto;
    margin: 0px 25px;
    text-align: center;
 }
 
-#News_menubtn_zone > input{
+#Issue_menubtn_zone > input{
 	width: 200px;
 	height: 50px;
 	margin-bottom: 20px;
 	border: 1px solid #aaa;
 }
 
-.btn_News{
+.btn_issue{
 	margin: 0px 20px;
 }
 
@@ -284,11 +284,27 @@
 	margin: 0px 20px;
 }
 
-.News{
+.Issue{
 	margin: 0px 20px;
 }
 #search{
 	width: 51px;
     height: 100%;
     border: 1px solid black;  /*  임시로 검색하기위해 만든 성원씨의 작품 */
+}
+
+#Issue_Board > #CreateM{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+
+#Issue_Board > #CreateM > #Create{
+	width: 100px;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	transform: translate(-100%, -0%);
+	background-color: rgba(170, 170, 170, 0.5);
 }

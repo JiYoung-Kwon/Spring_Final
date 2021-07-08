@@ -7,9 +7,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' type='text/css' href='../NIcss/hobby.css'>
-<script src="../NIjs/jquery-3.6.0.min.js" ></script>
-<script src='../NIjs/Manager.js'></script>
+<link rel='stylesheet' type='text/css' href='./NIcss/hobby_Manager.css'>
+<script src="./NIjs/jquery-3.6.0.min.js" ></script>
+<script src='./NIjs/Manager.js'></script>
 <title>이시국 취미생활(매니저)</title>
 </head>
 <body>
@@ -53,7 +53,7 @@
 		<c:forEach var="list" items="${list}">
 			<div class="hobby_items" onclick="brd.view('${list.serial }')">
 				<span>${list.rno}</span>
-				<span>${list.title}</span>
+				<span>[취미] ${list.title}</span>
 				<span>${list.mId}</span>
 				<span>${list.mDate}</span>
 				<span>${list.hit}</span>
@@ -62,9 +62,11 @@
 			
 		</form>
 		 
+		 
+	
 		<div id="hobby_footer_frm">
 		
-		<input type='button' id='Create' value='작성' >
+	
 		
 			<div id="hobby_previous">
 			<c:if test="${page.nowPage>1}">
@@ -86,10 +88,12 @@
 				<input type='button' value=' ' onclick ='brd.move(${page.nowPage+1})'/>
 				<input type='button' value=' ' onclick ='brd.move(${page.totPage})'/>
 			</c:if>
-			
 			</div>
-	</div>
-	
+			
+		</div>
+		<div id="CreateM">
+				<input type='button' id='Create' value='작성' >
+		</div>
 </div>
 
 

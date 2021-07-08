@@ -37,7 +37,7 @@
 			
 			<input id="nowPage" name="nowPage" type="hidden" value='${(empty param.nowPage)? 1 : param.nowPage }'>
 			<input id="tabGubun" name="tabGubun" type="hidden" value='${param.tabGubun}'>
-			<input id="findStr" name="findStr" type="hidden" value='${param.findStr }'>
+			<input id="serial" name="serial" type="hidden" value='${param.serial }'>
 		</form>
 		
 		
@@ -54,7 +54,7 @@
 		<c:forEach var="list" items="${list}">
 			<div class="hobby_items" onclick="brd.view('${list.serial }')">
 				<span>${list.rno}</span>
-				<span>${list.title}</span>
+				<span>[취미] ${list.title}</span>
 				<span>${list.mId}</span>
 				<span>${list.mDate}</span>
 				<span>${list.hit}</span>
@@ -75,7 +75,7 @@
 			
 			<div id="hobby_center">
 			<c:forEach var='p' begin='${page.startPage }' end='${page.endPage }'>
-				<input type='button' value='${p }' onclick ='brd.move(${p})' />
+				<input type='button' value='${p }' onclick ='brd.move(${p})' <c:if test="${p eq page.nowPage}">style='text-decoration: underline;color:#13669b;'</c:if>/>
 			</c:forEach>
 			
 			</div>

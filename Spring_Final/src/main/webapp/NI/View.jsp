@@ -13,14 +13,14 @@
 	<div id="View">
 		<div id="View_header">코로나 관련보도</div>
 		
-		<form id="View_frm" name="View_frm">
+		<form id="View_frm" name="View_frm" >
 			<div id="View_section1">
-				<input id="View_title" name="View_title" type="text" value="${vo.title }" readonly>
+				<label id="View_title">${vo.title }</label>
 			</div>
 			<div id="View_section2">
-				<input id="View_id" name="View_id" type="text" value="${vo.mId }" readonly>
+				<label id="View_id">담당 : ${vo.mId }</label>
 				<output> - </output>
-				<input id="View_date" name="View_date" type="text" value="${vo.mDate }" readonly>
+				<label id="View_date">작성일 : ${vo.mDate }</label>
 			</div>
 			<div id="View_section3">
 				${vo.doc }
@@ -35,7 +35,7 @@
 		</form>
 		
 		<div id="View_back">
-			<input id="View_backbtn" name="View_backbtn" type="button" value="목록으로" onclick='brd.back() ' >
+			<input id="View_backbtn" name="View_backbtn" type="button" value="목록" onclick='brd.back() ' >
 		</div>
 	</div>
 </body>

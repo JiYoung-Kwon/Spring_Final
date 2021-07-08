@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' type='text/css' href='../NIcss/NewsBoard.css'>
-<script src="../NIjs/jquery-3.6.0.min.js" ></script>
-<script src='../NIjs/Manager.js'></script>
+<link rel='stylesheet' type='text/css' href='./NIcss/News_Manager.css'>
+<script src="./NIjs/jquery-3.6.0.min.js" ></script>
+<script src='./NIjs/Manager.js'></script>
 <title>코로나 관련 보도(매니저)</title>
 </head>
 <body>
@@ -50,7 +50,7 @@
 		<c:forEach var="list" items="${list}">
 			<div class="News_items" onclick='brd.view(${list.serial})' >
 				<span>${list.rno}</span>
-				<span>${list.title}</span>
+				<span>[뉴스] ${list.title}</span>
 				<span>${list.mId}</span>
 				<span>${list.mDate}</span>
 				<span>${list.hit}</span>
@@ -61,7 +61,6 @@
 		</form>
 		<div id="News_footer_frm">
 		
-		<input type='button' id='Create' value='작성' >
 		
 		<div id="News_previous">
 			<c:if test="${page.nowPage>1}">
@@ -83,6 +82,9 @@
 				<input type='button' value=' ' onclick ='brd.move(${page.nowPage+1})'/>
 				<input type='button' value=' ' onclick ='brd.move(${page.totPage})'/>
 			</c:if>
+		</div>
+		<div id="CreateM">
+			<input type='button' id='Create' value='작성' >
 		</div>
 </div>
 

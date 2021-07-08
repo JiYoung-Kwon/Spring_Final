@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/* 로그인 페이지 */
+
+#login{
+	width:600px;
+	height:400px;
+	border:1px solid #000;
+	margin:250px auto;
+	text-align: center;
+	position: relative;
+}
+
+#btn_zone{
+	margin:150px auto;
+}
+
+#btn_zone input[type='button']{
+	width:100px;
+	height:50px;
+	font-size:15pt;
+}
+
+#login_frm{
+	width: 300px;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#login_frm > label{
+	width: 100px;
+	height: 30px;
+	margin: 5px 0px;
+	display: inline-block;
+}
+
+#login_frm > input{
+	width: 200px;
+	height: 30px;
+	margin: 5px 0px;
+	float: right;
+	box-sizing: border-box;
+}
+
+/* 관리자 메인 페이지 */
+
+#managerhome{
+	width:1400px;
+	height:2000px;
+	margin:0px auto;
+}
+
+#menu{
+	width:250px;
+	border:1px solid #000;
+	float:left;
+}
+
+#frm_manager{
+	width:1100px;
+	height:1000px;
+	border:1px solid #000;
+	float:right;
+}
+
+/* 메뉴바 */
+
+#manager_menu{
+	width:250px;
+	border:1px solid #000;
+	position: fixed;
+	overflow:auto;
+}
+
+#manager_ui{
+	width:250px;
+	height:250px;
+	background-color:#e9e9e9;
+	text-align: center;
+}
+
+#manager_image{
+	width:150px;
+	height:150px;
+	margin:20px auto;
+}
+
+#menu_bar{
+	width:250px;
+	margin-top:50px;
+}
+
+#menu_bar ul{
+	list-style:none;
+}
+
+#menu_bar li{
+	display:block;
+	text-decoration:none;
+	color: #000;
+	padding: 8px 15px 8px 15px;
+	font-weight: bold;
+}
+
+#menu_bar li:hover{
+	cursor:pointer;
+	background-color: #808080;
+	color: #fff;
+}
+
+#menu_bar li:nth-child(2) .sub{
+	display: none;
+}
+
+#menu_bar li:nth-child(2):hover .sub{
+	cursor:pointer;
+	display: inline-block;
+}
