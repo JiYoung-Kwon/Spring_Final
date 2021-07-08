@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title></title>
 
-<link rel="stylesheet" href="./notice.css">
-<script src="./jquery/jquery.js"></script>
+<link rel="stylesheet" href="/Spring_Final/notice/notice.css">
+<script src="/Spring_Final/notice/jquery/jquery.js"></script>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<div id="mnotice_header_frm">공지사항</div>
 		
 		<form id="mnotice_search_frm" name="mnotice_search_frm" method="post" action="" onsubmit="return false">
-			<div id="mnotice_total">총 ${page.totList}건</div>
+			<div id="mnotice_total">총 <span>${page.totList}</span>건</div>
 			<select id="mnotice_sort" name="findSort">
 				<option value="제목"<c:if test="${page.findSort eq '제목'}">selected="selected"</c:if>>제목</option>
 				<option value="내용"<c:if test="${page.findSort eq '내용'}">selected="selected"</c:if>>내용</option>
@@ -63,7 +63,7 @@
 			
 			<div id="mnotice_center">
 				<c:forEach var="p" begin="${page.startPage}" end="${page.endPage}">
-				<input type="button" value="${p}" onclick="MNoticePageMove(${p})" <c:if test="${p eq page.nowPage}">style='font-size:20pt;'</c:if>>
+				<input type="button" value="${p}" onclick="MNoticePageMove(${p})" <c:if test="${p eq page.nowPage}">style='text-decoration: underline; color:#13669b;'</c:if>>
 				</c:forEach>
 			</div>
 			
@@ -80,6 +80,6 @@
 		</div>
 	</div>
 	
-	<script src="./notice.js"></script>
+	<script src="/Spring_Final/notice/notice.js"></script>
 </body>
 </html>

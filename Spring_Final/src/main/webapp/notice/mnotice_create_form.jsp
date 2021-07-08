@@ -5,10 +5,10 @@
 <meta charset="UTF-8">
 <title></title>
 
-<link rel="stylesheet" href="./notice.css">
-<script src="./jquery/jquery.js"></script>
+<link rel="stylesheet" href="/Spring_Final/notice/notice.css">
+<script src="/Spring_Final/notice/jquery/jquery.js"></script>
 
-<script src="./smarteditor/demo/js/service/HuskyEZCreator.js"></script>
+<script src="/Spring_Final/notice/smarteditor/demo/js/service/HuskyEZCreator.js"></script>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
 		<input id="findSort" name="findSort" type="hidden" value="${page.findSort}">
 	</form>
 	
-	<script src="./notice.js"></script>
-	<script src="./editor.js"></script>
+	<script src="/Spring_Final/notice/notice.js"></script>
+	<script src="/Spring_Final/notice/editor.js"></script>
 </body>
 </html>
