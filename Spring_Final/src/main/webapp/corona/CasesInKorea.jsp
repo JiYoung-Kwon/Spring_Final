@@ -244,7 +244,7 @@ em {
 
 #cases {
 	width: max-content;
-	margin: 0 auto;
+	margin-left : 90px;
 }
 
 h2::before {

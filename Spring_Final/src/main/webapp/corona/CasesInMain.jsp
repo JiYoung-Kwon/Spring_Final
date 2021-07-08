@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
 #cases {
-	border: 1px solid;
+	/* border: 1px solid; */
 	width: 1365px;
 	margin: 0 auto;
 }
@@ -23,8 +23,8 @@
 
 .total .map {
 	width: 1100px;
-	border: 1px solid;
-	margin: 50px 0px 50px 50px;
+	border: 1px solid #00000020;
+	margin: 50px 0px 50px 0px;
 }
 
 .total .map .map_graph {
@@ -33,9 +33,9 @@
 
 .total .case {
 	width: 700px;
-	height: 600px;
-	border: 1px solid;
-	margin: 50px 50px 50px 0px;
+	height: 660px;
+	border: 1px solid #00000020;
+	margin: 50px 0px 50px 0px;
 	float: left;
 	/* display: flex; */
 	padding-left: 30px;
@@ -43,15 +43,50 @@
 }
 
 .total .case #info {
-	border: 1px solid;
-	width: 300px;
+	/* border: 1px solid; */
+	width: 490px;
 	margin: auto;
+	margin-top: 40px;
+	line-height: 2.5;
 	display: flex;
+	height: 250px;
+}
+
+.total .case #link {
+	/* border: 1px solid; */
+	width: 400px;
+	margin: auto;
+	line-height: 2.5;
 }
 
 .total .case #info_label {
 	width: 150px;
 	margin: auto;
+}
+
+#info_label .patient, #info_label .isolation, #info_label .release,
+	#info_label .death {
+	color: #444;
+	font-weight: 600;
+}
+
+#info_label .increase, #info_data .increase {
+	color: #0097c7;
+	font-size: 12px;
+	line-height: 1;
+}
+
+#info_label .per {
+	color: #666;
+	font-size: 12px;
+	line-height: 3;
+}
+
+#info_data .patient span:first-child, #info_data .isolation span:first-child,
+	#info_data .release span:first-child, #info_data .death span:first-child,
+	#info_data .per span:first-child {
+	color: #444;
+	font-weight: 600;
 }
 
 .total .case #info_data {
@@ -62,7 +97,7 @@
 
 .map_graph #map_layout {
 	position: relative;
-	transform: translate(140px, 10px);
+	transform: translate(170px, 10px);
 }
 
 button[data-city^="city"] {
@@ -207,17 +242,112 @@ svg {
 
 .case>div {
 	display: none;
-	height: 450px;
+	height: 480px;
+}
+
+.case>div>span {
+	font-size: 20px;
+	margin-left: 145px;
+	font-weight: bold;
+	color: #2c57a7;
+}
+
+#map_label::before {
+	content: "";
+	width: 16px;
+	height: 16px;
+	background:
+		url(http://ncov.mohw.go.kr/static/image/sub_cmn/ico_rss_alert.png)
+		no-repeat center center;
+	box-sizing: inherit;
+	position: absolute;
+	left: 4px;
+	top: 5px;
+	content: "";
+	display: block;
+}
+
+#map_label {
+	position: relative;
+	padding-left: 24px;
+	padding-top: 5px;
+	font-size: 12px;
+	color: #333;
+}
+
+.info_text li {
+	list-style: none;
+	padding: 4px;
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	word-break: keep-all;
+}
+
+.info_text li>span:first-child {
+	color: #000;
+	font-weight: 700;
+}
+
+.info_text li>.text2 {
+	line-height: 16px;
+	display: block;
+	margin-top: 10px;
+	color: #333;
+	font-weight: 500;
+}
+
+.info_text::before {
+	content: "1";
+	top: 5px;
+	width: 18px;
+	height: 18px;
+	font-family: 'Lato';
+	font-size: 10px;
+	line-height: 18px;
+	color: #fff;
+	text-align: center;
+	background: #8e7c7c;
+	border-radius: 100%;
+	display: block;
+	position: absolute;
+	left: 25px;
+}
+
+.info_text {
+	position: relative;
+}
+
+h3 {
+	margin-bottom: 40px;
+}
+
+.link_select {
+	display: block;
+	width: 100%;
+	background: #3f5378
+		url(http://ncov.mohw.go.kr/static/image/content/popup_btn.png)
+		no-repeat 93% center;
+	color: #fff;
+	font-size: 14px;
+	/*  line-height: 18px; */
+	padding: 10px 100px 10px 18px;
+	box-sizing: border-box;
+	margin: 20px auto;
+	border: 0;
+	text-align: left;
+	text-decoration: none;
+}
 }
 </style>
 
 </head>
 
 <body>
-	<h1>메인 현황</h1>
-	<!-- 합계 -->
+
 	<c:set var='city0' value='${cList[18]}' />
-	<!-- 서울 -->
+	<!-- 합계 -->
 	<c:set var='city1' value='${cList[17]}' />
 	<!-- 서울 -->
 	<c:set var='city2' value='${cList[16]}' />
@@ -258,6 +388,9 @@ svg {
 	<div id='cases'>
 		<div class="total">
 			<div class="map">
+				<div id='map_label'>
+					시도를 클릭하시면 상세 현황을 확인할 수 있습니다.<br /> ( ) 숫자는 전일대비 증감수치
+				</div>
 				<div class="map_graph">
 					<div id="map_layout">
 						<button type="button" data-city="city0">
@@ -576,8 +709,7 @@ svg {
 												<g>
 													<path class="city18" fill="#15a8de"
 								d="M379.418,505.809c0,10.939-8.789,19.808-19.631,19.808H229.011c-10.841,0-19.63-8.868-19.63-19.808l0,0    c0-10.94,8.789-19.809,19.63-19.809h130.776C370.629,486,379.418,494.868,379.418,505.809L379.418,505.809z" />
-													<path fill="#FFFFFF"
-								d="M246.028,505.438c0,8.982-7.216,16.266-16.117,16.266s-16.118-7.283-16.118-16.266    c0-8.979,7.217-16.262,16.118-16.262S246.028,496.458,246.028,505.438z" />
+													<ellipse fill="#FFFFFF" cx="230.247" cy="505.807" rx="16.117" ry="16.263" />
 													<g>
 														<g>
 															<g>
@@ -594,8 +726,7 @@ svg {
 								d="M229.91,516.26l4.485,0.763v-3.948l-1.862-0.716v-15.855c0-1.464-1.177-2.647-2.623-2.647      c-1.447,0-2.624,1.184-2.624,2.647v15.855l-1.863,0.716v3.948L229.91,516.26z M233.594,516.066l-3.684-0.628l-3.686,0.628      v-2.436l1.861-0.712v-16.416c0-1.015,0.818-1.84,1.824-1.84c1.003,0,1.822,0.825,1.822,1.84v16.416l1.861,0.712V516.066z" />
 														</g>
 													</g>
-													<ellipse fill="#FFFFFF" cx="264.247" cy="505.807"
-								rx="16.117" ry="16.263" />
+													<ellipse fill="#FFFFFF" cx="264.247" cy="505.807" rx="16.117" ry="16.263" />
 													<g>
 														<g>
 															<g>
@@ -633,7 +764,10 @@ svg {
 			<div class='case'>
 				<c:forEach var='i' begin="0" end="18">
 					<div id='city${i }'>
-						<h3>${cList[18-i].cityNm}</h3>
+						<h2>${cList[18-i].cityNm}</h2>
+						<c:set var='stdDay' value='${cList[18-i].stdDay }' />
+						<span>${fn:substring(stdDay,0,4)}.${fn:substring(stdDay,4,6)}.${fn:substring(stdDay,6,8)}
+							${cList[18-i].stdTime} 기준</span>
 						<div id='info'>
 							<%-- <div id = 'info_chart'>
 								<canvas id="doughnut-city" width="1000" height="300"></canvas>
@@ -704,12 +838,23 @@ svg {
 									<span>명</span>
 								</div>
 							</div>
+
 						</div>
+
+						<div id='link'>
+							<a class="link_select" id='select${i }' target="_blank">코로나19
+								${cList[18-i].cityNm} 현황 자세히 보기</a>
+						</div>
+
 					</div>
 				</c:forEach>
-				발생률 : 지역별 인구 출처 - 행정안전부, 주민등록인구현황 (’20.1월 기준) 해당 시군구별 확진자는 신고 의료기관 및
-				보건소의 주소지를 기준으로 한 것으로, 역학조사 결과에 따라 변동될 수 있으며, 지자체에서 발표하는 코로나19 발생현황과
-				상이할 수 있습니다.
+
+				<ul class="info_text">
+					<li><span>발생률 : </span>지역별 인구 출처 - 행정안전부, 주민등록인구현황 (’20.1월 기준)
+						<span class="text2">해당 시군구별 확진자는 신고 의료기관 및 보건소의 주소지를 기준으로 한
+							것으로, 역학조사 결과에 따라 변동될 수 있으며, 지자체에서 발표하는 코로나19 발생현황과 상이할 수 있습니다.</span></li>
+				</ul>
+
 			</div>
 		</div>
 	</div>

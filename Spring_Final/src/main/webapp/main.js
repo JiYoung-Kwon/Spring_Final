@@ -6,13 +6,13 @@ $('#btn_left').on({ 'click': function(){
 	
 	switch(num){
 	case "1" :
-		var src = "./img/banner3.png"
+		var src = "./img/banner4.jpg"
 		break;
 	case "2" :
 		var src = "./img/banner1.png"
 		break;
 	case "3" :
-		var src = "./img/banner2.png"
+		var src = "./img/banner2.jpg"
 		break;
 	}
 	
@@ -35,10 +35,10 @@ $('#btn_right').on({ 'click': function(){
 	
 	switch(num){
 	case "1" :
-		var src = "./img/banner2.png"
+		var src = "./img/banner2.jpg"
 		break;
 	case "2" :
-		var src = "./img/banner3.png"
+		var src = "./img/banner4.jpg"
 		break;
 	case "3" :
 		var src = "./img/banner1.png"
