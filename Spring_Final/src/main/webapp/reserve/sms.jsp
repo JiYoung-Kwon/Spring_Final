@@ -11,26 +11,48 @@
 <title>SMS 인증 </title>
 </head>
 <style>
-#reserve form>label{
+#reserve #phoneStyle>label{
 	display:inline-block;
-	width:150px;
+	width:120px;
 }
+ 
+#reserve #numStyle>label{
+	display:inline-block;
+	width:120px;
+}
+
+#reserve #phoneStyle{
+    margin-left: 15px;
+    padding-top: 5px;
+}
+
+#reserve #numStyle{
+	margin-left: 15px;
+    padding-top: 5px;
+}
+
 </style>
 <body>
 <div id='reserve'>
 	<form name='frm_reserve' id='frm_reserve' method='post' action=''>
+		<div style="text-align:center;">
 		<h2>SMS 문자인증 페이지입니다.</h2>
+		</div>
+		<div id='phoneStyle'>
 		<label>휴대폰 번호</label>
-		<input type='text' name='toPhone' id='toPhone'>
+		<input type='text' name='myPhone' id='reservePhone' placeholder="010-0000-0000" maxlength="13">
 		<input type='button' id='btnSmsSend' value='인증번호 발송'/>
-		<br>
+		</div>
+		<div id='numStyle'>
 		<label>인증 번호</label>
 		<input type='text' name='key' id='key'>
 		<input type='button' id='btnSmsChkNum' value='인증번호 확인'/>
+		</div>
 	</form>
 </div>
 <script>
 reserve.init();
+reserve.mykeyup();
 </script>
 </body>
 </html>

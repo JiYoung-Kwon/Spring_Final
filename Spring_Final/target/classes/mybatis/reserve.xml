@@ -36,6 +36,10 @@
 			select * from OtherReserve where myPhone = #{myPhone}
 	</select>
 	
+	<select id="reserve_timeChk" parameterType="reserve.MyReserveVo" resultType="Integer">
+		SELECT count(*) FROM MyReserve WHERE reserveCenter = #{reserveCenter } and facilityName = #{facilityName } and reserveTime = #{reserveTime} and RESERVEDATE = #{reserveDate}
+	</select>
+	
 	<!-- 삭제 -->
 	<delete id="reserve_delete" parameterType="reserve.MyReserveVo">
 			DELETE FROM MyReserve WHERE myPhone = #{myPhone}

@@ -19,6 +19,42 @@
 input[type=text]:focus::placeholder{
 color: transparent;
 }
+h2 {
+    font-size: 36px;
+    color: #0068b7;
+}
+button {
+    cursor: pointer;
+}
+.btn {
+    min-width: 80px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.075em;
+}
+
+.btn.wide2 {
+    width: 150px;
+}
+.orange {
+    background-color: #ff9d00;
+    color: #fff;
+}
+
+.btn.blue {
+    background-color: #0068b7;
+    color: #fff;
+}
+.btn.white {
+    background-color: #fff;
+    border: 1px solid #e9ebf5;
+    color: #666;
+}
 </style>
 <body>
 <h2>예약 조회/취소</h2>
@@ -35,15 +71,15 @@ color: transparent;
 		<hr/>
 		
 		<label>접종 받는 분 전화번호</label>
-		<input type='text' name='myPhone' id='myPhone' placeholder="010-0000-0000" maxlength="13"/>
+		<input type='text' name='myPhone' id='reservePhone' placeholder="010-0000-0000" maxlength="13"/>
 		<hr/>
 		
 		<label>예약 번호</label>
 		<input type='text' name='reserveNum' id='reserveNum'/>
 
-		<input type='button' id='btnSearch' value='조회하기'/>
-		<input type='button' id='btnFind' value='예약번호 찾기'/>
-		<input type='button' value='취소' onclick="$('#middle').load('./doReserve.reserve');"/>
+		<input type='button' id='btnSearch' class="btn blue wide"  value='조회하기'/>
+		<input type='button' id='btnFind' class='btn wide2 orange' value='예약번호 찾기'/>
+		<input type='button' value='취소' class="btn white homeBtn" onclick="$('#middle').load('./doReserve.reserve');"/>
 		<hr/>
 	
 	</form>

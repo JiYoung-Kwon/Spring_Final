@@ -21,6 +21,38 @@
     height: 300px;
     border: 1px solid black;
 }
+h2 {
+    font-size: 36px;
+    color: #0068b7;
+}
+button {
+    cursor: pointer;
+}
+.btn {
+    min-width: 80px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.075em;
+}
+
+.btn.wide2 {
+    width: 150px;
+}
+.orange {
+    background-color: #ff9d00;
+    color: #fff;
+}
+
+.btn.white {
+    background-color: #fff;
+    border: 1px solid #e9ebf5;
+    color: #666;
+}
 </style>
 <body>
 <h2>예약 결과가 조회 되었습니다.</h2>
@@ -58,7 +90,7 @@
 		<input type='text' name='reserveCenter' id='reserveCenter' value='${list.reserveCenter }' size="40" readonly/>
 		<br/>
 		<label></label>
-		<input type='text' name='facilityName' id='facilityName' value='${list.facilityName }' readonly/>
+		<input type='text' name='facilityName' id='facilityName' value='${list.facilityName }' style="margin-top: 5px;" readonly/>
 		<label></label>
 		<div id='reserveMap'></div>
 		<hr/>
@@ -68,8 +100,8 @@
 		<label>접종 시간</label>
 		<input type='text' name='reserveTime' value='${list.reserveTime }' readonly/>
 		<hr/>
-		<input type='button' id='btnCancle' value='예약 취소'/>
-		<input type='button' value='홈으로'/>
+		<input type='button' id='btnCancle' class='btn wide2 orange' value='예약 취소'/>
+		<input type='button' value='예약 화면' class="btn white homeBtn" onclick="$('#middle').load('./doReserve.reserve');"/>
 		<hr/>
 	
 	</form>

@@ -1,5 +1,6 @@
 package reserve;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -21,6 +22,7 @@ import com.google.gson.JsonObject;
 
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
+import vCenter.vCenterVo;
 
 @RestController
 public class ReserveController {
@@ -161,7 +163,7 @@ public class ReserveController {
 	    JsonObject json = new JsonObject();
 		String chkNum = getKey(6);
 		String authKey = "인증 번호는 " + chkNum + " 입니다.";
-		String toPhone = req.getParameter("toPhone");
+		String toPhone = req.getParameter("myPhone");
 
 	    // 4 params(to, from, type, text) are mandatory. must be filled
 	    HashMap<String, String> params = new HashMap<String, String>();
@@ -232,6 +234,22 @@ public class ReserveController {
 		mv.setViewName("reserveNumFind");
 		
 		return mv;
+	}
+	
+	//예약시간 중복인원 체크
+	@RequestMapping(value="timeChk.reserve", method= {RequestMethod.GET,RequestMethod.POST})
+	public void timeChk(MyReserveVo vo, HttpServletRequest req , HttpServletResponse resp) {
+		PrintWriter pw;
+
+		try {
+			int r = dao.timeChk(vo);
+			pw = resp.getWriter();
+
+			pw.print(r);
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 	
 	//본인예약 입력

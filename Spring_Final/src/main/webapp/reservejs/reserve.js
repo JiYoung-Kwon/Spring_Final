@@ -28,9 +28,7 @@ reserve.init = function(){
 				
 				checkNumber = resp.chkNum;
 				toPhone = resp.toPhone;
-				
-				alert(checkNumber);
-				
+
 			},
 			error : function(resp){
 				alert('문자 전송을 실패했습니다.');
@@ -70,6 +68,7 @@ reserve.init = function(){
 			self.close();
 			opener.document.getElementById("Email").value = document.getElementById("tomail").value;
 			opener.document.getElementById("reserveOk").value = "인증되었습니다";
+			$("#Email",opener.document).prop("readonly",true);
 			
 		}else(
 			alert('인증번호를 다시 확인해 주세요.')
@@ -83,21 +82,15 @@ reserve.init = function(){
 		if(key == checkNumber){
 			alert('인증되었습니다.')
 			self.close();
+			opener.document.getElementById("reservePhone").value = document.getElementById("reservePhone").value;
 			opener.document.getElementById("reserveOk").value = "인증되었습니다";
+			$("#reservePhone",opener.document).prop("readonly",true);
 			
 		}else(
 			alert('인증번호를 다시 확인해 주세요.')
 		)
 	})
-	
-	$('#reserve #btnMyReserve').on('click', function(){
-		$('#middle').load('./my.reserve');		
-	})
-	
-	$('#reserve #btnOtherReserve').on('click', function(){
-		$('#middle').load('./other.reserve');		
-	})
-	
+
 	$('#reserve #btnReserve').unbind("click").bind("click", function(){
 		var frm = $('#frm_reserve')[0];
 		var param = $(frm).serialize();
@@ -126,23 +119,31 @@ reserve.init = function(){
 			}else{
 				$.ajax({
 					type    : 'POST',
-					url     : './insert.reserve',
+					url     : './timeChk.reserve',
 					data    : param,
 					success : function(resp){
-						
-						$.post('./infoMailSender.reserve', param, function(){
-							alert('예약정보를 메일로 전송했습니다.');
-						})
-						
-						alert('예약이 완료되었습니다. 조회화면으로 넘어갑니다.');
-						$('#middle').load('./sc.reserve');	
+						if (resp >= 10) {
+							alert("해당 시간에 예약하실수 없습니다. 시간을 다시 선택해 주세요.")
+						} else {
+							$.ajax({
+								type    : 'POST',
+								url     : './insert.reserve',
+								data    : param,
+								success : function(resp){
+									
+									$.post('./infoMailSender.reserve', param, function(){
+										alert('예약정보를 메일로 전송했습니다.');
+									})
+									
+									alert('예약이 완료되었습니다. 조회화면으로 넘어갑니다.');
+									$('#middle').load('./sc.reserve');	
+								}
+							});	
+						}
 					}
 				});	
 			}
 		}
-		
-		
-		
 	})
 	
 	$('#reserve #btnReserveOther').unbind("click").bind("click", function(){
@@ -188,22 +189,33 @@ reserve.init = function(){
 			}else{
 				$.ajax({
 					type    : 'POST',
-					url     : './insert.reserve',
+					url     : './timeChk.reserve',
 					data    : param,
 					success : function(resp){
-						
-						$.post('./infoMailSender.reserve', param, function(){
-							alert('예약정보를 메일로 전송했습니다.');
-						})
-						
-						$.post('./otherInsert.reserve', param3, function(data){
-						$('#middle').html(data);
-						
-						alert('예약이 완료되었습니다. 조회화면으로 넘어갑니다.');
-					})
+						if (resp >= 10) {
+							alert("해당 시간에 예약하실수 없습니다. 시간을 다시 선택해 주세요.")
+						} else {
+							$.ajax({
+								type    : 'POST',
+								url     : './insert.reserve',
+								data    : param,
+								success : function(resp){
+									
+									$.post('./infoMailSender.reserve', param, function(){
+										alert('예약정보를 메일로 전송했습니다.');
+									})
+									
+									$.post('./otherInsert.reserve', param3, function(data){
+									$('#middle').html(data);
+															
+									alert('예약이 완료되었습니다. 조회화면으로 넘어갑니다.');
+									})
+								}
+							});
+						}
 					}
-				});	
-			}
+			});
+		}
 		}
 	})
 	
@@ -211,7 +223,7 @@ reserve.init = function(){
 		var frm = $('#frm_reserve')[0];
 		var param = $(frm).serialize();
 		
-		if(document.getElementById("myName").value == "" || document.getElementById("myPhone").value == "" || document.getElementById("reserveNum").value == ""){
+		if(document.getElementById("myName").value == "" || document.getElementById("reservePhone").value == "" || document.getElementById("reserveNum").value == ""){
 			alert('예약정보를 모두 입력해 주세요.')
 		
 		}else{
@@ -243,7 +255,7 @@ reserve.init = function(){
 		var frm = $('#frm_reserve')[0];
 		var param = $(frm).serialize();
 		
-		if(document.getElementById("myName").value == "" || document.getElementById("myJumin").value == "" || document.getElementById("myPhone").value == ""){
+		if(document.getElementById("myName").value == "" || document.getElementById("myJumin").value == "" || document.getElementById("reservePhone").value == ""){
 			alert('접종받는 분 정보를 모두 입력해 주세요.')
 		}else{
 			$.ajax({
@@ -328,7 +340,7 @@ reserve.mykeyup = function(){
 	      return str;
 	}
 	
-	var phoneNum = document.getElementById('myPhone');
+	var phoneNum = document.getElementById('reservePhone');
 	
 	phoneNum.onkeyup = function(){
 	  console.log(this.value);
@@ -393,7 +405,7 @@ reserve.otherkeyup = function(){
 
 	}
 
-	var phoneNum2 = document.getElementById('otherPhone');
+	var phoneNum2 = document.getElementById('reservePhone');
 
 	phoneNum2.onkeyup = function(){
 	  console.log(this.value);
@@ -445,7 +457,7 @@ reserve.mykeyupchk = function(){
 	      return str;
 	}
 
-	var phoneNum = document.getElementById('myPhone');
+	var phoneNum = document.getElementById('reservePhone');
 	
 	phoneNum.onkeyup = function(){
 	  console.log(this.value);

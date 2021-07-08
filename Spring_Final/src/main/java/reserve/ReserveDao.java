@@ -79,6 +79,18 @@ SqlSession sqlSession;
 		
 		return v2;
 	}
+	
+	public int timeChk(MyReserveVo vo) {
+		int r = 0;
+		
+		try {
+			r = sqlSession.selectOne("reserve_timeChk", vo);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return r;
+	}
 
 	public String insert(MyReserveVo vo) {
 		String msg = "OK";
