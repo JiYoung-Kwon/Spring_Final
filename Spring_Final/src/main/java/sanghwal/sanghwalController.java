@@ -17,7 +17,7 @@ public class sanghwalController {
 	@Autowired
 	sanghwalDao dao;
 	
-	@RequestMapping(value = "/sanghwal/search.sanghwal", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "sanghwal/search.sanghwal", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView search(sanghwalPage page) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -29,7 +29,7 @@ public class sanghwalController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/sanghwal/view.sanghwal", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "sanghwal/view.sanghwal", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView view(sanghwalVo vo, sanghwalPage page) {
 		ModelAndView mv = new ModelAndView();
 		

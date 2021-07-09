@@ -35,7 +35,7 @@
 			<div id='items'>
 				<c:forEach var='vo' items="${list}">
 					<div class='item' onclick='sang.update(${vo.serial})'>
-						<img src="../upload/${vo.nail }" class='photo' /><br /> 
+						<img src="../../upload/${vo.nail }" class='photo' /><br /> 
 						<span class='title'><h2>${vo.title}</h2></span><br /> 
 						<span class='mdate'>${vo.mdate }</span>
 					</div>

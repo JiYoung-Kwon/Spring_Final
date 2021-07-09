@@ -25,8 +25,8 @@
  <div id='center'>
   <div id='image_zone'>
 			<c:forEach var='f' items="${vo2.attList}">
-				<a href='../upload/${f.sysAtt }' download='${f.oriAtt }' >
-					<img src="../upload/${f.sysAtt }"/>
+				<a href='./upload/${f.sysAtt }' download='${f.oriAtt }' >
+					<img src="./upload/${f.sysAtt }"/>
 				</a>
 			</c:forEach>
 		</div>

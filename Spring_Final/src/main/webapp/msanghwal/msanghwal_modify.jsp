@@ -36,7 +36,7 @@
 			<div id='image_preview'>
 			<div id='attzone'>
 			<c:forEach var='f' items="${vo2.attList}">
-					<img src="../upload/${f.sysAtt }"  width='150px' height='180px'/>
+					<img src="../../upload/${f.sysAtt }"  width='150px' height='180px'/>
 					<label  class='del_file_chk'>
 						<input type='checkbox' class='delFile' name='delFile' value='${f.sysAtt }'>삭제</label> 
 			</c:forEach>
