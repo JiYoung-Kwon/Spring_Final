@@ -24,6 +24,9 @@ public class HospitalVo {
 		this.gubun = gubun;
 	}
 	public String getHospitalName() {
+//		if(hospitalName.indexOf("(")>0) {
+//			hospitalName = hospitalName.substring(0, hospitalName.indexOf("("));
+//		}
 		return hospitalName;
 	}
 	public void setHospitalName(String hospitalName) {

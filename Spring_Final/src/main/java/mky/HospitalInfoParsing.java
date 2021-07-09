@@ -96,16 +96,15 @@ public class HospitalInfoParsing {
 	                	vo.setHospUrl(nodeValue);
 	                	break;
 	                }
-	
+	                
 	            } // 2번째 for문 닫기
+	            String check = vo.getCheckNumber().replaceAll("[^0-9]", "");
+	            String check1 = vo.getPhoneNumber().replaceAll("[^0-9]", "");
+	            
+	            if(!(check.equals(check1))) { // 코로나19병원 전화번호와 병원정보 전화번호가 다를 시에
+	            	hpSido.sidoAddress(vo);
+	            }
 	        } // 1번째 for문 닫기
-	        
-	        String check = vo.getCheckNumber().replaceAll("[^0-9]", "");
-	        String check1 = vo.getPhoneNumber().replaceAll("[^0-9]", "");
-	       
-	        if(!(check.equals(check1))) { // 코로나19병원 전화번호와 병원정보 전화번호가 다를 시에
-	        	hpSido.sidoAddress(vo);
-	        }
 	        
 	        
 	        }catch(Exception e) {

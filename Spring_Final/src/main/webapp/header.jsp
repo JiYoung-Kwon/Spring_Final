@@ -72,7 +72,7 @@
 				<!-- 메뉴 끝  -->
 
 				<li class="main_menu">
-					<!-- 메뉴 탭 --> <a>의료기관찾기</a>
+					<!-- 메뉴 탭 --> <a onclick="$('#middle').load('./map.hospital?gubun=0')">의료기관찾기</a>
 					<ul id="sub5" class="sub_wraaper">
 						<!-- 서브 메뉴 -->
 						<li class="sub_menu"><a id='hospital'

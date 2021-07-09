@@ -11,14 +11,6 @@
 	width: 1400px;
 	margin-bottom: 60px;
 }
-/* #wrapper{
-	display: inline;
-} */
-
-/* .left_side,
-.right_side{
-	flex: 1;
-} */
 
 #tab_container{
 	margin: 20px 0;
@@ -47,7 +39,7 @@
 }
 
 #tab_container .tab_title .on_tab{
-	background-color: #07aad6;
+	background-color: #0b9bc9;
 	font-weight: bold;
 	color: #fff;
 	border: 1px solid #2b5f79;
@@ -200,6 +192,10 @@
 	border: 1px solid #aaa;
 }
 
+#search_area h3{
+	color: #1d9fc5;
+}
+
 .find_cont .selcity,
 .find_cont .search_text{
 	margin: 15px 0 0 0;
@@ -256,10 +252,14 @@ input[type=text]{
 
 .title{
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
 	color: #666;
 	line-height: 50px;
 	border-bottom: 1px solid #aaa;
+}
+
+.title em{
+	color: red;
 }
 
 .search_result .find_list ul{
@@ -357,19 +357,25 @@ dd {
 	height: 300px;
 }
 
-
-
-
 .gm-style-mtc{
 display: none;		
 }
 
+.none{
+	color: #378fa2;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: ns;
+	text-align: center;
+}
 
+.submit{
+	cursor: pointer;
+}
 
-
-
-
-
+.hospurl, .hosptype{
+	display: none;
+}
 
 
 

@@ -8,25 +8,30 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>search</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src='/Spring_Final/mapJs/map.js'></script>
 </head>
 <body>
-<c:forEach items="${list }" var="vo" varStatus="index">
+
+<div class='none'></div>
+
+<c:forEach items="${list}" var="vo" varStatus="index">
 <div class='find_list'>
 	<ul id="load_list">
 		<li>
-			<span class='pointer' onclick="javacript:pointerOnClick('${index.index}')">${index.index+1}</span>
+			<span class='pointer'>${index.index+1}</span>
 				<dl>
 					<dt>
-						<span id='submit'>${vo.hospitalName}</span>
+						<span id='submit' class="submit" onclick="gotohome(${index.index})">${vo.hospitalName}</span>
 					</dt>
-					<dd id='addr' class='addr'>${vo.address }</dd>
-					<dd class='telno'>📞 ${vo.phoneNumber }
-					</dd>
+					<dd id='addr' class='addr'>${vo.address}</dd>
+					<dd class='telno'>📞 ${vo.phoneNumber}</dd>
+					<dd class='hospurl'>${vo.hospUrl}</dd>
+					<dd class='hosptype'>${vo.hospType}</dd>
 				</dl>
 		</li>
 	</ul>
+	
+	
 </div>
 
 
@@ -37,4 +42,6 @@
 </html>
 
 
+	<%-- <input type='hidden' class='hospurl' value=${vo.hospUrl } />
+	<input type='hidden' class='hosptype' value=${vo.hospType } /> --%>
 <%-- <a href="javacript:pointerOnClick('${index.index }')">${vo.hospitalName}</a> --%>

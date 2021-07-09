@@ -37,15 +37,15 @@
 	 
 	 <!-- 조회 -->
 	 <select id="A0search" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
-	 	select hospitalname, address, phonenumber from hospital where sido = #{sido} and sigungu=#{sigungu} and hospitalname LIKE '%${findStr}%'
+	 	select hospitalname, address, phonenumber, hospUrl, hospType from hospital where sido = #{sido} and sigungu like '%${sigungu}%' and hospitalname LIKE '%${findStr}%'
 	 </select>
 	 
 	 <select id="97search" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
-	 	select hospitalname, address, phonenumber from testagency where sido=#{sido} and sigungu=#{sigungu} and hospitalname LIKE '%${findStr}%'
+	 	select hospitalname, address, phonenumber, hospUrl from testagency where sido=#{sido} and sigungu like '%${sigungu}%' and hospitalname LIKE '%${findStr}%'
 	 </select>
 	 
 	 <select id="99search" parameterType="mky.HospitalVo" resultType="mky.HospitalVo">
-	 	select hospitalname, address, phonenumber from carecenter where sido=#{sido} and sigungu=#{sigungu} and hospitalname LIKE '%${findStr}%'
+	 	select hospitalname, address, phonenumber, hospUrl from carecenter where sido=#{sido} and sigungu like '%${sigungu}%' and hospitalname LIKE '%${findStr}%'
 	 </select>
 	 
 	 <!-- 위도 경도 조회 -->

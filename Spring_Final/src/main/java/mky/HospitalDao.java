@@ -100,34 +100,34 @@ public class HospitalDao {
 	}
 		
 	
-		public HospitalVo mark(HospitalVo vo) {
-			HospitalVo vo2 = null;
-			
-			try {
-				switch(vo.getHpGubun()) {
-				case "A0":
-					vo2 = sqlSession.selectOne("hospital.A0mark", vo);
-					break;
-				case "97":
-					vo2 = sqlSession.selectOne("hospital.97mark", vo);
-					break;
-				case "99":
-					vo2 = sqlSession.selectOne("hospital.99mark", vo);
-					break;
-				}
-				
-				if(vo.getLat()!=null) {
-					sqlSession.commit();
-				}else {
-					sqlSession.rollback();				
-				}
-			}catch(Exception ex) {
-				ex.printStackTrace();
+	public HospitalVo mark(HospitalVo vo) {
+		HospitalVo vo2 = null;
+		
+		try {
+			switch(vo.getHpGubun()) {
+			case "A0":
+				vo2 = sqlSession.selectOne("hospital.A0mark", vo);
+				break;
+			case "97":
+				vo2 = sqlSession.selectOne("hospital.97mark", vo);
+				break;
+			case "99":
+				vo2 = sqlSession.selectOne("hospital.99mark", vo);
+				break;
 			}
 			
-			return vo2;
+			if(vo2.getLat()!=null) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();				
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
 		
-	}
+		return vo2;
+	
+}
 	
 }
 

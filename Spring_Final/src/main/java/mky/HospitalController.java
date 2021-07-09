@@ -28,33 +28,22 @@ public class HospitalController {
 	      
 	      List<HospitalVo> list = dao.search(vo);
 	      String a = vo.getHpGubun();
-	      
 	     
 	      mv.addObject("list", list);
 	      mv.addObject("hpGubun", a);
 	      mv.setViewName("search");
-
 	      return mv;
 	   }
 	
-  
 	
 	@RequestMapping(value="/mark.hospital", method= RequestMethod.POST)
 	public void mark(HospitalVo vo, HttpServletRequest req, HttpServletResponse resp){
-		
-		System.out.println("주소 서블릿 받음 : "+vo.getAddress());
-		System.out.println("구분 서블릿 받음 : "+vo.getHpGubun());
-
 		
 		PrintWriter pw;
 		
 		
 		try {
-			
 			HospitalVo vo2 = dao.mark(vo);
-			
-			System.out.println("lat"+vo2.getLat());
-			System.out.println("lng"+vo2.getLng());
 			
 			String result = vo2.getLat()+","+vo2.getLng();
 			
@@ -65,6 +54,7 @@ public class HospitalController {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	@RequestMapping(value = "/map.hospital", method = { RequestMethod.GET, RequestMethod.POST })
 	   public ModelAndView map(HttpServletRequest req, HttpServletResponse resp) throws IOException {

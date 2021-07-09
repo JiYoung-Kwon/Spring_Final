@@ -27,7 +27,7 @@ function MNoticeClickAction(){
 	var frm = $('#mnotice_search_frm')[0];
 	frm.nowPage.value = 1;
 	var param = $(frm).serialize();
-	$('#frm_manager').load('../../notice/mreader.notice', param);
+	$('#frm_manager').load('Spring_Final/notice/mreader.notice', param);
 };
 function MNoticeEnterAction(event){if(event.keyCode == 13){MNoticeClickAction();};};
 /*검색*/
@@ -49,12 +49,12 @@ function MNoticeView(serial){
 	var frm = $('#mnotice_search_frm')[0];
 	frm.serial.value = serial;
 	var param = $(frm).serialize();
-	$('#frm_manager').load('../../notice/mview.notice', param);
+	$('#frm_manager').load('Spring_Final/notice/mview.notice', param);
 };
 function MNoticeViewBack(){
 	var frm = $('#mnotice_update_form')[0];
 	var param = $(frm).serialize();
-	$('#frm_manager').load('../../notice/mreader.notice', param);
+	$('#frm_manager').load('Spring_Final/notice/mreader.notice', param);
 };
 /*상세보기*/
 
@@ -63,12 +63,12 @@ function MNoticeCreateGo(){
 	var frm = $('#mnotice_search_frm')[0];
 	$(frm).findStr = '';
 	var param = $(frm).serialize();
-	$('#frm_manager').load('../../notice/mcview.notice', param);
+	$('#frm_manager').load('Spring_Final/notice/mcview.notice', param);
 };
 function MNoticeCreateBack(){
 	var frm = $('#mnotice_create_form')[0];
 	var param = $(frm).serialize();
-	$('#frm_manager').load('../../notice/mreader.notice', param);
+	$('#frm_manager').load('Spring_Final/notice/mreader.notice', param);
 };
 /*입력 폼 바로가기*/
 
@@ -95,9 +95,9 @@ function MNoticeCreate(){
 			$.ajax({
 				type	:	'POST',
 				data	:	param,
-				url		:	'../../notice/mcreate.notice',
+				url		:	'Spring_Final/notice/mcreate.notice',
 				success	:	function() {
-					$('#frm_manager').load('../../notice/mreader.notice', param);
+					$('#frm_manager').load('Spring_Final/notice/mreader.notice', param);
 				}
 			});
 		};
@@ -130,9 +130,9 @@ function MNoticeUpdate(){
 			$.ajax({
 				type	:	'POST',
 				data	:	param + '&updatecompare=수정됨',
-				url		:	'../../notice/mupdate.notice',
+				url		:	'Spring_Final/notice/mupdate.notice',
 				success	:	function() {
-					$('#frm_manager').load('../../notice/mreader.notice', param);
+					$('#frm_manager').load('Spring_Final/notice/mreader.notice', param);
 				}
 			});
 		};
@@ -155,9 +155,9 @@ function MNoticeDelete(){
 		$.ajax({
 			type	:	'POST',
 			data	:	param,
-			url		:	'../../notice/mdelete.notice',
+			url		:	'Spring_Final/notice/mdelete.notice',
 			success	:	function() {
-				$('#frm_manager').load('../../notice/mreader.notice', param);
+				$('#frm_manager').load('Spring_Final/notice/mreader.notice', param);
 			}
 		});
 	};

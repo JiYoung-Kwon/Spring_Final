@@ -26,7 +26,7 @@
 					<ul class='sub'>
 						<li onclick="MNoticeGoPage()">공지사항</li>
 						<li>생활속방역수칙</li>
-						<li>뉴스&이슈</li>
+						<li class="News" id="NI" onclick="$('#frm_manager').load('../../NI/search.brd?tabGubun=issue_M');" data-ajax = "false">>뉴스&이슈</li>
 					</ul></li>
 				<li>메인 홈페이지 관리
 				<li>예약 관리</li>

@@ -96,7 +96,7 @@ public class HospitalInfoOfSido {
 
             } // 2번째 for문 닫기
         } // 1번째 for문 닫기
-    
+
         
         }catch(Exception e) {
         	e.printStackTrace();

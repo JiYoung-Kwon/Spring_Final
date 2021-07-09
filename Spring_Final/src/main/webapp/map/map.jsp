@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang='ko'>
 <head>
@@ -39,34 +40,7 @@
 				   		
 				   	</div>
 				   	
-				   	<div class='img_wrapper'>
-				   		
-				   		<div class='mask'>
-				   			<img class='mask_img' src='/Spring_Final/img/mask.png' >
-								<span class='mask_text'>마스크 착용</span>
-							</div>
-							
-							<div class='sanitizer'>
-								<img class='sanitizer_img' src='/Spring_Final/img/sanitizer.png'>
-								<span class='sanitizer_text'>손 소독</span>
-							</div>
-							
-							<div class='thermometer'>
-								<img class='thermometer_img' src='/Spring_Final/img/thermometer.png'>
-								<span class='thermometer_text'>비접촉 체온측정</span>
-							</div>
-							
-							<div class='doctor'>
-								<img class='doctor_img' src='/Spring_Final/img/doctor.png'>
-								<span class='thermometer_text'>의료진 의사소통</span>
-							</div>
-							
-							<div class='distancing'>
-								<img class='distancing_img' src='/Spring_Final/img/distancing.png'>
-								<span class='distancing_text'>거리두기</span>
-							</div>
-							
-				   	</div>
+				   	<div id='image'><jsp:include page="./imgForMap.jsp"></jsp:include></div>
 				   	
 				   </div>
 			   	
@@ -83,34 +57,7 @@
 				   		
 				   	</div>
 				   	
-				   	<div class='img_wrapper'>
-				   		
-				   		<div class='mask'>
-				   			<img class='mask_img' src='/Spring_Final/img/mask.png' >
-								<span class='mask_text'>마스크 착용</span>
-							</div>
-							
-							<div class='sanitizer'>
-								<img class='sanitizer_img' src='/Spring_Final/img/sanitizer.png'>
-								<span class='sanitizer_text'>손 소독</span>
-							</div>
-							
-							<div class='thermometer'>
-								<img class='thermometer_img' src='/Spring_Final/img/thermometer.png'>
-								<span class='thermometer_text'>비접촉 체온측정</span>
-							</div>
-							
-							<div class='doctor'>
-								<img class='doctor_img' src='/Spring_Final/img/doctor.png'>
-								<span class='thermometer_text'>의료진 의사소통</span>
-							</div>
-							
-							<div class='distancing'>
-								<img class='distancing_img' src='/Spring_Final/img/distancing.png'>
-								<span class='distancing_text'>거리두기</span>
-							</div>
-							
-				   	</div>
+				   	<div id='image'><jsp:include page="./imgForMap.jsp"></jsp:include></div>
 				   	
 			      </div>
 					
@@ -126,34 +73,7 @@
 				   		
 				   	</div>
 				   	
-				   	<div class='img_wrapper'>
-				   		
-				   		<div class='mask'>
-				   			<img class='mask_img' src='/Spring_Final/img/mask.png' >
-								<span class='mask_text'>마스크 착용</span>
-							</div>
-							
-							<div class='sanitizer'>
-								<img class='sanitizer_img' src='/Spring_Final/img/sanitizer.png'>
-								<span class='sanitizer_text'>손 소독</span>
-							</div>
-							
-							<div class='thermometer'>
-								<img class='thermometer_img' src='/Spring_Final/img/thermometer.png'>
-								<span class='thermometer_text'>비접촉 체온측정</span>
-							</div>
-							
-							<div class='doctor'>
-								<img class='doctor_img' src='/Spring_Final/img/doctor.png'>
-								<span class='thermometer_text'>의료진 의사소통</span>
-							</div>
-							
-							<div class='distancing'>
-								<img class='distancing_img' src='/Spring_Final/img/distancing.png'>
-								<span class='distancing_text'>거리두기</span>
-							</div>
-							
-				   	</div>
+				   	<div id='image'><jsp:include page="./imgForMap.jsp"></jsp:include></div>
 						
 					</div>	      
 		      </div>
@@ -188,7 +108,7 @@
 				
 				<div class='find_cont'>
 					
-					<form name="frm_search" id="frm_search" action="" method="post">
+					<form name="frm_search" onsubmit="return false;" id="frm_search" action="" method="post">
 						<div class='find_box'>
 							<div class='row'>
 								<div class='selcity'>
@@ -197,11 +117,9 @@
 								</div>
 							</div>
 							
-							<!-- <div class='sidoChoose'>시도내용</div>
-							<div class='sigunguChoose'>시군구내용</div> -->
 							
 							<div class='search_text'>
-								<input type='text' id='findStr' name='findStr'/>
+								<input onkeyup="enterkey()" type='text' id='findStr' name='findStr'/>
 								<input type='button' id='btnSearch' class='btnSearch' value='검색' onclick="search()"/>
 							</div>
 							<input type="hidden" id="hp_gubun" name="hpGubun" value="${hpGubun }">
@@ -230,5 +148,6 @@
 	<div class='right_side'></div>
 </div>
 <script type="text/javascript">tapinit()</script>
+<script type="text/javascript">sido()</script>
 </body>
 </html>

@@ -49,7 +49,7 @@ $(document).ready(function(){
 			case 2:
 			hpGubun.value = '97'
 			break;
-	}
+		}
 			
 		$('.tab_title li').removeClass('on_tab');
 		$('.tab_title li').eq(idx).addClass('on_tab');
@@ -63,12 +63,12 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function() {
+function sido() {
    var area0  = ["시/도 선택","서울","인천","대전","광주","대구","울산","부산","경기","강원","충청","충남","전북","전남","경북","경남","제주도"];
    var area1  = ["시/군/구 선택","강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구"];
    var area2  = ["시/군/구 선택","계양구","남구","남동구","동구","부평구","서구","연수구","중구","강화군","옹진군"];
    var area3  = ["시/군/구 선택","대덕구","동구","서구","유성구","중구"];
-   var area4  = ["시/군/구 선택","광산구","남구","동구",     "북구","서구"];
+   var area4  = ["시/군/구 선택","광산구","남구","동구","북구","서구"];
    var area5  = ["시/군/구 선택","남구","달서구","동구","북구","서구","수성구","중구","달성군"];
    var area6  = ["시/군/구 선택","남구","동구","북구","중구","울주군"];
    var area7  = ["시/군/구 선택","강서구","금정구","남구","동구","동래구","부산진구","북구","사상구","사하구","서구","수영구","연제구","영도구","중구","해운대구","기장군"];
@@ -83,16 +83,17 @@ $(document).ready(function() {
    var area16 = ["시/군/구 선택","서귀포시","제주시","남제주군","북제주군"];
 
  // 시/도 선택 박스 초기화
- $("select[name^=sido]").each(function() {
+ $("select[name=sido]").each(function() {
   $selsido = $(this);
   $.each(eval(area0), function() {
    $selsido.append("<option value='"+this+"'>"+this+"</option>");
   });
+  
   $selsido.next().append("<option value=''>시/군/구 선택</option>");
  });
 
  // 시/도 선택시 시/군/구 설정
- $("select[name^=sido]").change(function() {
+ $("select[name=sido]").change(function() {
   var area = "area"+$("option",$(this)).index($("option:selected",$(this))); // 선택지역의 시군구 Array
   var $sigungu = $(this).next(); // 선택영역 시군구 객체
   $("option",$sigungu).remove(); // 시군구 초기화
@@ -106,7 +107,7 @@ $(document).ready(function() {
   }
  });
 
-});
+};
 
 
 function search(){
@@ -120,11 +121,11 @@ function search(){
 	
 	if(sido == '시/도 선택'){
 		alert("시/도를 선택해주세요.")
-		/*$('.sidoChoose').show();*/
 	} else if(sigungu == '시/군/구 선택'){
 		alert("시/군/구를 선택해주세요.")
 	} 
 }
+
 
 function initMap() {
       var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
@@ -135,56 +136,82 @@ function initMap() {
     });
 }
 
-/*지오코딩 api키 : AIzaSyApFUNTAVof33a46pXOgxUTxE6qh_vJASM*/
-/*map javascript api키 : AIzaSyDXhZaX8CEwnJKpNAYp9aiLMIK2tl-yngw*/
 
-
-
-
-
-
-$('#submit').on('click',function(){
-	
-	var addr =  document.getElementById('addr').innerText
+function gotohome(num){
+	var addr =  document.getElementsByClassName('addr')[num].innerHTML 
 	var hp = document.getElementById('hp_gubun').value
-
+	var hosName = document.getElementsByClassName('submit')[num].innerHTML 
+	var hospUrl = document.getElementsByClassName('hospurl')[num].innerHTML
+	var hospType = document.getElementsByClassName('hosptype')[num].innerHTML
+	var telno = document.getElementsByClassName('telno')[num].innerHTML
 	var param = "address="+addr+"&hpGubun="+hp;
 
 	$.ajax({
-
 		type: 'post',
-		url : 'mark.hospital',
+		url : './mark.hospital',
 		data : param,
 		success: function(resp){
+			
 			var a = resp.trim().split(',');
 
 		 var center = {lat: Number(a[1]) ,lng: Number(a[0]) };       
 			
-		    var map = new google.maps.Map(document.getElementById('map_area'), {
+		   var map = new google.maps.Map(document.getElementById('map_area'), {
 
-		        zoom: 17,
-
+		       zoom: 17,
 			    center: center
 
 		      });
-
-
-		    var marker = new google.maps.Marker({position: center, map: map});
-
+			var myIcon = new google.maps.MarkerImage('./img/yellowmarker.png', null, null, null, new google.maps.Size(25,35));
+			
+			var contentString = "🏥 " + addr + 
+									  "<br><br> " + telno +
+									  "<br><br>🔗 " + hospUrl +
+									  "<br><br>💉 선정유형 : "+hospType
+			
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString,
+				size: new google.maps.Size(200,100)
+			})
+			
+		   var marker = new google.maps.Marker({
+				position: center, 
+				map: map,
+				draggable: true,
+				animation: google.maps.Animation.DROP,
+				title: hosName,
+				icon: myIcon
+				});
+				
+			google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open(map, marker);	
+				
+				if (marker.getAnimation() != null) {
+						marker.setAnimation(null);
+					} else {
+						marker.setAnimation(google.maps.Animation.BOUNCE);
+					}
+			})
 		}
-
-	})
+	});
+	google.maps.event.addDomListener(window, 'load', initialize);
+}
 
 	
+$(document).ready(function(){
+	var length = $('.find_list').find('ul').length;
+	$('.numOfSearch').html(length);
+
+	if(length==0){
+		$('.none').html('<span> 검색 결과가 없습니다. </span>' ).css('padding-top','300px');
+	}
 })
 
-
-
-
-
-
-
-
+function enterkey(){
+	if (window.event.keyCode == 13) {
+		search();
+	}
+}
 
 
 

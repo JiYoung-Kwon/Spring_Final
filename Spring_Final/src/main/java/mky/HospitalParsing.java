@@ -115,10 +115,10 @@ public class HospitalParsing {
             sido(vo);
             hp.addressch(vo);
             
-            if(vo.getLng().equals(null)) {
-            	
-            	
-            }
+//            if(vo.getLng().equals(null)) {
+//            	
+//            	
+//            }
             
             dao.insert(vo);
             
