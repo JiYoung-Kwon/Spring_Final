@@ -95,6 +95,16 @@
 		<url-pattern>*.sanghwal</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>msanghwal</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>msanghwal</servlet-name>
+		<url-pattern>*.msanghwal</url-pattern>
+	</servlet-mapping>
+	
 	<!-- 뉴스 -->
 	<servlet>
 		<servlet-name>brd</servlet-name>

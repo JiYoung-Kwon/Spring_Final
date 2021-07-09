@@ -6,16 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' type='text/css' href='./NIcss/Issue_Manager.css'>
+<link rel='stylesheet' type='text/css' href='../../NIcss/Issue_Manager.css'>
 <title>위험지역 이슈(매니저)</title>
-<script src="./NIjs/jquery-3.6.0.min.js" ></script>
-<script src='./NIjs/Manager.js'></script>
+<script src="../../NIjs/jquery-3.6.0.min.js" ></script>
+<script src="../../NIjs/Manager.js"></script>
 </head>
 <body>
 
 
 
-<div id = "Issue_Board">S
+<div id = "Issue_Board">
 	
  		
 		<h1 id="Issue_header">위험지역 이슈</h1>

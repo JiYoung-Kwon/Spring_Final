@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
+#sang #head{
+	border-bottom:2px solid #0b9bc9;
+}
+
 #sang #subject{
 	font: 13pt;
+	color:#5CB4D6;
 	text-align: center;
 }
 
@@ -29,6 +34,10 @@
 	height:250px;
 }
 
+#sang #items .title{
+	color:#5CB4D6;
+}
+
 #sang #nop {
 	width:1000px;
 	height:600px;
@@ -52,6 +61,9 @@
 }
 
 #find #btnFind{
+	border:0px;
+	color:#fff;
+	background-color: #5CB4D6;
 	font-size: 13pt;
 }
 /*---view 페이지 ---*/
@@ -63,15 +75,19 @@
 #sang #image_zone{
 	width:1100px;
 	min-height:200px;
-	border:1px solid #000;
 	margin:0px auto;
+}
+
+#sang #image_zone img{
+	width:700px;
+	height:700px;
+	margin:30px auto;
 }
 
 #sang #doc{
 	width:1100px;
-	height:300px;
-	border:1px solid #000;
-	margin-top:30px;
+	height:200px;
+	margin:30px auto;
 }
 
 #sang #title{

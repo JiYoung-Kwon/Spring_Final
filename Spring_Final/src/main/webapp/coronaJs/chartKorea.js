@@ -107,7 +107,7 @@ drawChart1 = function(kJson) {
 					position: 'right',
 					ticks: {
 						min: 0,
-						max: 1100,
+						max: 1600,
 						fontSize: 14,
 						userCallback: function(value, index, values) {
 							value = value.toString();

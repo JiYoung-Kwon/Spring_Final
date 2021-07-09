@@ -34,8 +34,7 @@
 		pSerial, mId,
 		to_char(mdate, 'rrrr-mm-dd') mdate, title, doc,
 		hit
-		FROM
-		sanghwal
+		FROM sanghwal
 		WHERE doc like '%${findStr}%'
 		ORDER BY serial DESC )m
 		)WHERE rno BETWEEN
@@ -63,5 +62,13 @@
 		update sanghwal
 		set hit=hit+1 where serial = #{_parameter}
 	</update>
+	
+	
+	<!-- 썸네일 -->
+	<select id="sanghwal_thumbnail"  resultType="String" parameterType="Integer">
+	  SELECT sysatt FROM SANGHWALATT JOIN sanghwal ON sanghwal.serial = sanghwalatt.PSERIAL 
+      WHERE sanghwal.serial = #{_parameter} AND sanghwalatt.serial = (SELECT min(serial) FROM SANGHWALATT where pserial = #{_parameter})
+	</select>
+	
 	
 </mapper>

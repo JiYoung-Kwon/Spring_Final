@@ -35,7 +35,8 @@ public class sanghwalController {
 		
 		
 		vo = dao.view(vo.getSerial());
-		sanghwalVo vo2 = dao.viewAtt(vo.getpSerial());
+		 System.out.println(vo.getSerial());
+		sanghwalVo vo2 = dao.viewAtt(vo.getSerial());
 		
 		
 		mv.addObject("vo", vo);

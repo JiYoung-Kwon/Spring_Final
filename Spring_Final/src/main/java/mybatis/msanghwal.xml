@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+
+<mapper namespace="msanghwal">
+
+	<select id="totList" parameterType="String" resultType="Integer">
+		select
+		count(serial) totList from sanghwal
+		where title like
+		'%${_parameter}%'
+		or doc like '%${_parameter}%'
+	</select>
+
+	<!-- 생활속 조회부분 -->
+	<select id="search_basic" parameterType="mybatis.sanghwalPage"
+		resultType="msanghwal.sanghwalVo">
+		SELECT * from(
+		SELECT rownum rno, m.* from(
+		SELECT serial, pSerial mId, to_char(mdate, 'rrrr-mm-dd') mdate, title, doc,
+		hit
+		FROM
+		sanghwal
+		WHERE title like '%${findStr}%'
+		ORDER BY serial DESC )m
+		)WHERE rno BETWEEN #{startNo} AND #{endNo}
+	</select>
+
+	<select id="search_doc" parameterType="mybatis.sanghwalPage"
+		resultType="msanghwal.sanghwalVo">
+		SELECT * from(
+		SELECT rownum rno, m.* from(
+		SELECT serial, pSerial, mId,
+		to_char(mdate, 'rrrr-mm-dd') mdate, title, doc,
+		hit
+		FROM
+		sanghwal
+		WHERE doc like '%${findStr}%'
+		ORDER BY serial DESC )m
+		)WHERE rno BETWEEN
+		#{startNo} AND #{endNo}
+	</select>
+
+	<!-- 생활속 view부분 -->
+	<select id="sanghwal_modify" parameterType="Integer"
+		resultType='msanghwal.sanghwalVo'>
+		select *
+		from sanghwal
+		where serial = #{_paremter}
+	</select>
+	
+	 <select id='sanghwalAtt_modify' parameterType='Integer' resultType='msanghwal.sanghwalAttVo'>
+			select * from sanghwalAtt where pSerial = #{_parameter}
+	</select>	
+	
+	<select id="sanghwal_getSerial" resultType="Integer">
+		select seq_sanghwal.nextval from dual
+	</select>
+	
+	<!-- 입력 -->
+	<insert id="sanghwal_insert" parameterType="msanghwal.sanghwalVo">
+		INSERT INTO sanghwal(serial, title, mId, mdate, hit, doc)
+		values(#{serial}, #{title}, '관리자', SYSDATE, 0, #{doc})
+	</insert>
+	
+	<insert id="sanghwalAtt_insert" parameterType="msanghwal.sanghwalAttVo">
+		insert into sanghwalAtt(serial, pserial, oriAtt, sysAtt)
+		values(seq_sanghwalAtt.nextval, #{pSerial}, #{oriAtt}, #{sysAtt})
+	</insert>
+	
+	<!-- 수정 -->
+		<update id="sanghwal_update" parameterType="msanghwal.sanghwalVo">
+			UPDATE sanghwal SET title = #{title} , doc=#{doc} 
+			WHERE serial= #{serial}
+		</update>
+		
+		<delete id="sanghwalAtt_delete2" parameterType="String">
+			DELETE FROM sanghwalAtt WHERE sysAtt=#{_parameter}
+		</delete>
+	
+	
+	<!-- 삭제 -->
+		<select id='sanghwalAtt_list' parameterType="Integer" resultType="msanghwal.sanghwalAttVo">
+			select sysAtt from sanghwalAtt where pserial = #{_parameter}
+		</select>
+		
+		<delete id="sanghwal_delete" parameterType="msanghwal.sanghwalVo">
+			DELETE FROM sanghwal WHERE serial = #{serial}
+		</delete>
+		
+		<delete id="sanghwalAtt_delete" parameterType="Integer">
+			DELETE FROM sanghwalAtt WHERE pserial=#{_parameter}
+		</delete>
+		
+		<!-- 썸네일 -->
+	<select id="sanghwal_thumbnail"  resultType="String" parameterType="Integer">
+	  SELECT sysatt FROM SANGHWALATT JOIN sanghwal ON sanghwal.serial = sanghwalatt.PSERIAL 
+      WHERE sanghwal.serial = #{_parameter} AND sanghwalatt.serial = (SELECT min(serial) FROM SANGHWALATT where pserial = #{_parameter})
+	</select>
+</mapper>

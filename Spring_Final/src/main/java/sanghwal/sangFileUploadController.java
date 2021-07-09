@@ -13,7 +13,7 @@ import javax.servlet.http.Part;
 public class sangFileUploadController {
 
 	//final static String saveDir = "C:\\pwg\\workspace\\WebStudy\\WebContent\\upload\\";
-	final static String saveDir = "C:\\Users\\2-14\\eclipse\\jee-2020-122\\eclipse\\workspace\\final\\WebContent\\msanghwal\\upload"; //수정해주세요 ㅜㅜ
+	final static String saveDir = "C:\\eclipse\\workspace\\Spring_Final\\src\\main\\webapp\\upload\\";
 	//final static String saveDir = "c:/pwg/upload/";
 
 	public sangFileUploadController() {

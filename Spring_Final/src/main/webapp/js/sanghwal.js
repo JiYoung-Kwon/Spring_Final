@@ -9,7 +9,7 @@ sang.init = function(){
 		var frm = $('#frm_sang')[0];
 		var param = $(frm).serialize();
 		
-		$('#middle').load('sanghwal/search.sanghwal', param);
+		$('#sang').load('search.sanghwal', param);
 	})
 	
 	$('#sang #btnFind').on('click', function(){
@@ -17,7 +17,7 @@ sang.init = function(){
 		frm.nowPage.value = 1;
 		var param = $(frm).serialize();
 		
-		$('#middle').load('sanghwal/search.sanghwal', param);
+		$('#sang').load('search.sanghwal', param);
 	})
 }
 
@@ -26,7 +26,7 @@ sang.view = function(serial){
 	frm.serial.value=serial;
 	var param = $(frm).serialize();
 	
-	$('#middle').load('sanghwal/view.sanghwal', param);
+	$('#sang').load('view.sanghwal', param);
 }
 
 
@@ -35,5 +35,5 @@ sang.move = function(nowPage){
 	frm.nowPage.value = nowPage;
 	var param = $(frm).serialize();
 		
-	$('#middle').load('sanghwal/search.sanghwal', param);
+	$('#sang').load('search.sanghwal', param);
 }

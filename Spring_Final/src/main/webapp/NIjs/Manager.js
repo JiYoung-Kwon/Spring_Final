@@ -1,8 +1,3 @@
-/**
- * 	페이지 이동을 위한 js
- */
- 
-var brd={};
 /*  ------------------ 페이지 이동 ---------------------*/
 brd.move = function (nowPage){	
 	 var tabGubun = document.getElementById('tabGubun').value;
@@ -10,7 +5,7 @@ brd.move = function (nowPage){
 
 	 var param = "tabGubun="+tabGubun+"&findStr="+findStr+"&nowPage="+nowPage;
 
-	 $('#main').load('search.brd', param);
+	 $('#frm_manager').load('../../NI/search.brd', param);
 }
 
 
@@ -20,38 +15,25 @@ brd.move = function (nowPage){
 /* 메인 페이지에서 테스트 해보기 위함.*/
 brd.init = function(){
 	
-	$('#btnIssue').on('click', function(){
-		$('#main').load('search.brd?tabGubun=issue_M');
-	})
-	
-	$('#btnNews').on('click', function(){
-		$('#main').load('search.brd?tabGubun=news_M');
-	})
-	
-	$('#btnHobby').on('click', function(){
-		$('#main').load('search.brd?tabGubun=hobby_M');
-	})		
-	
-	
-	$('#Issue_footer_frm #Create').on('click', function(){
+	$('#Issue_Board #Create').on('click', function(){
 		var frm = $('#Issue_board_frm')[0];
 		var param = $(frm).serialize();
 		
-		$('#main').load('Create_form.jsp', param);
+		$('#frm_manager').load('../../NI/Create_form.jsp', param);
 	})
 	
-	$('#News_footer_frm #Create').on('click', function(){
+	$('#News_Board #Create').on('click', function(){
 		var frm = $('#News_board_frm')[0];
 		var param = $(frm).serialize();
 		
-		$('#main').load('Create_form.jsp', param);
+		$('#frm_manager').load('../../NI/Create_form.jsp', param);
 	})
 	
-	$('#hobby_footer_frm #Create').on('click', function(){
+	$('#hobby_Board #CreateM').on('click', function(){
 		var frm = $('#hobby_board_frm')[0];
 		var param = $(frm).serialize();
 		
-		$('#main').load('Create_form.jsp', param);
+		$('#frm_manager').load('../../NI/Create_form.jsp', param);
 	})
 
 	
@@ -69,7 +51,7 @@ brd.init = function(){
 	}else{	
 		var frm = $('#Create_form')[0];
 		var param = $(frm).serialize();
-		$('#main').load('Create.brd', param);
+		$('#frm_manager').load('../../NI/Create.brd', param);
 			
 	}
  })	
@@ -97,9 +79,9 @@ brd.init = function(){
 			$.ajax({
 				type	:	'POST',
 				data	:	param,
-				url		:	'./Update.brd',
+				url		:	'../../NI/Update.brd',
 				success	:	function() {
-					$('#main').load('search.brd', param);
+					$('#frm_manager').load('../../NI/search.brd', param);
 				}
 			});
 		};
@@ -123,9 +105,9 @@ brd.init = function(){
 		$.ajax({
 			type	:	'POST',
 			data	:	param,
-			url		:	'./Delete.brd',
+			url		:	'../../NI/Delete.brd',
 			success	:	function() {
-				$('#main').load('search.brd', param);
+				$('#frm_manager').load('../../NI/search.brd', param);
 			}
 		});
 	};
@@ -137,118 +119,33 @@ brd.init = function(){
 	$('#Update_footer_frm #Update_back').on('click', function(){
 		var frm = document.getElementById('tabGubun');
 		var param = $(frm).serialize();
-		$('#main').load('search.brd',param);
+		$('#frm_manager').load('../../NI/search.brd',param);
 	})
 	
 	$('#Create_footer_frm #Create_back').on('click', function(){
 		var frm = document.getElementById('tabGubun');
 		var param = $(frm).serialize();
-		$('#main').load('search.brd',param);
+		$('#frm_manager').load('../../NI/search.brd',param);
 	})
 	
 };
 
 /*삭제*/
 /*수정*/
-	
-/* 파일 미리보기 --------------------- */
-	function imageView(fileTag, imageZone){
-	var ft = document.getElementById(fileTag);
-	var izone = document.getElementById(imageZone);
-	
-	ft.onchange = function(ev){
-		var ele = ev.srcElement; //이벤트가 발생한 테그
-		var files = ele.files;
-		for(var index in files){
-			console.table(files[index]);
-		}
-		
-		for(var file of files){
-			var reader = new FileReader();
-			reader.readAsDataURL(file);
-			reader.onload = function(ev2){
-				var div = makeItem(izone);
-				var img = new Image();
-				img.src = ev2.target.result;
-				
-				div.appendChild(img);
-				izone.appendChild(div);
-			}
-		}
-		
-	} // end of ft.onchage
-	
-	// drag & drop 기능 추가
-	izone.ondragenter = function(e){
-		e.preventDefault();
-		e.stopPropagation();
-		return false;
-	}
-	
-	izone.ondragover = function(e){
-		e.preventDefault();
-		e.stopPropagation();
-		return false;
-	}
-	
-	izone.ondrop = function(e){
-		e.preventDefault();
-		e.stopPropagation();
 
-		var dt = e.dataTransfer;
-		var files = dt.files;
-		
-		for(var file of files){
-			var reader = new FileReader();
-			reader.readAsDataURL(file);
-			reader.onload = function(ev2){
-				var div = makeItem(izone);
-				var img = new Image();
-				img.src = ev2.target.result;
-				
-				div.appendChild(img);
-				izone.appendChild(div);
-			}
-		}
-	}
-}
-
-
-function makeItem(izone){
-	// div 태그 생성 : <div class='item'></div>
-	var div = document.createElement('div');
-	div.setAttribute('class', 'item');
-	
-	// 삭제버튼 : <input type='button' value='x' class='del_btn' name='btnDel+ N'/>
-	var delBtn = document.createElement('input');
-	delBtn.setAttribute('type', 'button');
-	delBtn.setAttribute('value', 'X')
-	delBtn.setAttribute('class', 'del_btn')
-	delBtn.setAttribute('name', 'btnDel')
-	
-	div.appendChild(delBtn);
-	
-	delBtn.onclick = function(){
-		var p = this.parentNode;
-		izone.removeChild(p);
-	}
-	
-	
-	return div;
-}
 /* ----------페이지에서 버튼으로 다른 페이지를 이동하기 위함-------------*/	
 
 tab = function(tabName){
 	
 	switch(tabName){
 		case 'issue_M' :
-		$('#main').load('search.brd?tabGubun=issue_M');
+		$('#frm_manager').load('../../NI/search.brd?tabGubun=issue_M');
 		break;
 		case 'news_M' :
-		$('#main').load('search.brd?tabGubun=news_M');
+		$('#frm_manager').load('../../NI/search.brd?tabGubun=news_M');
 		break;
 		case 'hobby_M' :
-		$('#main').load('search.brd?tabGubun=hobby_M');
+		$('#frm_manager').load('../../NI/search.brd?tabGubun=hobby_M');
 		break;
 	}
 }
@@ -264,7 +161,7 @@ brd.back = function(){
 
 	 var param = "tabGubun="+tabGubun+"&nowPage="+nowPage+"&findStr="+findStr;
   	 
-		$('#main').load('search.brd', param);
+		$('#frm_manager').load('../../NI/search.brd', param);
 }
 	
 /* ---------------- 상세보기 페이지  ----------------*/	
@@ -274,7 +171,7 @@ brd.view = function(serial){
 	 var nowPage = document.getElementById('nowPage').value;
 
 	 var param = "tabGubun="+tabGubun+"&nowPage="+nowPage+"&serial="+serial;
-	 $('#main').load('View.brd', param);
+	 $('#frm_manager').load('../../NI/View.brd', param);
 }
 
 
@@ -291,11 +188,5 @@ search.onclick = function(){
 	
 	 var param = "tabGubun="+tabGubun+"&findStr="+findStr+"&nowPage="+'1';
 
-	$('#main').load('search.brd',param);
+	$('#frm_manager').load('../../NI/search.brd',param);
 }	
-
-
-
-
-
-	

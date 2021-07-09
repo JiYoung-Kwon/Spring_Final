@@ -3,155 +3,155 @@
 
 /* 게시판 */
 #hobby_Board *{
-	margin: 0px;
-	padding: 0px;
-	border: none;
-	box-sizing: border-box;
-	list-style: none;
-	text-decoration: none;
-	outline: none;
-	cursor: default;
-	vertical-align: top;
-	font-size: 13pt;
-	font-weight: bold;
-	color: #000;
-	background-color: #fff;
+   margin: 0px;
+   padding: 0px;
+   border: none;
+   box-sizing: border-box;
+   list-style: none;
+   text-decoration: none;
+   outline: none;
+   cursor: default;
+   vertical-align: top;
+   font-size: 13pt;
+   font-weight: bold;
+   color: #000;
+   background-color: #fff;
 }
 
 #hobby_Board{
-	width: 1100px;
-	height: auto;
+   width: 1100px;
+   height: auto;
 }
 
 #hobby_Board > #hobby_header{
-	width: 100%;
-	height: 100px;
-	line-height: 100px;
-	text-align: center;
-	font-size: 40pt;
+   width: 100%;
+   height: 100px;
+   line-height: 100px;
+   text-align: center;
+   font-size: 40pt;
 }
 
 <!--/* 폼1 */-->
 #hobby_Board > #hobby_board_frm{
-	width: 100%;
-	height: 100px;
-	border-top: 5px solid #0b9bc9;
-	border-bottom: 5px solid #0b9bc9;
-	position: relative;
+   width: 100%;
+   height: 100px;
+   border-top: 5px solid #0b9bc9;
+   border-bottom: 5px solid #0b9bc9;
+   position: relative;
 }
 
 #hobby_Board > #hobby_board_frm > #hobby_total{
-	width: 150px;
-	height: 50%;
-	line-height: 41px;
-	border: 2px solid #13669b;
-	position: absolute;
-	top: 50%;
-	left: 1%;
-	transform: translate(-0%, -50%);
-	text-align: center;
+   width: 150px;
+   height: 50%;
+   line-height: 41px;
+   border: 2px solid #13669b;
+   position: absolute;
+   top: 50%;
+   left: 1%;
+   transform: translate(-0%, -50%);
+   text-align: center;
 }
 
 #hobby_Board > #hobby_board_frm > #hobby_total > span{
-	font-weight: bold;
-	color: #13669b;
+   font-weight: bold;
+   color: #13669b;
 }
 
 #hobby_Board > #hobby_board_frm > #hobby_sort{
-	width: 150px;
-	height: 50%;
-	padding: 10px;
-	border: 2px solid #13669b;
-	position: absolute;
-	top: 50%;
-	left: 60%;
-	transform: translate(-50%, -50%);
-	
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-image: url("../image/down.png");
-	background-repeat: no-repeat;
-	background-position: 90% center;
+   width: 150px;
+   height: 50%;
+   padding: 10px;
+   border: 2px solid #13669b;
+   position: absolute;
+   top: 50%;
+   left: 60%;
+   transform: translate(-50%, -50%);
+   
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   background-image: url("../image/down.png");
+   background-repeat: no-repeat;
+   background-position: 90% center;
 }
 
 #hobby_Board > #hobby_board_frm > #hobby_searchbox{
-	width: 300px;
-	height: 50%;
-	border: 2px solid #aaa;
-	border: 2px solid #13669b;
-	position: absolute;
-	top: 50%;
-	left: 99%;
-	transform: translate(-100%, -50%);
-	display: flex;
+   width: 300px;
+   height: 50%;
+   border: 2px solid #aaa;
+   border: 2px solid #13669b;
+   position: absolute;
+   top: 50%;
+   left: 99%;
+   transform: translate(-100%, -50%);
+   display: flex;
 }
 #hobby_Board > #hobby_board_frm > #hobby_searchbox > #findstr{
-	flex: 1;
-	padding: 5px;
+   flex: 1;
+   padding: 5px;
 }
 
 #hobby_Board > #hobby_board_frm > #hobby_searchbox > #search{
-	flex: 1;
-	
-	border: none;
-	background-image: url("../image/search.png");
-	background-repeat: no-repeat;
-	background-position: center center;
+   flex: 1;
+   
+   border: none;
+   background-image: url("../image/search.png");
+   background-repeat: no-repeat;
+   background-position: center center;
 }
 
 #hobby_Board > #hobby_frm{
-	width: 100%;
-	height: 600px;
-	padding: 25px 0px;
+   width: 100%;
+   height: 600px;
+   padding: 25px 0px;
 }
 
 #hobby_Board > #hobby_frm > .hobby_item, .hobby_items{
-	width: 100%;
-	height: 50px;
-	border-bottom: 2px solid #aaa;
-	display: flex;
+   width: 100%;
+   height: 50px;
+   border-bottom: 2px solid #aaa;
+   display: flex;
 }
 
 #hobby_Board > #hobby_frm > .hobby_item > span{
-	flex: 1;
-	line-height: 48px;
-	text-align: center;
+   flex: 1;
+   line-height: 48px;
+   text-align: center;
 }
 
 #hobby_Board > #hobby_frm > .hobby_item > span{
-	flex: 1;
-	line-height: 48px;
-	text-align: center;
+   flex: 1;
+   line-height: 48px;
+   text-align: center;
 }
 
 #hobby_Board > #hobby_frm > .hobby_items > span:nth-child(1){
-	color: #13669b;
-	font-weight: bold;
+   color: #13669b;
+   font-weight: bold;
 }
 
 #hobby_Board > #hobby_frm > .hobby_item > span:nth-child(2){
-	flex: 5;
+   flex: 5;
 }
 
 #hobby_Board > #hobby_frm > .hobby_items > span:nth-child(2){
-	flex: 5;
+   flex: 5;
 }
 
 #hobby_Board > #hobby_frm > .hobby_item > span:nth-child(3){
-	flex: 2;
+   flex: 2;
 }
 
 #hobby_Board > #hobby_frm > .hobby_items > span:nth-child(3){
-	flex: 2;
+   flex: 2;
 }
 
 
 #hobby_board_frm > #hobby_searchbox > #hobby_findbtn{
-  	flex: 1;
-	background-image: url("./image/notice_search.png");
-	background-repeat: no-repeat;
-	background-position: center center;
+     flex: 1;
+   background-image: url("./image/notice_search.png");
+   background-repeat: no-repeat;
+   background-position: center center;
 }
 
 /* 게시판  */
@@ -191,73 +191,73 @@
 }
 
 #hobby_Board > #hobby_footer_frm{
-	width: 100%;
-	height: 100px;
-	position: relative;
+   width: 100%;
+   height: 100px;
+   position: relative;
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_previous{
-	width: 100px;
-	height: 50%;
-	position: absolute;
-	top: 50%;
-	left: 25%;
-	transform: translate(-50%, -50%);
-	display: flex;
+   width: 100px;
+   height: 50%;
+   position: absolute;
+   top: 50%;
+   left: 25%;
+   transform: translate(-50%, -50%);
+   display: flex;
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_previous > input:nth-child(1){
-	flex: 1;
-	background-image: url("../image/left2.png");
-	background-repeat: no-repeat;
-	background-position: center center;
+   flex: 1;
+   background-image: url("../image/left2.png");
+   background-repeat: no-repeat;
+   background-position: center center;
 }
 
 
 #hobby_Board > #hobby_footer_frm > #hobby_previous > input:nth-child(2){
-	flex: 1;
-	background-image: url("../image/left1.png");
-	background-repeat: no-repeat;
-	background-position: center center;
+   flex: 1;
+   background-image: url("../image/left1.png");
+   background-repeat: no-repeat;
+   background-position: center center;
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_center{
-	width: auto;
-	height: 50%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+   width: auto;
+   height: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_center > input{
-	width: 50px;
-	height: 100%;
-	float: left;
+   width: 50px;
+   height: 100%;
+   float: left;
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_next{
-	width: 100px;
-	height: 50%;
-	position: absolute;
-	top: 50%;
-	left: 75%;
-	transform: translate(-50%, -50%);
-	display: flex;
+   width: 100px;
+   height: 50%;
+   position: absolute;
+   top: 50%;
+   left: 75%;
+   transform: translate(-50%, -50%);
+   display: flex;
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_next > input:nth-child(1){
-	flex: 1;
-	background-image: url("../image/right1.png");
-	background-repeat: no-repeat;
-	background-position: center center;
+   flex: 1;
+   background-image: url("../image/right1.png");
+   background-repeat: no-repeat;
+   background-position: center center;
 }
 
 #hobby_Board > #hobby_footer_frm > #hobby_next > input:nth-child(2){
-	flex: 1;
-	background-image: url("../image/right2.png");
-	background-repeat: no-repeat;
-	background-position: center center;
+   flex: 1;
+   background-image: url("../image/right2.png");
+   background-repeat: no-repeat;
+   background-position: center center;
 }
 
 /* 제목 밑 버튼 3개 */
@@ -270,41 +270,41 @@
 }
 
 #hobby_menubtn_zone > input{
-	width: 200px;
-	height: 50px;
-	margin-bottom: 20px;
-	border: 1px solid #aaa;
+   width: 200px;
+   height: 50px;
+   margin-bottom: 20px;
+   border: 1px solid #aaa;
 }
 
 .btn_hobby{
-	margin: 0px 20px;
+   margin: 0px 20px;
 }
 
 .btn_hobby{
-	margin: 0px 20px;
+   margin: 0px 20px;
 }
 
 .hobby{
-	margin: 0px 20px;
+   margin: 0px 20px;
 }
 #search{
-	width: 51px;
+   width: 51px;
     height: 100%;
     border: 1px solid black;  /*  임시로 검색하기위해 만든 성원씨의 작품 */
 }
 
 #hobby_Board > #CreateM{
-	width: 100%;
-	height: 100px;
-	position: relative;
+   width: 100%;
+   height: 26px;
+   position: relative;
 }
 
 #hobby_Board > #CreateM > #Create{
-	width: 100px;
-	height: 50%;
-	position: absolute;
-	top: 50%;
-	left: 100%;
-	transform: translate(-100%, -0%);
-	background-color: rgba(170, 170, 170, 0.5);
+   width: 100px;
+   height: 200%;
+   position: absolute;
+   top: -118%;
+   left: 97%;
+   transform: translate(-100%, -0%);
+   background-color: rgba(170, 170, 170, 0.5);
 }

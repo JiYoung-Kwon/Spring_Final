@@ -34,10 +34,10 @@
 			<!-- serial값을 저장하고 보내는 히든값 -->
 			<div id='items'>
 				<c:forEach var='vo' items="${list}">
-					<div class='item' onclick='sang.view(${vo.serial})'>
-						<img src='http://placehold.it/150x180' class='photo' /><br /> <span
-							class='title'><h2>${vo.title}</h2></span><br /> <span
-							class='mdate'>${vo.mdate }</span>
+					<div class='item' onclick='sang.update(${vo.serial})'>
+						<img src="../upload/${vo.nail }" class='photo' /><br /> 
+						<span class='title'><h2>${vo.title}</h2></span><br /> 
+						<span class='mdate'>${vo.mdate }</span>
 					</div>
 				</c:forEach>
 				

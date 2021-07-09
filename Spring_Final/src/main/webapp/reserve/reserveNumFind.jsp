@@ -81,7 +81,7 @@ button {
 </div>
 <script>
 reserve.init();
-reserve.mykeyupchk();
+reserve.mykeyup();
 </script>
 </body>
 </html>

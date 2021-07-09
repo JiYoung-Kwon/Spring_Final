@@ -7,7 +7,7 @@ var editor_object = [];
 nhn.husky.EZCreator.createInIFrame({
    oAppRef               :   editor_object,
    elPlaceHolder         :   'Create_area',
-   sSkinURI            :   '../textarea/demo/SmartEditor2Skin.html',
+   sSkinURI            :   '../../textarea/demo/SmartEditor2Skin.html',
    htParams            :   {
       bUseToolbar         :   true,
       bUseVerticalResizer   :   false,

@@ -33,6 +33,11 @@ public class sanghwalDao {
 				list = sqlsession.selectList("sanghwal.search_doc", page);
 				break;
 			}
+			
+			for(int i=0;i<list.size();i++) {
+				String nail = sqlsession.selectOne("msanghwal.sanghwal_thumbnail", list.get(i).getSerial());
+				list.get(i).setNail(nail);
+			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

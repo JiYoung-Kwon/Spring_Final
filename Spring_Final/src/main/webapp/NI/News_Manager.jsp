@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' type='text/css' href='./NIcss/News_Manager.css'>
-<script src="./NIjs/jquery-3.6.0.min.js" ></script>
-<script src='./NIjs/Manager.js'></script>
+<link rel='stylesheet' type='text/css' href='../../NIcss/News_Manager.css'>
+<script src="../../NIjs/jquery-3.6.0.min.js" ></script>
+<script src="../../NIjs/Manager.js"></script>
 <title>코로나 관련 보도(매니저)</title>
 </head>
 <body>

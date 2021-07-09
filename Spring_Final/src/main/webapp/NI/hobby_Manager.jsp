@@ -7,9 +7,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel='stylesheet' type='text/css' href='./NIcss/hobby_Manager.css'>
-<script src="./NIjs/jquery-3.6.0.min.js" ></script>
-<script src='./NIjs/Manager.js'></script>
+<link rel='stylesheet' type='text/css' href='../../NIcss/hobby_Manager.css'>
+<script src="../../NIjs/jquery-3.6.0.min.js" ></script>
+<script src="../../NIjs/Manager.js"></script>
 <title>이시국 취미생활(매니저)</title>
 </head>
 <body>

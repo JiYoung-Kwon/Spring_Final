@@ -1,10 +1,11 @@
 package sanghwal;
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class sanghwalVo {
 	int serial;
-	int pSerial;
 	int hit;
 	
 	String mId="";
@@ -12,8 +13,10 @@ public class sanghwalVo {
 	String doc="";
 	String mdate="";
 	
-	List<sanghwalAttVo> attList;
-	List<sanghwalAttVo> delList;
+	String nail="";
+	
+	List<sanghwalAttVo> attList = new ArrayList<sanghwalAttVo>();;
+	List<sanghwalAttVo> delList = new ArrayList<sanghwalAttVo>();;
 	
 	
 	
@@ -30,17 +33,17 @@ public class sanghwalVo {
 		this.delList = delList;
 	}
 	
+	public String getNail() {
+		return nail;
+	}
+	public void setNail(String nail) {
+		this.nail = nail;
+	}
 	public int getSerial() {
 		return serial;
 	}
 	public void setSerial(int serial) {
 		this.serial = serial;
-	}
-	public int getpSerial() {
-		return pSerial;
-	}
-	public void setpSerial(int pSerial) {
-		this.pSerial = pSerial;
 	}
 	public int getHit() {
 		return hit;
