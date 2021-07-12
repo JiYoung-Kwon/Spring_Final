@@ -39,7 +39,6 @@ public class scheduleData {
 		try {
 			//나머지는 11시 갱신
 			kData.parsingKorea();
-			gaData.parsingGenderAge();
 			cData.parsingCity();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -66,6 +65,7 @@ public class scheduleData {
 		try {
 			//global은 3시 갱신
 			gData.parsingGlobal();
+			gaData.parsingGenderAge();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
