@@ -15,7 +15,7 @@
 
 /* --------------------------------- header -------------------------------  */
 #header {
-	height: 140px;
+	height: 155px;
 }
 
 #header>* {
@@ -23,13 +23,14 @@
 }
 
 #header>#header_logo {
-	height: 60px;
+	height: 80px;
 }
 
 #header>#header_logo>#logo_IF {
 	height: 50px;
 	width: max-content;
 	margin: 0 auto;
+	margin-top: 40px;
 	line-height: 1.5;
 }
 
@@ -45,7 +46,7 @@
 #header>#header_logo>#logo_IF>#font {
 	width: max-content;
 	display: inline-block;
-	font-size: 35px;
+	font-size: 40px;
 	font-weight: bold;
 }
 

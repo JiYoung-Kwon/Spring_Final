@@ -14,7 +14,7 @@
 	<div id='manager_menu'>
 		<h1>관리자 페이지</h1>
 		<div id='manager_ui'>
-			<img src="../img/manager.jpg" id='manager_image'><br /> <label>관리자
+			<img src="../../img/manager.jpg" id='manager_image'><br /> <label>관리자
 				님</label>
 			<!-- 관리자 아이디명이 들어갈 곳 -->
 		</div>

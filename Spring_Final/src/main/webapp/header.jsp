@@ -7,17 +7,31 @@
 <script src='/Spring_Final/reservejs/reserve.js'></script>
 <meta charset="UTF-8">
 <title>header</title>
+<style>
+#i_img {
+	transform: translate(1350px, -15px);
+}
 
+.i_img {
+	width: 30px;
+	margin: 25px 12px 0 0;
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<div id="header">
 		<div id="header_logo">
 			<div id="logo_IF">
-				<div id="icon">
-					<img alt="손바닥이미지" src="./img/son.png">
-				</div>
-				<div id="font">코로나! 멈춰!</div>
+				<div id="font">🖐🏻 코로나! 멈춰!</div>
 			</div>
+			
+			<div id="i_img">
+                <a href="https://youtube.com/channel/UCa7-3Zvxg-5Rfxgu3RQY_gw"><img src="img/png1.png" alt="" class="i_img"></a>
+                <a href="http://www.facebook.com/koreadca"><img src="img/png2.png" alt="" class="i_img"></a>
+                <a href="https://www.instagram.com/k__doooong"><img src="img/png3.png" alt="" class="i_img"></a>
+                <a href="https://github.com/JiYoung-Kwon/Spring_Final"><img src="img/png4.png" alt="" class="i_img" id="img_i"></a>
+            </div>
 		</div>
 		<div id="header_menu">
 			<ul id="menu_wrapper">

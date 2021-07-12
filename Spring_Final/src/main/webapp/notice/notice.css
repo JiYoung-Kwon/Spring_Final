@@ -19,6 +19,7 @@
 #unotice_reader_form{
 	width: 1400px;
 	height: auto;
+	transform: translate(0px, 10px);
 }
 
 #unotice_reader_form > #unotice_header_frm{

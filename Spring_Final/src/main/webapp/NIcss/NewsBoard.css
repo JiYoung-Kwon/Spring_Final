@@ -21,6 +21,7 @@
 #News_Board{
 	width: 1400px;
 	height: auto;
+	transform: translate(0px, 10px);
 }
 
 #News_Board > #News_header{
