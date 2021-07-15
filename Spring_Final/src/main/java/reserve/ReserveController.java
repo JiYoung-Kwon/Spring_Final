@@ -78,7 +78,7 @@ public class ReserveController {
 		String chkNum = getKey(6);
 		String authKey = "인증 번호는 " + chkNum + " 입니다.";
 
-		String setfrom = "wnsghk6670@gmail.com";
+		String setfrom = "";
 		String tomail = req.getParameter("tomail"); // 받는 사람 이메일
 		String title = "백신예약 인증번호 안내입니다."; // 제목
 		//String content = request.getParameter("content"); // 내용
@@ -124,7 +124,7 @@ public class ReserveController {
 		
 		String mailContent = String.format("%s\n%s\n%s\n%s\n%s", a,b,c,d,f);
 		
-		String setfrom = "wnsghk6670@gmail.com";
+		String setfrom = "";
 		String tomail = req.getParameter("Email"); // 받는 사람 이메일
 		String title = "백신 예약정보 안내 메일입니다."; // 제목
 

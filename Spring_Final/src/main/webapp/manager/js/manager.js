@@ -19,6 +19,12 @@ function init(){
 		
 		$("#btnmanager").trigger("click");
 }
+
+history.pushState(null, null, "./manager_loginform.jsp");
+    window.onpopstate = function () {
+        history.go(1);
+};
+
 function account(){
 		$('#frm_manager').load('../../account/search.act');
 	}
