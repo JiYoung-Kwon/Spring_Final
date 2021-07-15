@@ -16,5 +16,6 @@
 	
 	<mappers>
 		<mapper resource="notice/NoticeSQL.xml"/>
+		<mapper resource="account/accountSQL.xml"/>
 	</mappers>
 </configuration>

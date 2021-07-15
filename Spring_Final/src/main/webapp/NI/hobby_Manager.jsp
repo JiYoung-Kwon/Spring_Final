@@ -23,7 +23,7 @@
  		<input type='button' class='btn_hobby' id='btn_hobby'   value="이시국 취미생활" onclick="tab('hobby_M')"/>
 		</div>
 		
-		<form id="hobby_board_frm" name="hobby_frm" method="post" action="hobby.brd">
+		<form id="hobby_board_frm" name="hobby_frm" method="post" onsubmit="return false">
 			<div id="hobby_total"> 총 ${page.totList } 건</div>
 			
 			<select id="hobby_sort">
@@ -31,7 +31,7 @@
 				<option value="joHoe">내용</option>
 			</select>
 			<div id="hobby_searchbox">
-				<input id="findStr" name='hobby_findbtn' type="text"  value="${page.findStr }">
+				<input id="findStr" name='hobby_findbtn' type="text"  value="${page.findStr }" onkeyup="EnterAction(event)">
 				<input id="search"  type="button">
 			</div>
 			

@@ -90,6 +90,9 @@ public class NoticeController {
 	public ModelAndView mreader(NoticePage page) {
 		ModelAndView mv = new ModelAndView();
 		
+		System.out.println(page.getNowPage());
+		System.out.println(page.getFindStr());
+		
 		List<NoticeVo> list = dao.mreader(page);
 		
 		mv.addObject("list", list);

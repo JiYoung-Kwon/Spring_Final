@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+
+<mapper namespace="account">
+	
+	<select id="totlist" parameterType="account.accountPage" resultType="Integer">
+		SELECT	count(mid) totList
+		FROM	account
+		Where mid like '%${findStr}%'
+	</select>
+	
+	<!-- reader -->
+	<select id="search" parameterType="account.accountPage" resultType="account.accountVo">
+		SELECT *
+		FROM(
+			SELECT rownum rno, m.*
+			FROM(
+				SELECT mid , password , mname , mdate , mjob , mposition
+				FROM account
+				ORDER BY mid DESC)m
+		)WHERE rno BETWEEN #{startNo} AND #{endNo}
+	</select>
+	
+	<select id="view" parameterType="account.accountVo" resultType="account.accountVo">
+		SELECT	* FROM account Where mid = #{mid}
+	</select>
+	
+	<update id="update" parameterType="account.accountVo" >
+		UPDATE	account
+		SET		mname = #{mname}, mjob = #{mjob}, mposition = #{mposition}
+		WHERE	mid = #{mid }
+	</update>
+
+	
+	<delete id="delete" parameterType="account.accountVo">
+		DELETE
+		FROM account
+		WHERE mid = #{mid}
+	</delete>
+
+	<insert id="insert" parameterType="account.accountVo">
+		insert into account values(#{mid}, #{password}, #{mname}, to_char(sysdate,'yyyy-mm-dd'), #{mjob}, #{mposition})
+	</insert>
+	
+	
+	<select id="idChk" parameterType="account.accountVo" resultType="Integer">
+	select count(mid) from account where mid=#{mid}
+	</select>	
+	
+	<select id="pwdChk" parameterType="account.accountVo" resultType="String">
+	select password from account where mid=#{mid}
+	</select>	
+	
+	<update id="view_pwdChange" parameterType="account.accountVo" >
+		UPDATE	account
+		SET		password = #{newPwd}
+		WHERE	mid = #{mid }
+	</update>
+	
+</mapper>

@@ -81,6 +81,17 @@ brd.view = function(serial){
 
 }
 
+
+function EnterAction(event){
+	if(event.keyCode == 13){
+	 var tabGubun = document.getElementById('tabGubun').value;
+	 var findStr = document.getElementById('findStr').value;
+
+	 var param = "tabGubun="+tabGubun+"&findStr="+findStr+"&nowPage="+'1';
+
+	$('#middle').load('./NI/search.brd',param);
+	}
+}
  
 
 /* ---------------- 검색창  ----------------*/	

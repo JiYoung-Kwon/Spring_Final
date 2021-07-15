@@ -74,7 +74,9 @@
 	position: fixed;
 	overflow:auto;
 }
-
+#manager_menu>#page_name{
+	text-align: center;	
+}
 #manager_ui{
 	width:250px;
 	height:250px;
@@ -118,4 +120,10 @@
 #menu_bar li:nth-child(2):hover .sub{
 	cursor:pointer;
 	display: inline-block;
+}
+#btn_logout{
+    position: relative;
+    background-color: #676767;
+    color: #ffffff;
+    top: 14px;
 }

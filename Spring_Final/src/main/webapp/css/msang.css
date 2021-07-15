@@ -59,6 +59,13 @@
 	font-size: 13pt;
 }
 
+#sang #insert_btn_zone #btnInsert{
+	font-size:15pt;
+	float: right;
+	border:0px;
+	color:#0b9bc9;
+}
+
 /* 이미지 미리보기 -------------------- */
 #image_preview{
 	position: relative;	

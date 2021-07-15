@@ -23,14 +23,14 @@
  		<input type='button' class='btn_hobby' id='btn_hobby' name='btn_hobby' value="이시국 취미생활" onclick="tab('hobby')" />
 		</div>
 		
-		<form id="News_board_frm" name="News_frm" method="post" action="News.brd">
+		<form id="News_board_frm" name="News_frm" method="post" onsubmit="return false">
 			<div id="News_total"> 총 ${page.totList } 건</div>
 			<select id="News_sort">
 				<option value="jacSung">제목</option>
 				<option value="joHoe">내용</option>
 			</select>
 			<div id="News_searchbox">
-				<input id="findStr" name='News_findbtn' type="text"  value="${page.findStr }">
+				<input id="findStr" name='News_findbtn' type="text"  value="${page.findStr }" onkeyup="EnterAction(event)">
 				<input id="search"  type="button">
 			</div>
 			

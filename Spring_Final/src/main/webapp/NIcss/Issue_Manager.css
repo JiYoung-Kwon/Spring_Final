@@ -294,17 +294,18 @@
 }
 
 #Issue_Board > #CreateM{
-	width: 100%;
-	height: 100px;
-	position: relative;
+   width: 100%;
+   height: 26px;
+   position: relative;
 }
 
 #Issue_Board > #CreateM > #Create{
-	width: 100px;
-	height: 50%;
-	position: absolute;
-	top: 50%;
-	left: 100%;
-	transform: translate(-100%, -0%);
-	background-color: rgba(170, 170, 170, 0.5);
+   width: 100px;
+   height: 200%;
+   position: absolute;
+   top: -118%;
+   left: 97%;
+   transform: translate(-100%, -0%);
+   background-color: rgba(170, 170, 170, 0.5);
+}
 }
